@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Catch my Shift</string>
+
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_login_email">E-mail</string>
     <string name="title_login_password">Contraseña</string>
@@ -8,5 +9,8 @@
     <string name="title_Linkedin">Inicia con LinkedIn</string>
     <string name="title_ForgotPassword">¿Olvidó su contrseña?</string>
 
+    <string name="title_main_ToDo">¿Qué deseas hacer?</string>
+    <string name="title_searchJob">Buscar un Trabajo</string>
+    <string name="title_searchEmployees">Publicar Vacante</string>
 
 </resources>
