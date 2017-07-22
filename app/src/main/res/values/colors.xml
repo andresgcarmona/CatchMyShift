@@ -3,7 +3,10 @@
     <color name="colorPrimary">#48a0dc</color>
     <color name="colorPrimaryDark">#48a0dc</color>
     <color name="colorAccent">#88c057</color>
-    <color name="colorWhiteText">#ffffff</color>
-    <color name="colorBtnMain">#f4f4f4</color>
 
+    <color name="colorBtnWhite">#f4f4f4</color>
+    <color name="colorBtLinkedin">#00c0f5</color>
+
+    <color name="colorWhiteText">#ffffff</color>
+    <color name="colorSoftDarkBrownText">#645b52</color>
 </resources>
