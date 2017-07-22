@@ -12,5 +12,18 @@
     <string name="title_main_ToDo">¿Qué deseas hacer?</string>
     <string name="title_searchJob">Buscar un Trabajo</string>
     <string name="title_searchEmployees">Publicar Vacante</string>
+    <string name="title_activity_user"></string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="title_navdraw_profile">Perfil</string>
+    <string name="title_navdraw_searchJob">Buscar Trabajo</string>
+    <string name="title_navdraw_myEvents">Mis Eventos</string>
+    <string name="title_navdraw_Pay">Pago</string>
+    <string name="title_navdraw_settings">Configuración</string>
+
+    <string name="action_settings">Configuración</string>
+
 
 </resources>

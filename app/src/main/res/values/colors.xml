@@ -9,4 +9,8 @@
 
     <color name="colorWhiteText">#ffffff</color>
     <color name="colorSoftDarkBrownText">#645b52</color>
+    <color name="colorNavDrawText">#40372f</color>
+
+    <color name="colorIconsNavDraw">#535353</color>
+    <color name="colorIconsControls">#535353</color>
 </resources>

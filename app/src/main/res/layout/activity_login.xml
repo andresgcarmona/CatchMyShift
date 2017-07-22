@@ -101,7 +101,7 @@
         android:layout_marginLeft="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginTop="7dp"
-        android:background="@color/colorBtLinkedin"
+        android:background="@drawable/bgnd_btn_linkedin"
         android:drawableLeft="@drawable/linkedinpng"
         android:text="@string/title_Linkedin"
         android:textAllCaps="false"
