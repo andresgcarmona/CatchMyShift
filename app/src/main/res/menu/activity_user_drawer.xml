@@ -3,15 +3,15 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_profile"
             android:icon="@drawable/profilevd"
             android:title="@string/title_navdraw_profile" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_searchJob"
             android:icon="@drawable/searchvd"
             android:title="@string/title_navdraw_searchJob" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_pay"
             android:icon="@drawable/payvd"
             android:title="@string/title_navdraw_Pay" />
         <item
@@ -19,21 +19,17 @@
             android:icon="@drawable/myeventsvd"
             android:title="@string/title_navdraw_myEvents" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_settings"
             android:icon="@drawable/settingsvd"
             android:title="@string/title_navdraw_settings" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/title_navdraw_option">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_logoff"
+                android:title="@string/title_navdraw_logoff" />
+
         </menu>
     </item>
 

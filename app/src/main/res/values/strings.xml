@@ -22,6 +22,8 @@
     <string name="title_navdraw_myEvents">Mis Eventos</string>
     <string name="title_navdraw_Pay">Pago</string>
     <string name="title_navdraw_settings">Configuración</string>
+    <string name="title_navdraw_logoff">Cerrar Sesión</string>
+    <string name="title_navdraw_option">Opciones</string>
 
     <string name="action_settings">Configuración</string>
 
