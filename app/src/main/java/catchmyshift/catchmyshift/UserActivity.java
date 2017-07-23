@@ -3,6 +3,7 @@ package catchmyshift.catchmyshift;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -81,7 +82,9 @@ public class UserActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_profile) {
-            // Handle the camera action
+            ProfileFragment profileFragment = new ProfileFragment();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.layout_content_user,profileFragment, profileFragment.getTag()).commit();
         } else if (id == R.id.nav_searchJob) {
 
         } else if (id == R.id.nav_pay) {

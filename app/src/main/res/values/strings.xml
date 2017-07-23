@@ -27,5 +27,10 @@
 
     <string name="action_settings">Configuración</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="title_MyInterests">Mis Intereses</string>
+    <string name="title_MySkills">Mis Aptitudes</string>
+
 
 </resources>
