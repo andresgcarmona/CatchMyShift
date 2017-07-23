@@ -82,10 +82,16 @@ public class UserActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_profile) {
+
             ProfileFragment profileFragment = new ProfileFragment();
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction().replace(R.id.layout_content_user,profileFragment, profileFragment.getTag()).commit();
+
         } else if (id == R.id.nav_searchJob) {
+
+            MapUserFragment mapUserFragment = new MapUserFragment();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.layout_content_user,mapUserFragment, mapUserFragment.getTag()).commit();
 
         } else if (id == R.id.nav_pay) {
 
