@@ -13,4 +13,9 @@
 
     <color name="colorIconsNavDraw">#535353</color>
     <color name="colorIconsControls">#535353</color>
+
+    <color name="colorSnackSuccess">#29a67a</color>
+    <color name="colorSnackDanger">#a62940</color>
+    <color name="colorSnackProgress">#31b6ce</color>
+
 </resources>

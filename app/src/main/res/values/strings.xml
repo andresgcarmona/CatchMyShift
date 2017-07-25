@@ -12,7 +12,8 @@
     <string name="title_main_ToDo">¿Qué deseas hacer?</string>
     <string name="title_searchJob">Buscar un Trabajo</string>
     <string name="title_searchEmployees">Publicar Vacante</string>
-    <string name="title_activity_user"></string>
+    <string name="title_activity_user">Usuario</string>
+
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -27,14 +28,27 @@
 
     <string name="action_settings">Configuración</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-
     <string name="title_MyInterests">Mis Intereses</string>
     <string name="title_MySkills">Mis Aptitudes</string>
-    <string name="title_activity_maps">Map</string>
+
+    <string name="title_Success">Se ha insertado correctamente</string>
+    <string name="title_Danger">Error al insertar datos</string>
+    <string name="title_Loading">Cargando datos...</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="title_activity_maps">Maps</string>
+    <string name="title_fragment_profile">Perfil</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps_user">Empresas Disponibles</string>
+
+
+        <string name="apply">Trabajos aplicados</string>
+        <string name="future_jobs">Trabajos Futuros</string>
+        <string name="jobs_done">Trabajos Completos</string>
+        <string name="approve_payment">Pagos Aprovados</string>
 
 
 </resources>
