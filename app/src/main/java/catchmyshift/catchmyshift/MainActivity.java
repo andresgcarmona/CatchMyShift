@@ -24,15 +24,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent().setClass(getApplicationContext(),LoginActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
 
         btnPublishVacancy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Snackbar.make(v, "Función pendiente", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent().setClass(getApplicationContext(),LoginActivityCompany.class);
+                startActivity(intent);
             }
         });
     }

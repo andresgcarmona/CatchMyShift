@@ -29,6 +29,16 @@
     <string name="title_navdraw_logoff">Cerrar Sesión</string>
     <string name="title_navdraw_option">Opciones</string>
 
+    <string name="title_navdraw_profileBussiness">Perfil de Trabajo</string>
+    <string name="title_navdraw_bussinessContact">Publicar un Trabajo</string>
+    <string name="title_navdraw_billingInfo">Información de Facturación</string>
+    <string name="title_navdraw_publishJob">Publicar un Trabajo</string>
+    <string name="title_navdraw_myEventsBussiness">Mis Eventos</string>
+    <string name="title_navdraw_myOpEventsBussiness">Mis Eventos Abiertos</string>
+    <string name="title_navdraw_settingsBussiness">Configuración</string>
+    <string name="title_navdraw_openEvents">Cerrar Sesión</string>
+    <string name="title_navdraw_optionBussiness">Opciones</string>
+
     <string name="action_settings">Configuración</string>
 
     <string name="title_MyInterests">Mis Intereses</string>
