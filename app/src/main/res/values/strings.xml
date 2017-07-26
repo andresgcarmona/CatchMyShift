@@ -47,10 +47,13 @@
     <string name="title_activity_maps_user">Empresas Disponibles</string>
 
 
-        <string name="apply">Trabajos aplicados</string>
-        <string name="future_jobs">Trabajos Futuros</string>
-        <string name="jobs_done">Trabajos Completos</string>
-        <string name="approve_payment">Pagos Aprovados</string>
+    <string name="apply">Trabajos aplicados</string>
+    <string name="future_jobs">Trabajos Futuros</string>
+    <string name="jobs_done">Trabajos Completos</string>
+    <string name="approve_payment">Pagos Aprovados</string>
 
-
+    <string name="total_payment">Total a Pagar:</string>
+    <string name="method_payment">Metodo de pago</string>
+    <string name="statistics_payment">Estadísticas de Pago</string>
+    <string name="event_summary">Resumen del Evento</string>
 </resources>

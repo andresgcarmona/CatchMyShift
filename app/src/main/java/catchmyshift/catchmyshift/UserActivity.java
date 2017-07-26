@@ -7,6 +7,7 @@ import android.graphics.PorterDuff;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.internal.NavigationMenuItemView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
@@ -55,7 +56,11 @@ public class UserActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.getMenu().getItem(0).setChecked(true);
         navigationView.setNavigationItemSelectedListener(this);
+        ProfileFragment profileFragment = new ProfileFragment();
+        manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.layout_content_user,profileFragment,profileFragment.getTag()).commit();
     }
 
     @Override
@@ -116,7 +121,9 @@ public class UserActivity extends AppCompatActivity
 
                 break;
             case R.id.nav_pay:
-
+                PaymentFragment paymentFragment = new PaymentFragment();
+                manager = getSupportFragmentManager();
+                manager.beginTransaction().replace(R.id.layout_content_user,paymentFragment, paymentFragment.getTag()).commit();
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_myevents:
@@ -130,8 +137,10 @@ public class UserActivity extends AppCompatActivity
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_logoff:
-
                 drawer.closeDrawer(GravityCompat.START);
+                Intent intent = new Intent().setClass(getApplicationContext(),LoginActivity.class);
+                startActivity(intent);
+                finish();
                 break;
 
             default:
