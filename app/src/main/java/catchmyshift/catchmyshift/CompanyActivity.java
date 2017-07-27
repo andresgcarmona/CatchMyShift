@@ -49,9 +49,9 @@ public class CompanyActivity extends AppCompatActivity implements NavigationView
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_company);
         navigationView.getMenu().getItem(0).setChecked(true);
         navigationView.setNavigationItemSelectedListener(this);
-//        ProfileFragment profileFragment = new ProfileFragment();
-  //      manager = getSupportFragmentManager();
-    //    manager.beginTransaction().replace(R.id.layout_content_user,profileFragment,profileFragment.getTag()).commit();
+        ProfileCompanyFragment profileCompanyFragment = new ProfileCompanyFragment();
+        manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.layout_content_company,profileCompanyFragment,profileCompanyFragment.getTag()).commit();
     }
 
     @Override
