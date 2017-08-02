@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Catch my Shift</string>
+    <string name="title_welcom">Welcome</string>
+    <string name="title_welcom_to">to</string>
+
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_login_email">E-mail</string>
+    <string name="title_login_password">Password</string>
+    <string name="title_sign_in">Login</string>
+    <string name="title_Or">Or</string>
+    <string name="title_Linkedin">Login with LinkedIn</string>
+    <string name="title_ForgotPassword">Forgot your password?</string>
+    <string name="title_CreateAccount">Create new account</string>
+
+    <string name="title_main_ToDo">What are you looking for?</string>
+    <string name="title_searchJob">Search a Job</string>
+    <string name="title_searchEmployees">Publish Vacancy</string>
+    <string name="title_activity_user">User</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="title_navdraw_profile">Profile</string>
+    <string name="title_navdraw_searchJob">Search Job</string>
+    <string name="title_navdraw_myEvents">My Events</string>
+    <string name="title_navdraw_Pay">Payment</string>
+    <string name="title_navdraw_settings">Settings</string>
+    <string name="title_navdraw_logoff">Log off</string>
+    <string name="title_navdraw_option">Options</string>
+
+    <string name="title_navdraw_profileBussiness">Bussiness Profile</string>
+    <string name="title_navdraw_bussinessContact">Bussiness Contact</string>
+    <string name="title_navdraw_billingInfo">Billing Information</string>
+    <string name="title_navdraw_publishJob">Publish a Job</string>
+    <string name="title_navdraw_myEventsBussiness">My Events</string>
+    <string name="title_navdraw_myOpEventsBussiness">My Open Events</string>
+    <string name="title_navdraw_settingsBussiness">Settings</string>
+    <string name="title_navdraw_openEvents">Log off</string>
+    <string name="title_navdraw_optionBussiness">Options</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="title_MyInterests">My Interests</string>
+    <string name="title_MySkills">My Skills</string>
+
+    <string name="title_Success">Inserted</string>
+    <string name="title_Danger">Error </string>
+    <string name="title_Loading">Loading data...</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="title_activity_maps">Maps</string>
+    <string name="title_fragment_profile">Profile</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps_user">Available Companies</string>
+
+
+    <string name="apply">Applyed Jobs</string>
+    <string name="future_jobs">Future Jobs</string>
+    <string name="jobs_done">Complete Jobs</string>
+    <string name="approve_payment">Approve Payment</string>
+
+    <string name="total_payment">Total Payment:</string>
+    <string name="method_payment">Method Payment</string>
+    <string name="statistics_payment">Stadistics payment</string>
+    <string name="event_summary">Event Summary</string>
+
+    <string name="title_description">Description</string>
+    <string name="title_schedule">Schedule</string>
+    <string name="title_address">Address</string>
+    <string name="title_city">City</string>
+    <string name="title_state">State</string>
+    <string name="title_zip">Zip</string>
+    <string name="title_billing_contact">Billing Contact</string>
+</resources>
