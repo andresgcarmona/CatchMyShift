@@ -48,7 +48,6 @@
             android:label="@string/title_activity_maps_user"
             android:parentActivityName=".UserActivity"
             android:theme="@style/AppTheme.NoActionBar">
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="catchmyshift.catchmyshift.UserActivity" />
@@ -59,16 +58,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".CompanyActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
+            android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="catchmyshift.catchmyshift.CompanyActivity" />
         </activity>
-        <activity android:name=".LoginActivityCompany"></activity>
+        <activity android:name=".LoginActivityCompany" />
+        <activity
+            android:name=".MyEventsActivity"
+            android:label="@string/title_activity_my_events"
+            android:parentActivityName=".UserActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="catchmyshift.catchmyshift.UserActivity" />
+        </activity>
     </application>
 
 </manifest>

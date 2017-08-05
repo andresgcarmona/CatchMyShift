@@ -39,9 +39,7 @@
             android:id="@+id/edittext_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/mailvd"
-            android:hint="@string/title_login_email"
-            android:inputType="textEmailAddress" />
+            android:hint="@string/title_login_email"/>
 
     </android.support.design.widget.TextInputLayout>
 

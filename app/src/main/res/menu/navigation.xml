@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/id_applyjob"
+        android:icon="@drawable/applyjobvd"
+        android:title="@string/apply" />
+
+    <item
+        android:id="@+id/id_futurejob"
+        android:icon="@drawable/futurejobvd"
+        android:title="@string/future_jobs" />
+
+    <item
+        android:id="@+id/id_jobsdone"
+        android:icon="@drawable/donejobvd"
+        android:title="@string/jobs_done" />
+
+    <item
+        android:id="@+id/id_paymentdone"
+        android:icon="@drawable/approvepaymentvd"
+        android:title="@string/approve_payment" />
+
+</menu>

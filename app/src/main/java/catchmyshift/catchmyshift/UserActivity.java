@@ -127,9 +127,8 @@ public class UserActivity extends AppCompatActivity
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_myevents:
-                MyEventsFragment myEventsFragment = new MyEventsFragment();
-                manager = getSupportFragmentManager();
-                manager.beginTransaction().replace(R.id.layout_content_user,myEventsFragment,myEventsFragment.getTag()).commit();
+               Intent myEventsIntent = new Intent().setClass(getApplicationContext(),MyEventsActivity.class);
+                startActivity(myEventsIntent);
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_settings:

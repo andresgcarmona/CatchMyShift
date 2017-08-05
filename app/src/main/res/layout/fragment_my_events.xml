@@ -46,8 +46,7 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/jobsfuturepng" />
+                android:layout_margin="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -68,8 +67,7 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/jobsdonepng" />
+                android:layout_margin="10dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -90,8 +88,7 @@
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_margin="10dp"
-                android:src="@drawable/paymentdonepng" />
+                android:layout_margin="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
