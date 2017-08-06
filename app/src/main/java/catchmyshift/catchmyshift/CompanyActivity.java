@@ -72,11 +72,11 @@ public class CompanyActivity extends AppCompatActivity implements NavigationView
         int id = item.getItemId();
         switch (id){
             case R.id.nav_profile_bussiness:
-
+                Intent inst = new Intent().setClass(getApplicationContext(), ProfileCompanyActivity.class);
+                startActivity(inst);
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_contact:
-
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_billing_info:
