@@ -80,6 +80,9 @@ public class CompanyActivity extends AppCompatActivity implements NavigationView
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_billing_info:
+                BillingCompanyFragment billingFragment = new BillingCompanyFragment();
+                manager = getSupportFragmentManager();
+                manager.beginTransaction().replace(R.id.layout_content_company,billingFragment, billingFragment.getTag()).commit();
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_publish_job:

@@ -60,7 +60,7 @@
     <string name="apply">Trabajos aplicados</string>
     <string name="future_jobs">Trabajos Futuros</string>
     <string name="jobs_done">Trabajos Completos</string>
-    <string name="approve_payment">Pagos Aprovados</string>
+    <string name="approve_payment">Pagos Aprobados</string>
 
     <string name="total_payment">Total a Pagar:</string>
     <string name="method_payment">Metodo de pago</string>
@@ -75,13 +75,19 @@
     <string name="title_zip">Código Postal</string>
     <string name="title_billing_contact">Contacto de facturación</string>
     <string name="title_activity_my_events">Mis Eventos</string>
-    <string name="title_activity_create_company">CreateCompanyActivity</string>
+    <string name="title_activity_create_company">Crear Empresa</string>
 
     <string name="title_company">EMPRESA</string>
     <string name="title_name">Nombre</string>
     <string name="title_confirm_password">Confirmar contraseña</string>
     <string name="title_confirm_create">CREAR CUENTA</string>
-    <string name="title_activity_profile_company">ProfileCompanyActivity</string>
+    <string name="title_activity_profile_company">Perfil Empresa</string>
+    <string name="title_new_billing_company">Nuevo Método de Pago</string>
+    <string name="title_credit_card">Tarjeta de Crédito</string>
+    <string name="title_bank_account">Cuenta Bancaria</string>
+    <string name="title_paypal">PayPal</string>
+    <string name="title_or">O</string>
+    <string name="title_cellphone_company">Celular</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
