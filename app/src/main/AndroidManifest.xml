@@ -74,6 +74,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="catchmyshift.catchmyshift.UserActivity" />
         </activity>
+        <activity
+            android:name=".CreateCompanyActivity"
+            android:label="@string/title_activity_create_company"
+            android:parentActivityName=".LoginActivityCompany"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="catchmyshift.catchmyshift.LoginActivityCompany" />
+        </activity>
     </application>
 
 </manifest>
