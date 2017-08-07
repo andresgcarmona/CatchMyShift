@@ -83,7 +83,6 @@
     <string name="title_confirm_password">Confirmar contraseña</string>
     <string name="title_confirm_create">CREAR CUENTA</string>
 
-    <string name="title_activity_profile_company">ProfileCompanyActivity</string>
     <string name="title_activity_profile_company">Perfil Empresa</string>
     <string name="title_new_billing_company">Nuevo Método de Pago</string>
     <string name="title_credit_card">Tarjeta de Crédito</string>
