@@ -81,6 +81,7 @@
     <string name="title_name">Nombre</string>
     <string name="title_confirm_password">Confirmar contraseña</string>
     <string name="title_confirm_create">CREAR CUENTA</string>
+
     <string name="title_activity_profile_company">ProfileCompanyActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"

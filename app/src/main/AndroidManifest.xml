@@ -51,12 +51,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="catchmyshift.catchmyshift.UserActivity" />
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".CompanyActivity"
@@ -82,15 +76,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="catchmyshift.catchmyshift.LoginActivityCompany" />
-        </activity>
-        <activity
-            android:name=".ProfileCompanyActivity"
-            android:label="@string/title_activity_profile_company"
-            android:parentActivityName=".CompanyActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="catchmyshift.catchmyshift.CompanyActivity" />
         </activity>
     </application>
 

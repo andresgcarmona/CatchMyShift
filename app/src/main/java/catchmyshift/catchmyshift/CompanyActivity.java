@@ -39,6 +39,9 @@ public class CompanyActivity extends AppCompatActivity implements NavigationView
         currentView = getWindow().getDecorView().findViewById(android.R.id.content);
         context = getApplicationContext();
 
+        ProfileCompanyFragment profileFragment = new ProfileCompanyFragment();
+        manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.layout_content_company,profileFragment,profileFragment.getTag()).commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_company);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -49,9 +52,6 @@ public class CompanyActivity extends AppCompatActivity implements NavigationView
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_company);
         navigationView.getMenu().getItem(0).setChecked(true);
         navigationView.setNavigationItemSelectedListener(this);
-        ProfileCompanyFragment profileCompanyFragment = new ProfileCompanyFragment();
-        manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.layout_content_company,profileCompanyFragment,profileCompanyFragment.getTag()).commit();
     }
 
     @Override
@@ -72,8 +72,9 @@ public class CompanyActivity extends AppCompatActivity implements NavigationView
         int id = item.getItemId();
         switch (id){
             case R.id.nav_profile_bussiness:
-                Intent inst = new Intent().setClass(getApplicationContext(), ProfileCompanyActivity.class);
-                startActivity(inst);
+                    ProfileCompanyFragment profileFragment = new ProfileCompanyFragment();
+                    manager = getSupportFragmentManager();
+                    manager.beginTransaction().replace(R.id.layout_content_company,profileFragment,profileFragment.getTag()).commit();
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_contact:
