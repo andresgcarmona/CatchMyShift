@@ -77,6 +77,7 @@
     <string name="title_activity_my_events">Mis Eventos</string>
     <string name="title_activity_create_company">Crear Empresa</string>
 
+
     <string name="title_company">EMPRESA</string>
     <string name="title_name">Nombre</string>
     <string name="title_confirm_password">Confirmar contraseña</string>
@@ -88,6 +89,21 @@
     <string name="title_paypal">PayPal</string>
     <string name="title_or">O</string>
     <string name="title_cellphone_company">Celular</string>
+
+    <string name="title_publish_job_company">Publicar Empleo</string>
+    <string name="title_reference_name_job_company">Nombre Vacante</string>
+    <string name="title_category_job_company">Categoría</string>
+    <string name="title_task_job_company">Tareas a Realizar</string>
+    <string name="title_requirments_job_company">Requerimientos</string>
+    <string name="title_contact_name_company">Nombre Contacto</string>
+    <string name="title_quantity_employments_company">Cantidad Empleados</string>
+    <string name="title_job_address_company">Dirección de Empleo</string>
+    <string name="title_start_date_company">Fecha de Inicio</string>
+    <string name="title_start_time_company">Hora de Inicio</string>
+    <string name="title_end_date_company">Fecha Final</string>
+    <string name="title_end_time_company">Hora Final</string>
+    <string name="title_payment_day_company">Pago Diario por Persona</string>
+
     <string name="large_text">
         "Material is the metaphor.\n\n"
 

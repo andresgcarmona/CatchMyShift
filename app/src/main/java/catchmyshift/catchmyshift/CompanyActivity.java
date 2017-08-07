@@ -86,7 +86,9 @@ public class CompanyActivity extends AppCompatActivity implements NavigationView
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_publish_job:
-
+                PublishJobCompanyFragment publishJob = new PublishJobCompanyFragment();
+                manager = getSupportFragmentManager();
+                manager.beginTransaction().replace(R.id.layout_content_company,publishJob, publishJob.getTag()).commit();
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_myevents:
