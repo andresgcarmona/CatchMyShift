@@ -78,6 +78,9 @@ public class CompanyActivity extends AppCompatActivity implements NavigationView
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_contact:
+                ContactCompanyFragment contactFragment = new ContactCompanyFragment();
+                manager = getSupportFragmentManager();
+                manager.beginTransaction().replace(R.id.layout_content_company,contactFragment,contactFragment.getTag()).commit();
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_billing_info:
@@ -93,10 +96,15 @@ public class CompanyActivity extends AppCompatActivity implements NavigationView
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_myevents:
-
+                EventsCompanyFragment myEvents = new EventsCompanyFragment();
+                manager = getSupportFragmentManager();
+                manager.beginTransaction().replace(R.id.layout_content_company, myEvents, myEvents.getTag()).commit();
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_myopenevents:
+                OpenEventsCompanyFragment openEvents = new OpenEventsCompanyFragment();
+                manager= getSupportFragmentManager();
+                manager.beginTransaction().replace(R.id.layout_content_company, openEvents, openEvents.getTag()).commit();
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_settings:

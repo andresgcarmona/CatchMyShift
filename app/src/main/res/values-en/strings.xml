@@ -78,4 +78,36 @@
     <string name="title_zip">Zip</string>
     <string name="title_billing_contact">Billing Contact</string>
     <string name="title_activity_my_events">My Events</string>
+
+    <string name="title_company">COMPANY</string>
+    <string name="title_name">Name</string>
+    <string name="title_confirm_password">Confirm Password</string>
+    <string name="title_confirm_create">CREATE ACCOUNT</string>
+
+    <string name="title_activity_profile_company">Company Profile</string>
+    <string name="title_new_billing_company">New Payment Method</string>
+    <string name="title_credit_card">Credit Card</string>
+    <string name="title_bank_account">Bank Account</string>
+    <string name="title_paypal">PayPal</string>
+    <string name="title_or">OR</string>
+    <string name="title_cellphone_company">Cellphone</string>
+
+    <string name="title_publish_job_company">Publish Job</string>
+    <string name="title_reference_name_job_company">Name Reference</string>
+    <string name="title_category_job_company">Category</string>
+    <string name="title_task_job_company">Tasks</string>
+    <string name="title_requirments_job_company">Requirements</string>
+    <string name="title_contact_name_company">Job Contact Name</string>
+    <string name="title_quantity_employments_company">Quantity of Employees</string>
+    <string name="title_job_address_company">Address</string>
+    <string name="title_start_date_company">Start Date</string>
+    <string name="title_start_time_company">Start Time</string>
+    <string name="title_end_date_company">End Date</string>
+    <string name="title_end_time_company">End Time</string>
+    <string name="title_payment_day_company">Payment per Person (Day)</string>
+    <string name="title_summary">Summary</string>
+    <string name="title_date_time">Date and Time</string>
+    <string name="title_staff_number">Staff Number</string>
+    <string name="title_staff_accept">Staff Accept</string>
+    <string name="title_staff_accepted">Accepted</string>
 </resources>
