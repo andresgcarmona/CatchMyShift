@@ -17,15 +17,18 @@
             <!-- TODO: Update blank fragment layout -->
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:textSize="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textAlignment="center"
                 android:text="@string/title_publish_job_company" />
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                >
 
                 <EditText
                     android:layout_width="match_parent"
@@ -37,76 +40,96 @@
                 android:id="@+id/spinnerCategoria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="8dp"
                 android:prompt="@string/title_category_job_company"/>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                >
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/title_task_job_company" />
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <android.support.design.widget.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                            <android.support.design.widget.TextInputLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <EditText
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="@string/title_job_address_company" />
-                            </android.support.design.widget.TextInputLayout>
-
-                            <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:hint="@string/title_quantity_employments_company"
-                                android:inputType="number"/>
-                        </android.support.design.widget.TextInputLayout>
-
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="@string/title_contact_name_company" />
-                    </android.support.design.widget.TextInputLayout>
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/title_requirments_job_company" />
-                </android.support.design.widget.TextInputLayout>
             </android.support.design.widget.TextInputLayout>
 
-            <TextView
-                android:id="@+id/fechaInicial"
+
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:textSize="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/title_requirments_job_company" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/title_contact_name_company" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/title_quantity_employments_company" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/title_job_address_company" />
+            </android.support.design.widget.TextInputLayout>
+
+
+            <TextView
+                android:id="@+id/idfechaInicial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="18sp"
+                android:text="Seleccione una fecha"
                 android:drawableRight="@drawable/datecompanyvd"/>
 
             <TextView
-                android:id="@+id/fechaFinal"
+                android:id="@+id/idfechaFinal"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:textSize="20dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:textSize="18sp"
+                android:text="Seleccione una fecha"
                 android:drawableRight="@drawable/datecompanyvd"/>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                >
 
                 <EditText
                     android:layout_width="match_parent"
@@ -118,9 +141,10 @@
                 android:id="@+id/id_publish_job"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="24dp"
                 android:layout_weight="1"
                 android:text="@string/title_navdraw_publishJob"
                 android:layout_gravity="center"
