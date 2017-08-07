@@ -113,7 +113,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:textSize="18sp"
-                android:text="Seleccione una fecha"
+                android:text="@string/title_pick_start_date"
                 android:drawableRight="@drawable/datecompanyvd"/>
 
             <TextView
@@ -122,7 +122,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:textSize="18sp"
-                android:text="Seleccione una fecha"
+                android:text="@string/title_pick_end_date"
                 android:drawableRight="@drawable/datecompanyvd"/>
 
             <android.support.design.widget.TextInputLayout

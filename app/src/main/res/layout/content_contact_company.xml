@@ -26,55 +26,67 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        android:textSize="19sp"
+        android:textStyle="bold|italic"
         android:text="5556503912"
-        android:layout_marginLeft="24dp"
         android:drawableLeft="@drawable/companyphonevd"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="24dp"
+        android:layout_marginBottom="8dp"
+        android:textSize="19sp"
+        android:textStyle="bold|italic"
         android:drawableLeft="@drawable/companyemailvd"
         android:text="company@company.com" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/title_MyInterests" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:textSize="18sp"
         android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:text="El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña toca el saxofón detrás del palenque de paja. " />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/title_MySkills" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:textSize="18sp"
         android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:text="El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña toca el saxofón detrás del palenque de paja. " />
 
 </LinearLayout>

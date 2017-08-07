@@ -199,4 +199,8 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
 
+    <string name="title_pick_start_date">Seleccione la fecha inicial</string>
+    <string name="title_pick_end_date">Seleccione la fecha final</string>
+
+
 </resources>

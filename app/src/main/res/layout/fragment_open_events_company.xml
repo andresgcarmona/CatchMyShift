@@ -33,23 +33,23 @@
             android:textSize="18sp"
             android:layout_marginTop="16dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
             android:drawableLeft="@drawable/namereferencecompanyvd"
             android:text="@string/title_reference_name_job_company" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
-            android:drawableLeft="@drawable/contactvd"
+            android:layout_margin="8dp"
+            android:drawableLeft="@drawable/futurejobvd"
             android:text="@string/title_date_time"
             android:textSize="18sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
+            android:layout_margin="8dp"
             android:drawableLeft="@drawable/searchvd"
             android:text="@string/title_address"
             android:textSize="18sp" />
@@ -57,9 +57,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
-            android:drawableLeft="@drawable/searchvd"
+            android:layout_margin="8dp"
+            android:drawableLeft="@drawable/companyphonevd"
             android:text="@string/title_staff_number"
             android:textSize="18sp" />
 
@@ -68,8 +67,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="8dp"
+            android:layout_margin="8dp"
             android:text="@string/title_staff_accept" />
 
         <TextView
@@ -77,8 +75,7 @@
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="8dp"
+            android:layout_margin="8dp"
             android:text="@string/title_staff_accepted" />
 
     </LinearLayout>

@@ -13,7 +13,8 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textAlignment="center"
@@ -29,7 +30,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textAlignment="center"
@@ -45,7 +46,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="wrap_content"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textAlignment="center"
@@ -60,47 +61,56 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
             android:textSize="20sp"
             android:textStyle="bold"
             android:textAlignment="inherit"
-            android:paddingTop="20dp"
             android:text="@string/title_billing_contact" />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/title_login_email"
-                        android:drawableLeft="@drawable/companyemailvd"/>
-                </android.support.design.widget.TextInputLayout>
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/title_cellphone_company"
-                    android:drawableLeft="@drawable/companyphonevd"
-                    android:inputType="phone"/>
-            </android.support.design.widget.TextInputLayout>
-
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            >
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/contactvd"
-                android:hint="@string/title_name" />
+                android:hint="@string/title_name"
+                android:drawableStart="@drawable/contactvd"
+                />
         </android.support.design.widget.TextInputLayout>
 
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/title_cellphone_company"
+                android:inputType="phone"
+                android:drawableStart="@drawable/companyphonevd"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/title_login_email"
+                android:inputType="textEmailAddress"
+                android:drawableStart="@drawable/mailvd"
+                />
+        </android.support.design.widget.TextInputLayout>
 
     </LinearLayout>
 </FrameLayout>
