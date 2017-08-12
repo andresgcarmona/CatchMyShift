@@ -6,11 +6,11 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_login_email">E-mail</string>
     <string name="title_login_password">Contraseña</string>
-    <string name="title_sign_in">Iniciar Sesión</string>
+    <string name="title_sign_in">INICIAR SESIÓN</string>
     <string name="title_Or">O</string>
-    <string name="title_Linkedin">Inicia con LinkedIn</string>
+    <string name="title_Linkedin">LINKEDIN</string>
     <string name="title_ForgotPassword">¿Olvidó su contraseña?</string>
-    <string name="title_CreateAccount">Crear una cuenta</string>
+    <string name="title_CreateAccount">REGISTRARSE</string>
 
     <string name="title_main_ToDo">¿Qué deseas hacer?</string>
     <string name="title_searchJob">Buscar un Trabajo</string>

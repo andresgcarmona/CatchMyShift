@@ -2,7 +2,9 @@
 <resources>
     <color name="colorPrimary">#48a0dc</color>
     <color name="colorPrimaryDark">#48a0dc</color>
-    <color name="colorAccent">#56b974</color>
+    <color name="colorAccent">#6c8385</color>
+    <color name="colorAccent2">#87c15e</color>
+
 
     <color name="colorBtnWhite">#f4f4f4</color>
     <color name="colorBtLinkedin">#00c0f5</color>
@@ -23,5 +25,7 @@
     <color name="bgnd_color_blue">#e8f5ff</color>
 
     <color name="colorIconsForms">#aaaaaa</color>
+
+    <color name="colorTransparent">#bfffffff</color>
 
 </resources>

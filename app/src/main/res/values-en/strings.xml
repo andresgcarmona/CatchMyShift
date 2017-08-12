@@ -8,9 +8,9 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_login_email">E-mail</string>
     <string name="title_login_password">Password</string>
-    <string name="title_sign_in">Login</string>
+    <string name="title_sign_in">SIGN IN</string>
     <string name="title_Or">Or</string>
-    <string name="title_Linkedin">Login with LinkedIn</string>
+    <string name="title_Linkedin">LINKEDIN</string>
     <string name="title_ForgotPassword">Forgot your password?</string>
     <string name="title_CreateAccount">Create new account</string>
 
@@ -83,7 +83,7 @@
     <string name="title_company">COMPANY</string>
     <string name="title_name">Name</string>
     <string name="title_confirm_password">Confirm Password</string>
-    <string name="title_confirm_create">CREATE ACCOUNT</string>
+    <string name="title_confirm_create">SIGN UP</string>
 
     <string name="title_activity_profile_company">Company Profile</string>
     <string name="title_new_billing_company">New Payment Method</string>
