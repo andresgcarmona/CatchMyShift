@@ -34,6 +34,7 @@
                 android:textColor="@color/colorWhiteText"
                 />
             <TextView
+                android:id="@+id/text_createAccoutn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -116,7 +117,7 @@
                 android:id="@+id/button_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bgnd_btn_accent"
+                android:background="@drawable/bgnd_btn_accent2"
                 android:text="@string/title_sign_in"
                 android:textColor="@color/colorWhiteText"
                 android:textSize="18sp" />

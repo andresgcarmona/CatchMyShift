@@ -137,7 +137,7 @@
                     android:layout_weight="1"
                     android:text="@string/title_confirm_create"
                     android:layout_gravity="center"
-                    android:background="@drawable/bgnd_btn_accent"
+                    android:background="@drawable/bgnd_btn_accent2"
                     android:textColor="@color/colorWhiteText"
                     />
             </LinearLayout>

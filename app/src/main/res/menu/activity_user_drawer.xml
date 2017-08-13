@@ -22,15 +22,11 @@
             android:id="@+id/nav_settings"
             android:icon="@drawable/settingsvd"
             android:title="@string/title_navdraw_settings" />
+        <item
+            android:id="@+id/nav_logoff"
+            android:icon="@drawable/backvd"
+            android:title="@string/title_navdraw_logoff" />
     </group>
 
-    <item android:title="@string/title_navdraw_option">
-        <menu>
-            <item
-                android:id="@+id/nav_logoff"
-                android:title="@string/title_navdraw_logoff" />
-
-        </menu>
-    </item>
 
 </menu>

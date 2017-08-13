@@ -3,6 +3,7 @@
     <color name="colorPrimary">#48a0dc</color>
     <color name="colorPrimaryDark">#48a0dc</color>
     <color name="colorAccent">#6c8385</color>
+    <color name="colorAccentBtn">#546a79</color>
     <color name="colorAccent2">#87c15e</color>
 
 
@@ -12,6 +13,7 @@
     <color name="colorWhiteText">#ffffff</color>
     <color name="colorSoftDarkBrownText">#645b52</color>
     <color name="colorNavDrawText">#40372f</color>
+    <color name="colorBackgndNav">#5d6164</color>
 
     <color name="colorIconsNavDraw">#535353</color>
     <color name="colorIconsControls">#535353</color>

@@ -205,4 +205,7 @@
     <string name="title_pick_start_date">Pick the start date</string>
     <string name="title_pick_end_date">Pick the end date</string>
 
+    <string name="title_blank"></string>
+    <string name="title_sign_up">SIGN UP</string>
+
 </resources>

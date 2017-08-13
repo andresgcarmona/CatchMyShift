@@ -202,5 +202,6 @@
     <string name="title_pick_start_date">Seleccione la fecha inicial</string>
     <string name="title_pick_end_date">Seleccione la fecha final</string>
 
-
+    <string name="title_blank"></string>
+    <string name="title_sign_up">REGISTRARSE</string>
 </resources>

@@ -70,7 +70,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/bgnd_btn_accent"
+        android:background="@drawable/bgnd_btn_accent2"
         android:text="@string/title_sign_in"
         android:textAllCaps="false"
         android:textColor="@color/colorWhiteText"
