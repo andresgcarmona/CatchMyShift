@@ -14,30 +14,6 @@
         android:orientation="vertical"
         >
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_gravity="center"
-            android:textAlignment="inherit"
-            android:textSize="15sp"
-            android:text="Nombre Apellido Paterno"
-
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_gravity="center"
-            android:textAlignment="inherit"
-            android:textSize="15sp"
-            android:text="usuario@gmail.com"
-            />
         <RelativeLayout
             android:id="@+id/mapUserReplaceContent"
             android:layout_width="match_parent"

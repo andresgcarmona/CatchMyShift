@@ -28,12 +28,39 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:gravity="center|bottom"
+                android:gravity="bottom"
                 >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="inherit"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:text="Nombre Apellido Paterno"
+
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="inherit"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:text="usuario@gmail.com"
+                    />
                 <RatingBar
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:layout_gravity="left"
                     android:numStars="5"
                     android:rating="4"
                     style="?android:attr/ratingBarStyleIndicator"
