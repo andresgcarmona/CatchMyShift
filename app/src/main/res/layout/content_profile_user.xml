@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="catchmyshift.catchmyshift.ProfileCompanyFragment"
+    tools:context="catchmyshift.catchmyshift.ProfileFragment"
     tools:showIn="@layout/fragment_profile">
 
     <LinearLayout
@@ -42,7 +42,10 @@
             android:id="@+id/mapUserReplaceContent"
             android:layout_width="match_parent"
             android:layout_height="200dp">
-
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </RelativeLayout>
 
 
