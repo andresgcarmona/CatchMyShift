@@ -14,59 +14,65 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:textSize="20sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="16dp"
+            android:textSize="17sp"
             android:textStyle="bold"
             android:textAlignment="center"
-            android:text="@string/title_new_billing_company" />
+            android:text="@string/title_new_billing_company"/>
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:drawableTop="@drawable/approvepaymentvd"
-            android:text="@string/title_credit_card" />
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:text="@string/title_Or" />
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:background="@drawable/bgnd_btn_accent2"
+            android:textColor="@color/colorWhiteText"
+            android:drawableTint="@color/colorEditText"
+            android:drawableRight="@drawable/approvepaymentvd"
+            android:text="@string/title_credit_card" />
+
+
 
         <Button
             android:id="@+id/button4"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:drawableTop="@drawable/payvd"
-            android:text="@string/title_bank_account" />
-
-        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:text="@string/title_Or" />
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:background="@drawable/bgnd_btn_accent"
+            android:textColor="@color/colorWhiteText"
+            android:drawableTint="@color/colorWhiteText"
+            android:drawableRight="@drawable/payvd"
+            android:text="@string/title_bank_account" />
+
+
 
         <Button
             android:id="@+id/button5"
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:layout_gravity="center"
+            android:textSize="15sp"
+            android:background="@drawable/bgnd_btn_accent2"
+            android:textColor="@color/colorWhiteText"
+            android:drawableTint="@color/colorEditText"
+            android:drawableRight="@drawable/approvepaymentvd"
             android:text="@string/title_paypal" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:layout_marginBottom="8dp"
-            android:textSize="20sp"
+            android:textSize="17sp"
             android:textStyle="bold"
             android:textAlignment="inherit"
             android:text="@string/title_billing_contact" />
@@ -74,41 +80,44 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
             >
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textSize="16sp"
                 android:hint="@string/title_name"
-                android:drawableStart="@drawable/contactvd"
                 />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             >
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/title_cellphone_company"
+                android:textSize="16dp"
                 android:inputType="phone"
-                android:drawableStart="@drawable/companyphonevd"
                 />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             >
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/title_login_email"
+                android:textSize="16sp"
                 android:inputType="textEmailAddress"
-                android:drawableStart="@drawable/mailvd"
                 />
         </android.support.design.widget.TextInputLayout>
 

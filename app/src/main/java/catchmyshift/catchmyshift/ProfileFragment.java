@@ -3,6 +3,10 @@ package catchmyshift.catchmyshift;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -21,6 +25,8 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import static android.content.Context.LOCATION_SERVICE;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,6 +34,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class ProfileFragment extends Fragment {
 
     MapView mMapView;
+
+    LocationManager locationManager;
+
     private GoogleMap googleMap;
 
     @Override
@@ -37,16 +46,10 @@ public class ProfileFragment extends Fragment {
         final View v = inflater.inflate(R.layout.fragment_profile, container, false);
         mMapView = (MapView) v.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);
-
         mMapView.onResume(); // needed to get the map to display immediately
 
-        try {
-            MapsInitializer.initialize(getActivity().getApplicationContext());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
         mMapView.getMapAsync(new OnMapReadyCallback() {
+
             @Override
             public void onMapReady(GoogleMap mMap) {
                 googleMap = mMap;
@@ -58,14 +61,20 @@ public class ProfileFragment extends Fragment {
                     //                                          int[] grantResults)
                     // to handle the case where the user grants the permission. See the documentation
                     // for ActivityCompat#requestPermissions for more details.
-                    return;
-                }
-                else {
-                    mMap.setMyLocationEnabled(true);
-                }
+                    try{
+                        googleMap.setMyLocationEnabled(true);
+                    }catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+                }else {}
+
             }
         });
         return v;
+
     }
+
+
 
 }

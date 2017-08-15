@@ -204,4 +204,10 @@
 
     <string name="title_blank"></string>
     <string name="title_sign_up">REGISTRARSE</string>
+
+    <string name="title_terms">
+        "By signing up, you agree to the Terms of Service and Privacy Policy,\n"
+        "including Cookie Use. Others will be able to find you by email or phone number when provided.\n"
+    </string>
+
 </resources>

@@ -21,47 +21,61 @@
             ></FrameLayout>
     </FrameLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
         >
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:textAlignment="center"
-            android:textSize="15sp"
-            android:inputType="textWebEmailAddress"
-            android:hint="@string/title_login_email"
-            />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:textAlignment="center"
-            android:textSize="15sp"
-            android:inputType="textWebPassword"
-            android:hint="@string/title_login_password"
-            />
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:textAlignment="center"
-            android:textSize="15sp"
-            android:inputType="textWebPassword"
-            android:hint="@string/title_confirm_password"
-            />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bgnd_btn_accent"
-            android:textColor="@color/colorWhiteText"
-            android:text="@string/title_sign_up"
-            />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:textAlignment="center"
+                android:textSize="15sp"
+                android:inputType="textWebEmailAddress"
+                android:hint="@string/title_login_email"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:textAlignment="center"
+                android:textSize="15sp"
+                android:inputType="textWebPassword"
+                android:hint="@string/title_login_password"
+                />
 
-    </LinearLayout>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:textAlignment="center"
+                android:textSize="15sp"
+                android:inputType="textWebPassword"
+                android:hint="@string/title_confirm_password"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title_terms"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bgnd_btn_accent"
+                android:textColor="@color/colorWhiteText"
+                android:text="@string/title_sign_up"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
 </LinearLayout>

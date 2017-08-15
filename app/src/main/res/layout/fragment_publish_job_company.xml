@@ -19,7 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 android:textAlignment="center"
                 android:text="@string/title_publish_job_company" />
@@ -33,6 +33,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="15sp"
                     android:hint="@string/title_reference_name_job_company" />
             </android.support.design.widget.TextInputLayout>
 
@@ -52,6 +53,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="15sp"
                     android:hint="@string/title_task_job_company" />
 
             </android.support.design.widget.TextInputLayout>
@@ -66,6 +68,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="15sp"
                     android:hint="@string/title_requirments_job_company" />
             </android.support.design.widget.TextInputLayout>
 
@@ -78,6 +81,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="15sp"
                     android:hint="@string/title_contact_name_company" />
             </android.support.design.widget.TextInputLayout>
 
@@ -91,6 +95,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="15sp"
                     android:hint="@string/title_quantity_employments_company" />
             </android.support.design.widget.TextInputLayout>
 
@@ -103,16 +108,18 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="15sp"
                     android:hint="@string/title_job_address_company" />
             </android.support.design.widget.TextInputLayout>
 
 
             <TextView
+
                 android:id="@+id/idfechaInicial"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:text="@string/title_pick_start_date"
                 android:drawableRight="@drawable/datecompanyvd"/>
 
@@ -121,7 +128,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:text="@string/title_pick_end_date"
                 android:drawableRight="@drawable/datecompanyvd"/>
 
@@ -134,13 +141,14 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textSize="15sp"
                     android:hint="@string/title_payment_day_company" />
             </android.support.design.widget.TextInputLayout>
 
             <Button
                 android:id="@+id/id_publish_job"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"

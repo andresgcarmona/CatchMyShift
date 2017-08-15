@@ -4,21 +4,21 @@
     <item
         android:id="@+id/id_applyjob"
         android:icon="@drawable/applyjobvd"
-        android:title="@string/apply" />
+        android:title="@string/title_blank" />
 
     <item
         android:id="@+id/id_futurejob"
         android:icon="@drawable/futurejobvd"
-        android:title="@string/future_jobs" />
+        android:title="@string/title_blank" />
 
     <item
         android:id="@+id/id_jobsdone"
         android:icon="@drawable/donejobvd"
-        android:title="@string/jobs_done" />
+        android:title="@string/title_blank" />
 
     <item
         android:id="@+id/id_paymentdone"
         android:icon="@drawable/approvepaymentvd"
-        android:title="@string/approve_payment" />
+        android:title="@string/title_blank" />
 
 </menu>
