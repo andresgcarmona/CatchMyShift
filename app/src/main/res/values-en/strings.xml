@@ -63,11 +63,11 @@
     <string name="apply">Applyed Jobs</string>
     <string name="future_jobs">Future Jobs</string>
     <string name="jobs_done">Complete Jobs</string>
-    <string name="approve_payment">Approve Payment</string>
+    <string name="approve_payment">Approve</string>
 
     <string name="total_payment">Total Payment:</string>
     <string name="method_payment">Method Payment</string>
-    <string name="statistics_payment">Stadistics payment</string>
+    <string name="statistics_payment">Stadistics</string>
     <string name="event_summary">Event Summary</string>
 
     <string name="title_description">Description</string>

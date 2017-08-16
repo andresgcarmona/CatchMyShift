@@ -232,22 +232,22 @@ public class UserActivity extends AppCompatActivity
                 //else {
 
                     if (hidden) {
-                        Animator anim = android.view.ViewAnimationUtils.createCircularReveal(mRevealView, cx, cy, 0, radius);
-                        mRevealView.setVisibility(View.VISIBLE);
-                        anim.start();
-                        hidden = false;
-                    } else {
-                        Animator anim = android.view.ViewAnimationUtils.createCircularReveal(mRevealView, cx, cy, radius, 0);
-                        anim.addListener(new AnimatorListenerAdapter() {
-                            @Override
-                            public void onAnimationEnd(Animator animation) {
-                                super.onAnimationEnd(animation);
-                                mRevealView.setVisibility(View.INVISIBLE);
-                                hidden = true;
-                            }
-                        });
-                        anim.start();
+                Animator anim = android.view.ViewAnimationUtils.createCircularReveal(mRevealView, cx, cy, 0, radius);
+                mRevealView.setVisibility(View.VISIBLE);
+                anim.start();
+                hidden = false;
+            } else {
+                Animator anim = android.view.ViewAnimationUtils.createCircularReveal(mRevealView, cx, cy, radius, 0);
+                anim.addListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        super.onAnimationEnd(animation);
+                        mRevealView.setVisibility(View.INVISIBLE);
+                        hidden = true;
                     }
+                });
+                anim.start();
+            }
 
                 //}
                 break;

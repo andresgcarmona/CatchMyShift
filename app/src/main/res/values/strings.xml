@@ -60,12 +60,12 @@
     <string name="apply">Trabajos aplicados</string>
     <string name="future_jobs">Trabajos Futuros</string>
     <string name="jobs_done">Trabajos Completos</string>
-    <string name="approve_payment">Pagos Aprobados</string>
+    <string name="approve_payment">Aprobados</string>
 
     <string name="total_payment">Total a Pagar:</string>
     <string name="method_payment">Metodo de pago</string>
-    <string name="statistics_payment">Estadísticas de Pago</string>
-    <string name="event_summary">Resumen del Evento</string>
+    <string name="statistics_payment">Estadísticas</string>
+    <string name="event_summary">Resumen Evento</string>
 
     <string name="title_description">Descripción</string>
     <string name="title_schedule">Horario</string>
