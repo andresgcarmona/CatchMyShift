@@ -16,7 +16,7 @@
     <color name="colorNavDrawText">#40372f</color>
     <color name="colorBackgndNav">#5d6164</color>
 
-    <color name="colorIconsNavDraw">#535353</color>
+    <color name="colorIconsNavDraw">#ffffff</color>
     <color name="colorIconsControls">#535353</color>
 
     <color name="colorSnackSuccess">#29a67a</color>
@@ -30,5 +30,8 @@
     <color name="colorIconsForms">#aaaaaa</color>
 
     <color name="colorTransparent">#bfffffff</color>
+
+    <color name="subMenuUser1">#60a9df</color>
+    <color name="subMenuUser2">#78b5e3</color>
 
 </resources>

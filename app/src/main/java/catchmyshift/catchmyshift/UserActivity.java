@@ -1,10 +1,14 @@
 package catchmyshift.catchmyshift;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.PorterDuff;
+import android.media.Image;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.internal.NavigationMenuItemView;
@@ -23,9 +27,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import java.lang.ref.WeakReference;
+
+import io.codetail.animation.SupportAnimator;
+import io.codetail.animation.ViewAnimationUtils;
 
 public class UserActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -37,6 +48,9 @@ public class UserActivity extends AppCompatActivity
     private Context context;
     private String data;
 
+    private LinearLayout mRevealView;
+    private boolean hidden = true;
+    private LinearLayout profile, searchJob, payment, myEvents, setting, logOff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +58,68 @@ public class UserActivity extends AppCompatActivity
         setContentView(R.layout.activity_user);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        mRevealView = (LinearLayout) findViewById(R.id.reveal_items);
+        mRevealView.setVisibility(View.GONE);
+
+        profile = (LinearLayout) findViewById(R.id.nav_profile);
+        searchJob = (LinearLayout)findViewById(R.id.nav_searchJob);
+        payment = (LinearLayout)findViewById(R.id.nav_pay);
+        myEvents = (LinearLayout) findViewById(R.id.nav_myevents);
+        setting = (LinearLayout) findViewById(R.id.nav_settings);
+        logOff= (LinearLayout) findViewById(R.id.nav_logoff);
+
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hideRevealView();
+                ProfileFragment profileFragment = new ProfileFragment();
+                manager = getSupportFragmentManager();
+                manager.beginTransaction().replace(R.id.layout_content_user,profileFragment,profileFragment.getTag()).commit();
+            }
+        });
+        searchJob.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hideRevealView();
+                Intent inst = new Intent().setClass(getApplicationContext(), MapsUserActivity.class);
+                startActivity(inst);
+            }
+        });
+        payment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hideRevealView();
+                PaymentFragment paymentFragment = new PaymentFragment();
+                manager = getSupportFragmentManager();
+                manager.beginTransaction().replace(R.id.layout_content_user,paymentFragment, paymentFragment.getTag()).commit();
+            }
+        });
+        myEvents.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hideRevealView();
+                Intent myEventsIntent = new Intent().setClass(getApplicationContext(),MyEventsActivity.class);
+                startActivity(myEventsIntent);
+            }
+        });
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hideRevealView();
+
+            }
+        });
+
+        logOff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                hideRevealView();
+                Intent intent = new Intent().setClass(getApplicationContext(),LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         currentView = getWindow().getDecorView().findViewById(android.R.id.content);
         context = getApplicationContext();
@@ -62,6 +138,26 @@ public class UserActivity extends AppCompatActivity
         manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.layout_content_user,profileFragment,profileFragment.getTag()).commit();
     }
+
+    private void hideRevealView() {
+        if (mRevealView.getVisibility() == View.VISIBLE) {
+            int cx = (mRevealView.getLeft() + mRevealView.getRight());
+            int cy = mRevealView.getTop();
+            int radius = Math.max(mRevealView.getWidth(), mRevealView.getHeight());
+            Animator anim = android.view.ViewAnimationUtils.createCircularReveal(mRevealView, cx, cy, radius, 0);
+            anim.addListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    super.onAnimationEnd(animation);
+                    mRevealView.setVisibility(View.INVISIBLE);
+                    hidden = true;
+                }
+            });
+            anim.start();
+            hidden = true;
+        }
+    }
+
 
     @Override
     public void onBackPressed() {
@@ -82,14 +178,79 @@ public class UserActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()){
+
+            case R.id.action_submenu:
+
+                int cx = (mRevealView.getLeft() + mRevealView.getRight());
+                int cy = mRevealView.getTop();
+                int radius = Math.max(mRevealView.getWidth(), mRevealView.getHeight());
+
+                //Below Android LOLIPOP Version
+                /*
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+                    SupportAnimator animator =
+                            ViewAnimationUtils.createCircularReveal(mRevealView, cx, cy, 0, radius);
+                    animator.setInterpolator(new AccelerateDecelerateInterpolator());
+                    animator.setDuration(700);
+
+                    SupportAnimator animator_reverse = animator.reverse();
+
+                    if (hidden) {
+                        mRevealView.setVisibility(View.VISIBLE);
+                        animator.start();
+                        hidden = false;
+                    } else {
+                        animator_reverse.addListener(new SupportAnimator.AnimatorListener() {
+                            @Override
+                            public void onAnimationStart() {
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd() {
+                                mRevealView.setVisibility(View.INVISIBLE);
+                                hidden = true;
+
+                            }
+
+                            @Override
+                            public void onAnimationCancel() {
+
+                            }
+
+                            @Override
+                            public void onAnimationRepeat() {
+
+                            }
+                        });
+                        animator_reverse.start();
+                    }
+                }*/
+                // Android LOLIPOP And ABOVE Version
+                //else {
+
+                    if (hidden) {
+                        Animator anim = android.view.ViewAnimationUtils.createCircularReveal(mRevealView, cx, cy, 0, radius);
+                        mRevealView.setVisibility(View.VISIBLE);
+                        anim.start();
+                        hidden = false;
+                    } else {
+                        Animator anim = android.view.ViewAnimationUtils.createCircularReveal(mRevealView, cx, cy, radius, 0);
+                        anim.addListener(new AnimatorListenerAdapter() {
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                super.onAnimationEnd(animation);
+                                mRevealView.setVisibility(View.INVISIBLE);
+                                hidden = true;
+                            }
+                        });
+                        anim.start();
+                    }
+
+                //}
+                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -102,17 +263,12 @@ public class UserActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         int id = item.getItemId();
         switch (id){
-            case R.id.nav_profile:
-
+            case R.id.option1:
                 drawer.closeDrawer(GravityCompat.START);
-                ProfileFragment profileFragment = new ProfileFragment();
-                manager = getSupportFragmentManager();
-                manager.beginTransaction().replace(R.id.layout_content_user,profileFragment,profileFragment.getTag()).commit();
 
                 break;
-            case R.id.nav_searchJob:
-                Intent inst = new Intent().setClass(getApplicationContext(), MapsUserActivity.class);
-                startActivity(inst);
+            case R.id.option2:
+
                 drawer.closeDrawer(GravityCompat.START);
                 //mapUserFragment = new MapUserFragment();
                 //manager = getSupportFragmentManager();
@@ -120,26 +276,21 @@ public class UserActivity extends AppCompatActivity
                 //fragmentTransaction.commit();
 
                 break;
-            case R.id.nav_pay:
-                PaymentFragment paymentFragment = new PaymentFragment();
-                manager = getSupportFragmentManager();
-                manager.beginTransaction().replace(R.id.layout_content_user,paymentFragment, paymentFragment.getTag()).commit();
-                drawer.closeDrawer(GravityCompat.START);
-                break;
-            case R.id.nav_myevents:
-               Intent myEventsIntent = new Intent().setClass(getApplicationContext(),MyEventsActivity.class);
-                startActivity(myEventsIntent);
-                drawer.closeDrawer(GravityCompat.START);
-                break;
-            case R.id.nav_settings:
+            case R.id.option3:
 
                 drawer.closeDrawer(GravityCompat.START);
                 break;
-            case R.id.nav_logoff:
+            case R.id.option4:
+
                 drawer.closeDrawer(GravityCompat.START);
-                Intent intent = new Intent().setClass(getApplicationContext(),LoginActivity.class);
-                startActivity(intent);
-                finish();
+                break;
+            case R.id.option5:
+
+                drawer.closeDrawer(GravityCompat.START);
+                break;
+            case R.id.option6:
+                drawer.closeDrawer(GravityCompat.START);
+
                 break;
 
             default:

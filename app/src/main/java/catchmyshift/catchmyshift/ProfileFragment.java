@@ -61,13 +61,13 @@ public class ProfileFragment extends Fragment {
                     //                                          int[] grantResults)
                     // to handle the case where the user grants the permission. See the documentation
                     // for ActivityCompat#requestPermissions for more details.
-                    try{
-                        googleMap.setMyLocationEnabled(true);
-                    }catch (Exception e)
-                    {
-                        e.printStackTrace();
-                    }
-                }else {}
+                }
+                try{
+                    googleMap.setMyLocationEnabled(true);
+                }catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
 
             }
         });

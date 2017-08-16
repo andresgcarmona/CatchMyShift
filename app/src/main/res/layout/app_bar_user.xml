@@ -21,6 +21,17 @@
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_user" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        >
+        <io.codetail.widget.RevealFrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <include layout="@layout/user_submenu_media"/>
+        </io.codetail.widget.RevealFrameLayout>
 
+    </FrameLayout>
 
 </android.support.design.widget.CoordinatorLayout>
