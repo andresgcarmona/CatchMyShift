@@ -76,9 +76,8 @@ public class MapsUserActivity extends AppCompatActivity implements OnMapReadyCal
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        else {
             map.setMyLocationEnabled(true);
-        }
+
         data = getString(R.string.title_Success);
         myMethods.Success(currentView, data, context).show();
     }
