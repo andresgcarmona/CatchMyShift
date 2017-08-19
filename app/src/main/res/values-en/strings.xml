@@ -213,4 +213,6 @@
         "including Cookie Use. Others will be able to find you by email or phone number when provided.\n"
     </string>
 
+    <string name="title_edit_profile">Edit my Profile</string>
+
 </resources>

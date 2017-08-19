@@ -16,6 +16,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,8 +54,6 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
         mMapView = (MapView) v.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);
         mMapView.onResume(); // needed to get the map to display immediately
-
-
         mMapView.getMapAsync(this);
 
         return v;
@@ -63,8 +62,10 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
 
     @Override
     public void onMapReady(GoogleMap mMap) {
+
+
         googleMap = mMap;
-        try{
+
             if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling
                 //    ActivityCompat#requestPermissions
@@ -83,7 +84,11 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
 
                 return;
             }
-            else {
+            else
+                {
+
+                try
+                {
                 googleMap.setMyLocationEnabled(true);
                 locationManager = (LocationManager)getActivity().getSystemService(Context.LOCATION_SERVICE);
                 Criteria cri = new Criteria();
@@ -92,12 +97,16 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
 
                 CameraPosition camPos = new CameraPosition.Builder().target(new LatLng(loc.getLatitude(),loc.getLongitude())).zoom(17.1f).build();
                 CameraUpdate camUpdate = CameraUpdateFactory.newCameraPosition(camPos);
-
+                Log.e("JMMC","Camera1");
                 googleMap.moveCamera(camUpdate);
+                Log.e("JMMC","Camera2");
+
             }
-    }catch (Exception e) {
-            e.printStackTrace();
-        }
+            catch (Exception e) {
+                e.printStackTrace();
+                }
+            }
+
     }
 }
 
