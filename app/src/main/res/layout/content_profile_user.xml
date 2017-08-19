@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="catchmyshift.catchmyshift.ProfileFragment"
+    tools:context="catchmyshift.catchmyshift.fragment.ProfileFragment"
     tools:showIn="@layout/fragment_profile">
 
     <LinearLayout
@@ -17,10 +17,12 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@drawable/bgnd_btn_accent2"
-            android:text="@string/title_edit_profile"
-            android:textSize="14sp"
             android:textColor="@color/colorWhiteText"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="@color/colorAccent"
+            android:clickable="true"
+            android:textSize="14sp"
+            android:text="@string/title_edit_profile"
             />
 
         <RelativeLayout

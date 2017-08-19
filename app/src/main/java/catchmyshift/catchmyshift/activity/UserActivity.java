@@ -1,22 +1,12 @@
-package catchmyshift.catchmyshift;
+package catchmyshift.catchmyshift.activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.PorterDuff;
-import android.media.Image;
-import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.design.internal.NavigationMenuItemView;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -26,17 +16,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewGroup;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 
-import java.lang.ref.WeakReference;
-
-import io.codetail.animation.SupportAnimator;
-import io.codetail.animation.ViewAnimationUtils;
+import catchmyshift.catchmyshift.utilities.MyMethods;
+import catchmyshift.catchmyshift.fragment.PaymentFragment;
+import catchmyshift.catchmyshift.fragment.ProfileFragment;
+import catchmyshift.catchmyshift.R;
 
 public class UserActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -60,7 +45,7 @@ public class UserActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         mRevealView = (LinearLayout) findViewById(R.id.reveal_items);
-        mRevealView.setVisibility(View.GONE);
+        mRevealView.setVisibility(View.INVISIBLE);
 
         profile = (LinearLayout) findViewById(R.id.nav_profile);
         searchJob = (LinearLayout)findViewById(R.id.nav_searchJob);

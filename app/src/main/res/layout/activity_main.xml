@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondoinicio"
-    tools:context="catchmyshift.catchmyshift.MainActivity"
+    tools:context="catchmyshift.catchmyshift.activity.MainActivity"
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
 
@@ -40,7 +40,9 @@
                 android:id="@+id/button_buscartrabajo"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:background="@drawable/bgnd_btn_accent2"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@color/colorAccent"
+                android:clickable="true"
                 android:text="@string/title_searchJob"
                 android:textColor="@color/colorWhiteText"
                 android:textSize="18sp" />
@@ -49,7 +51,9 @@
                 android:id="@+id/button_publicvacante"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:background="@drawable/bgnd_btn_accent"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@color/colorAccentBtn"
+                android:clickable="true"
                 android:text="@string/title_searchEmployees"
                 android:textColor="@color/colorWhiteText"
                 android:textSize="18sp" />

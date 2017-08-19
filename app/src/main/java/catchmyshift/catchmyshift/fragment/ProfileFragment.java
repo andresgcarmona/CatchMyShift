@@ -1,4 +1,4 @@
-package catchmyshift.catchmyshift;
+package catchmyshift.catchmyshift.fragment;
 
 
 import android.Manifest;
@@ -30,6 +30,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import catchmyshift.catchmyshift.R;
 
 import static android.content.Context.LOCATION_SERVICE;
 

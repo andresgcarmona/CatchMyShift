@@ -1,9 +1,11 @@
-package catchmyshift.catchmyshift;
+package catchmyshift.catchmyshift.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.transition.Fade;
 import android.transition.Slide;
+
+import catchmyshift.catchmyshift.R;
 
 public class CreateUserActivity extends AppCompatActivity {
 

@@ -1,11 +1,14 @@
-package catchmyshift.catchmyshift;
+package catchmyshift.catchmyshift.activity;
 
 import android.content.Intent;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import catchmyshift.catchmyshift.R;
+import catchmyshift.catchmyshift.activity.LoginActivity;
+import catchmyshift.catchmyshift.activity.LoginActivityCompany;
 
 public class MainActivity extends AppCompatActivity {
 

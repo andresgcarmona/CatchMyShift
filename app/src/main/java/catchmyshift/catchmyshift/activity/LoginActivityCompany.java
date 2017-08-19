@@ -1,4 +1,4 @@
-package catchmyshift.catchmyshift;
+package catchmyshift.catchmyshift.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +7,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import catchmyshift.catchmyshift.R;
+import catchmyshift.catchmyshift.activity.CompanyActivity;
+import catchmyshift.catchmyshift.activity.CreateCompanyActivity;
 
 public class LoginActivityCompany extends AppCompatActivity {
     private Button btnLogin;

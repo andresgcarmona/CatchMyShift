@@ -1,9 +1,8 @@
-package catchmyshift.catchmyshift;
+package catchmyshift.catchmyshift.activity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -12,9 +11,17 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+
+import catchmyshift.catchmyshift.fragment.BillingCompanyFragment;
+import catchmyshift.catchmyshift.fragment.ContactCompanyFragment;
+import catchmyshift.catchmyshift.fragment.EventsCompanyFragment;
+import catchmyshift.catchmyshift.utilities.MyMethods;
+import catchmyshift.catchmyshift.fragment.OpenEventsCompanyFragment;
+import catchmyshift.catchmyshift.fragment.ProfileCompanyFragment;
+import catchmyshift.catchmyshift.fragment.PublishJobCompanyFragment;
+import catchmyshift.catchmyshift.R;
 
 /**
  * Created by SILVER on 26/07/2017.

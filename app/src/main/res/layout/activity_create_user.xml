@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="catchmyshift.catchmyshift.CreateUserActivity">
+    tools:context="catchmyshift.catchmyshift.activity.CreateUserActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -68,7 +68,9 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bgnd_btn_accent"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@color/colorAccentBtn"
+                android:clickable="true"
                 android:textColor="@color/colorWhiteText"
                 android:text="@string/title_sign_up"
                 />

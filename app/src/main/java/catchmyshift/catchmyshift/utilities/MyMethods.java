@@ -1,4 +1,4 @@
-package catchmyshift.catchmyshift;
+package catchmyshift.catchmyshift.utilities;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import catchmyshift.catchmyshift.R;
 
 /**
  * Created by SILVER on 24/07/2017.

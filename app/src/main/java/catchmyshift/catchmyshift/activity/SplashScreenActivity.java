@@ -1,4 +1,4 @@
-package catchmyshift.catchmyshift;
+package catchmyshift.catchmyshift.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,9 @@ import com.q42.android.scrollingimageview.ScrollingImageView;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import catchmyshift.catchmyshift.R;
+import catchmyshift.catchmyshift.activity.MainActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 

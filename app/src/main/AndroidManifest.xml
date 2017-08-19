@@ -21,7 +21,7 @@
         android:theme="@style/AppTheme">
 
         <!--MAIN ACTIVITY-->
-        <activity android:name=".SplashScreenActivity"
+        <activity android:name=".activity.SplashScreenActivity"
             android:theme="@style/AppTheme.NoActionBar"
             >
             <intent-filter>
@@ -31,10 +31,10 @@
         </activity>
 
         <activity
-            android:name=".LoginActivity"
+            android:name=".activity.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".UserActivity"
+            android:name=".activity.UserActivity"
             android:label="@string/title_activity_user"
             android:theme="@style/AppTheme.NoActionBar" />
         <!--
@@ -50,54 +50,54 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".activity.MapsActivity"
             android:label="@string/title_activity_maps" />
 
         <activity
-            android:name=".MapsUserActivity"
+            android:name=".activity.MapsUserActivity"
             android:label="@string/title_activity_maps_user"
-            android:parentActivityName=".UserActivity"
+            android:parentActivityName=".activity.UserActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="catchmyshift.catchmyshift.UserActivity" />
+                android:value="catchmyshift.catchmyshift.activity.UserActivity" />
         </activity>
 
         <activity
-            android:name=".CompanyActivity"
+            android:name=".activity.CompanyActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="catchmyshift.catchmyshift.CompanyActivity" />
+                android:value="catchmyshift.catchmyshift.activity.CompanyActivity" />
         </activity>
 
-        <activity android:name=".LoginActivityCompany" />
+        <activity android:name=".activity.LoginActivityCompany" />
 
         <activity
-            android:name=".MyEventsActivity"
+            android:name=".activity.MyEventsActivity"
             android:label="@string/title_activity_my_events"
-            android:parentActivityName=".UserActivity">
+            android:parentActivityName=".activity.UserActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="catchmyshift.catchmyshift.UserActivity" />
+                android:value="catchmyshift.catchmyshift.activity.UserActivity" />
         </activity>
 
         <activity
-            android:name=".CreateCompanyActivity"
+            android:name=".activity.CreateCompanyActivity"
             android:label="@string/title_activity_create_company"
-            android:parentActivityName=".LoginActivityCompany"
+            android:parentActivityName=".activity.LoginActivityCompany"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="catchmyshift.catchmyshift.LoginActivityCompany" />
+                android:value="catchmyshift.catchmyshift.activity.LoginActivityCompany" />
         </activity>
 
         <activity
-            android:name=".CreateUserActivity"
+            android:name=".activity.CreateUserActivity"
             android:label="@string/title_blank"
-            android:parentActivityName=".LoginActivity" />
+            android:parentActivityName=".activity.LoginActivity" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
 
         </activity>
     </application>

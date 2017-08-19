@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondologin"
-    tools:context="catchmyshift.catchmyshift.LoginActivity"
+    tools:context="catchmyshift.catchmyshift.activity.LoginActivity"
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
 
@@ -117,11 +117,13 @@
             <Button
                 android:id="@+id/button_login"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bgnd_btn_accent2"
+                android:layout_height="60dp"
                 android:text="@string/title_sign_in"
                 android:textColor="@color/colorWhiteText"
-                android:textSize="18sp" />
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@color/colorAccent"
+                android:clickable="true"
+                android:textSize="17sp" />
         </LinearLayout>
 
     </LinearLayout>

@@ -1,4 +1,4 @@
-package catchmyshift.catchmyshift;
+package catchmyshift.catchmyshift.fragment;
 
 
 import android.os.Bundle;
@@ -7,14 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import catchmyshift.catchmyshift.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ProfileCompanyFragment extends Fragment {
+public class ContactCompanyFragment extends Fragment {
 
 
-    public ProfileCompanyFragment() {
+    public ContactCompanyFragment() {
         // Required empty public constructor
     }
 
@@ -23,7 +25,7 @@ public class ProfileCompanyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile_company, container, false);
+        return inflater.inflate(R.layout.fragment_contact_company, container, false);
     }
 
 }
