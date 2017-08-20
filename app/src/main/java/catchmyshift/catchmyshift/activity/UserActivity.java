@@ -18,6 +18,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 
+import java.util.List;
+import butterknife.BindViews;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import catchmyshift.catchmyshift.utilities.MyMethods;
 import catchmyshift.catchmyshift.fragment.PaymentFragment;
 import catchmyshift.catchmyshift.fragment.ProfileFragment;
@@ -35,7 +39,6 @@ public class UserActivity extends AppCompatActivity
 
     private LinearLayout mRevealView;
     private boolean hidden = true;
-    private LinearLayout profile, searchJob, payment, myEvents, setting, logOff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,68 +46,10 @@ public class UserActivity extends AppCompatActivity
         setContentView(R.layout.activity_user);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        ButterKnife.bind(this);
 
         mRevealView = (LinearLayout) findViewById(R.id.reveal_items);
         mRevealView.setVisibility(View.INVISIBLE);
-
-        profile = (LinearLayout) findViewById(R.id.nav_profile);
-        searchJob = (LinearLayout)findViewById(R.id.nav_searchJob);
-        payment = (LinearLayout)findViewById(R.id.nav_pay);
-        myEvents = (LinearLayout) findViewById(R.id.nav_myevents);
-        setting = (LinearLayout) findViewById(R.id.nav_settings);
-        logOff= (LinearLayout) findViewById(R.id.nav_logoff);
-
-        profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hideRevealView();
-                ProfileFragment profileFragment = new ProfileFragment();
-                manager = getSupportFragmentManager();
-                manager.beginTransaction().replace(R.id.layout_content_user,profileFragment,profileFragment.getTag()).commit();
-            }
-        });
-        searchJob.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hideRevealView();
-                Intent inst = new Intent().setClass(getApplicationContext(), MapsUserActivity.class);
-                startActivity(inst);
-            }
-        });
-        payment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hideRevealView();
-                PaymentFragment paymentFragment = new PaymentFragment();
-                manager = getSupportFragmentManager();
-                manager.beginTransaction().replace(R.id.layout_content_user,paymentFragment, paymentFragment.getTag()).commit();
-            }
-        });
-        myEvents.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hideRevealView();
-                Intent myEventsIntent = new Intent().setClass(getApplicationContext(),MyEventsActivity.class);
-                startActivity(myEventsIntent);
-            }
-        });
-        setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hideRevealView();
-
-            }
-        });
-
-        logOff.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                hideRevealView();
-                Intent intent = new Intent().setClass(getApplicationContext(),LoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
 
         currentView = getWindow().getDecorView().findViewById(android.R.id.content);
         context = getApplicationContext();
@@ -143,6 +88,43 @@ public class UserActivity extends AppCompatActivity
         }
     }
 
+    @OnClick({R.id.nav_profile,R.id.nav_searchJob,R.id.nav_pay,R.id.nav_myevents,R.id.nav_settings,R.id.nav_logoff})
+    public void ActionReveal(View view){
+        hideRevealView();
+        switch (view.getId()){
+            case R.id.nav_profile:
+                ProfileFragment profileFragment = new ProfileFragment();
+                manager = getSupportFragmentManager();
+                manager.beginTransaction().replace(R.id.layout_content_user,profileFragment,profileFragment.getTag()).commit();
+                break;
+
+            case R.id.nav_searchJob:
+                Intent inst = new Intent().setClass(getApplicationContext(), MapsUserActivity.class);
+                startActivity(inst);
+                break;
+
+            case R.id.nav_pay:
+                PaymentFragment paymentFragment = new PaymentFragment();
+                manager = getSupportFragmentManager();
+                manager.beginTransaction().replace(R.id.layout_content_user,paymentFragment, paymentFragment.getTag()).commit();
+                break;
+
+            case R.id.nav_myevents:
+                Intent myEventsIntent = new Intent().setClass(getApplicationContext(),MyEventsActivity.class);
+                startActivity(myEventsIntent);
+                break;
+
+            case R.id.nav_settings:
+
+                break;
+
+            case R.id.nav_logoff:
+                Intent intent = new Intent().setClass(getApplicationContext(),LoginActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+        }
+    }
 
     @Override
     public void onBackPressed() {
@@ -172,51 +154,7 @@ public class UserActivity extends AppCompatActivity
                 int cy = mRevealView.getTop();
                 int radius = Math.max(mRevealView.getWidth(), mRevealView.getHeight());
 
-                //Below Android LOLIPOP Version
-                /*
-                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-                    SupportAnimator animator =
-                            ViewAnimationUtils.createCircularReveal(mRevealView, cx, cy, 0, radius);
-                    animator.setInterpolator(new AccelerateDecelerateInterpolator());
-                    animator.setDuration(700);
-
-                    SupportAnimator animator_reverse = animator.reverse();
-
-                    if (hidden) {
-                        mRevealView.setVisibility(View.VISIBLE);
-                        animator.start();
-                        hidden = false;
-                    } else {
-                        animator_reverse.addListener(new SupportAnimator.AnimatorListener() {
-                            @Override
-                            public void onAnimationStart() {
-
-                            }
-
-                            @Override
-                            public void onAnimationEnd() {
-                                mRevealView.setVisibility(View.INVISIBLE);
-                                hidden = true;
-
-                            }
-
-                            @Override
-                            public void onAnimationCancel() {
-
-                            }
-
-                            @Override
-                            public void onAnimationRepeat() {
-
-                            }
-                        });
-                        animator_reverse.start();
-                    }
-                }*/
-                // Android LOLIPOP And ABOVE Version
-                //else {
-
-                    if (hidden) {
+                if (hidden) {
                 Animator anim = android.view.ViewAnimationUtils.createCircularReveal(mRevealView, cx, cy, 0, radius);
                 mRevealView.setVisibility(View.VISIBLE);
                 anim.start();
@@ -233,11 +171,8 @@ public class UserActivity extends AppCompatActivity
                 });
                 anim.start();
             }
-
-                //}
-                break;
+            break;
         }
-
         return super.onOptionsItemSelected(item);
     }
 

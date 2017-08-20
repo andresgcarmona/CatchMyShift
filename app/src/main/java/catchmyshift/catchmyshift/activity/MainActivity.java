@@ -6,37 +6,36 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import catchmyshift.catchmyshift.R;
 import catchmyshift.catchmyshift.activity.LoginActivity;
 import catchmyshift.catchmyshift.activity.LoginActivityCompany;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnSearchJob, btnPublishVacancy;
+    @BindView(R.id.button_buscartrabajo) Button btnSearchJob;
+    @BindView(R.id.button_publicvacante) Button btnPublishVacancy;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
+        ButterKnife.bind(this);
+    }
 
-        btnSearchJob = (Button) findViewById(R.id.button_buscartrabajo);
-        btnPublishVacancy = (Button) findViewById(R.id.button_publicvacante);
+    @OnClick(R.id.button_buscartrabajo)
+    public void SearchJob(){
+        Intent intent = new Intent().setClass(getApplicationContext(),LoginActivity.class);
+        startActivity(intent);
+    }
 
-        btnSearchJob.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent().setClass(getApplicationContext(),LoginActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        btnPublishVacancy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent().setClass(getApplicationContext(),LoginActivityCompany.class);
-                startActivity(intent);
-            }
-        });
+    @OnClick(R.id.button_publicvacante)
+    public void PublishVacancy(){
+        Intent intent = new Intent().setClass(getApplicationContext(),LoginActivityCompany.class);
+        startActivity(intent);
     }
 
 }

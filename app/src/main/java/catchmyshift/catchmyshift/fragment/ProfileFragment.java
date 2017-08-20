@@ -43,9 +43,7 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
 
     private MapView mMapView;
     private View v;
-
     LocationManager locationManager;
-
     private GoogleMap googleMap;
 
     @Override
