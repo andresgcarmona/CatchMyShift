@@ -95,7 +95,7 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
 
                 Location loc = locationManager.getLastKnownLocation(locationManager.getBestProvider(cri,false));
 
-                CameraPosition camPos = new CameraPosition.Builder().target(new LatLng(loc.getLatitude(),loc.getLongitude())).zoom(17.1f).build();
+                CameraPosition camPos = new CameraPosition.Builder().target(new LatLng(loc.getLatitude(),loc.getLongitude())).zoom(15.1f).build();
                 CameraUpdate camUpdate = CameraUpdateFactory.newCameraPosition(camPos);
                 Log.e("JMMC","Camera1");
                 googleMap.moveCamera(camUpdate);
