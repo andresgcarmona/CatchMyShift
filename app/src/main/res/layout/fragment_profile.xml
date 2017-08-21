@@ -31,6 +31,7 @@
                 android:gravity="bottom"
                 >
                 <TextView
+                    android:id="@+id/idNameUser"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -40,11 +41,13 @@
                     android:textAlignment="inherit"
                     android:textStyle="bold"
                     android:textSize="18sp"
+                    android:textColor="@color/colorWhiteText"
                     android:text="Nombre Apellido Paterno"
 
                     />
 
                 <TextView
+                    android:id="@+id/idEmailUser"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -54,6 +57,7 @@
                     android:textAlignment="inherit"
                     android:textStyle="bold"
                     android:textSize="17sp"
+                    android:textColor="@color/colorWhiteText"
                     android:text="usuario@gmail.com"
                     />
                 <RatingBar

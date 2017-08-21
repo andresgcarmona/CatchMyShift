@@ -28,42 +28,44 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="@drawable/bgnd_payment_color2"
             android:orientation="horizontal"
             >
 
 
             <Button
                 android:id="@+id/button4"
-                android:layout_width="170dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@color/colorAccentBtn"
+                android:clickable="true"
                 android:textSize="12sp"
-                android:background="@drawable/bgnd_btn_accent"
                 android:textColor="@color/colorWhiteText"
-                android:drawableTint="@color/colorWhiteText"
                 android:text="@string/title_bank_account" />
 
             <Button
                 android:id="@+id/button3"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@color/colorAccent"
+                android:clickable="true"
+                android:textColor="@color/colorWhiteText"
                 android:layout_gravity="left"
                 android:textSize="12sp"
-                android:background="@drawable/bgnd_btn_accent2"
-                android:textColor="@color/colorWhiteText"
-                android:drawableTint="@color/colorEditText"
                 android:text="@string/title_credit_card" />
 
             <Button
                 android:id="@+id/button5"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:textSize="12sp"
-                android:background="@drawable/bgnd_btn_accent2"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@color/colorAccent"
                 android:textColor="@color/colorWhiteText"
-                android:drawableTint="@color/colorEditText"
+                android:layout_gravity="right"
+                android:clickable="true"
+                android:textSize="12sp"
                 android:text="@string/title_paypal" />
 
 

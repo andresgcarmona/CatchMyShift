@@ -15,6 +15,7 @@
         >
 
         <Button
+            android:id="@+id/idEditUser"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:textColor="@color/colorWhiteText"

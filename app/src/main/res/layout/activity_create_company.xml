@@ -135,9 +135,11 @@
                     android:layout_marginRight="16dp"
                     android:layout_marginBottom="24dp"
                     android:layout_weight="1"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:background="@color/colorAccent"
+                    android:clickable="true"
                     android:text="@string/title_confirm_create"
                     android:layout_gravity="center"
-                    android:background="@drawable/bgnd_btn_accent2"
                     android:textColor="@color/colorWhiteText"
                     />
             </LinearLayout>

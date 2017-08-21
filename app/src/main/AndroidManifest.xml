@@ -20,16 +20,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!--MAIN ACTIVITY-->
-        <activity android:name=".activity.SplashScreenActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
+        <!-- MAIN ACTIVITY -->
+        <activity
+            android:name=".activity.SplashScreenActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".activity.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -62,7 +62,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="catchmyshift.catchmyshift.activity.UserActivity" />
         </activity>
-
         <activity
             android:name=".activity.CompanyActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -70,7 +69,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="catchmyshift.catchmyshift.activity.CompanyActivity" />
         </activity>
-
         <activity android:name=".activity.LoginActivityCompany" />
 
         <activity
@@ -98,8 +96,14 @@
             android:parentActivityName=".activity.LoginActivity" />
 
         <activity android:name=".activity.MainActivity">
-
         </activity>
+
+        <activity android:name=".activity.EditUserActivity"
+            android:parentActivityName=".activity.UserActivity"
+            android:label="@string/title_edit_profile"
+            >
+        </activity>
+
     </application>
 
 </manifest>

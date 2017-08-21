@@ -26,36 +26,42 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:background="@drawable/bgnd_payment_color2"
+            android:background="@color/payment_color2"
             android:orientation="horizontal"
             >
 
 
             <Button
-                android:layout_width="170dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@color/payment_color2"
+                android:clickable="true"
                 android:textSize="12sp"
                 android:text="@string/statistics_payment"
-                android:background="@drawable/bgnd_payment_color2"
                 android:textColor="#FFFFFF"
                 />
             <Button
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@color/colorAccentBtn"
+                android:clickable="true"
                 android:textSize="12sp"
                 android:text="@string/approve_payment"
-                android:background="@drawable/bgnd_payment_color1"
                 android:textColor="#FFFFFF"
                 />
             <Button
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@color/colorAccentBtn"
+                android:clickable="true"
                 android:layout_gravity="right"
                 android:textSize="12sp"
                 android:text="@string/event_summary"
-                android:background="@drawable/bgnd_payment_color1"
                 android:textColor="#FFFFFF"
                 />
 
@@ -92,10 +98,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@color/colorAccent"
+                android:clickable="true"
                 android:textSize="16sp"
                 android:text="@string/method_payment"
-                android:background="@drawable/bgnd_btn_accent2"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/colorWhiteText"
                 />
 
 
