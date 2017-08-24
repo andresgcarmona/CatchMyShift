@@ -43,8 +43,8 @@
     <string name="title_MyInterests">Mis Intereses</string>
     <string name="title_MySkills">Mis Aptitudes</string>
 
-    <string name="title_Success">Se ha insertado correctamente</string>
-    <string name="title_Danger">Error al insertar datos</string>
+    <string name="title_Success">La petición se realizó correctamente</string>
+    <string name="title_Danger">Error al realizar la petición</string>
     <string name="title_Loading">Cargando datos...</string>
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -211,5 +211,11 @@
     </string>
 
     <string name="title_edit_profile">Editar mi Perfil</string>
+
+    <string name="title_close">Cerrar</string>
+
+    <string name="title_camera">Camara</string>
+    <string name="title_gallery">Galería</string>
+    <string name="title_selectOption">Seleccione una Opción</string>
 
 </resources>

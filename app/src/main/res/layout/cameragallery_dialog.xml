@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/runded_dialog"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:text="@string/title_selectOption"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="32dp"
+            >
+
+            <Button
+                android:id="@+id/idcameraOption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/cameravd"
+                android:drawableTint="@color/colorWhiteText"
+                android:background="@drawable/rounded_accent1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:paddingLeft="16dp"
+                android:layout_alignParentLeft="true" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            >
+
+            <Button
+                android:id="@+id/idgalleryOption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="16dp"
+                android:drawableRight="@drawable/galleryvd"
+                android:drawableTint="@color/colorWhiteText"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/rounded_accent2" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        >
+
+        <TextView
+            android:id="@+id/idcancelOption"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:background="@drawable/rounded_grey"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:text="@string/title_close"
+            android:clickable="true"/>
+    </RelativeLayout>
+
+</LinearLayout>

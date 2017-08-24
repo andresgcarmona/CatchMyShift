@@ -33,6 +33,8 @@ import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import butterknife.BindString;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import catchmyshift.catchmyshift.R;
@@ -51,6 +53,8 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
     LocationManager locationManager;
     private GoogleMap googleMap;
 
+    @BindString(R.string.title_Loading) String loadingText;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -68,7 +72,7 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
 
     @OnClick(R.id.idEditUser)
     public void EditUser(Button btnEdit){
-        btnEdit.setText("Loading...");
+        btnEdit.setText(loadingText);
         Intent intent = new Intent().setClass(getContext(), EditUserActivity.class);
         startActivity(intent);
     }
