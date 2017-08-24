@@ -218,4 +218,10 @@
     <string name="title_gallery">Galería</string>
     <string name="title_selectOption">Seleccione una Opción</string>
 
+    <string name="permission">Active este permiso en la confirguración</string>
+    <string name="title_accept">Aceptar</string>
+
+    <string name="permisonSuccess">Permiso Garantizado!, Seleccione Nuevamente la Opción</string>
+    <string name="permisonFail">Permiso denegado 🙁 </string>
+
 </resources>

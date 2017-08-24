@@ -221,4 +221,10 @@
     <string name="title_gallery">Gallery</string>
     <string name="title_selectOption">Select an Option</string>
 
+    <string name="permission">Please allow this permission in App Settings</string>
+    <string name="title_accept">Ok</string>
+
+    <string name="permisonSuccess">Permission Granted Successfully!, select the option</string>
+    <string name="permisonFail">Permission Denied 🙁 </string>
+
 </resources>

@@ -1,12 +1,10 @@
 package catchmyshift.catchmyshift.utilities;
 
-import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.os.AsyncTask;
+import android.graphics.drawable.ColorDrawable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
@@ -49,7 +47,7 @@ public class MyMethods {
         View subview = snackbar.getView();
 
         TextView snackbar_text = (TextView) subview.findViewById(android.support.design.R.id.snackbar_text);
-        snackbar_text.setCompoundDrawablesWithIntrinsicBounds(R.drawable.dangervd,0,0,0);
+        snackbar_text.setCompoundDrawablesWithIntrinsicBounds(R.drawable.warningvd,0,0,0);
         snackbar_text.setGravity(Gravity.CENTER);
         subview.setBackgroundColor(ContextCompat.getColor(context,R.color.colorSnackDanger));
         snackbar.setAction("x", new View.OnClickListener() {
@@ -73,5 +71,25 @@ public class MyMethods {
         ViewGroup viewGroup = (ViewGroup) snackbar.getView().findViewById(android.support.design.R.id.snackbar_text).getParent();
         viewGroup.addView(progressBar,0);
         return snackbar;
+    }
+
+    public static Dialog InfoDialog(Context context, String title, String content){
+
+        final Dialog dialog = new Dialog(context);
+        dialog.setContentView(R.layout.info_dialog);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView titledialog = (TextView) dialog.findViewById(R.id.titleDialog);
+        titledialog.setText(title);
+        TextView contentDialog = (TextView) dialog.findViewById(R.id.contentDialog);
+        contentDialog.setText(content);
+
+        TextView okDialog = (TextView) dialog.findViewById(R.id.okDialog);
+        okDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.hide();
+            }
+        });
+        return dialog;
     }
 }

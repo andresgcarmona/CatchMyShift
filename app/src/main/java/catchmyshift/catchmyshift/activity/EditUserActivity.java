@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +32,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import catchmyshift.catchmyshift.R;
+import catchmyshift.catchmyshift.utilities.MyMethods;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
@@ -38,6 +40,10 @@ public class EditUserActivity extends AppCompatActivity {
 
     @BindView(R.id.userImageProfile) CircleImageView imageUser;
     @BindString(R.string.title_selectOption) String selectOption;
+    @BindString(R.string.permission) String permissions;
+    @BindString(R.string.permisonSuccess) String permissionSuccess;
+    @BindString(R.string.permisonFail) String permissionFail;
+
     Dialog myDialog;
     Button cameraOption, galleryOpcion;
     TextView cancelOption;
@@ -149,9 +155,14 @@ public class EditUserActivity extends AppCompatActivity {
 
     private void requestPermission() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-            Toast.makeText(this, " Please allow this permission in App Settings.", Toast.LENGTH_LONG).show();
+
+            myDialog.hide();
+            MyMethods.InfoDialog(EditUserActivity.this,"Info.",permissions).show();
+
         } else {
+
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, GALLERY_REQUEST);
+
         }
     }
 
@@ -167,9 +178,13 @@ public class EditUserActivity extends AppCompatActivity {
 
     private void requestPermissionCAM() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
-            Toast.makeText(this, " Please allow this permission in App Settings.", Toast.LENGTH_LONG).show();
+
+            MyMethods.InfoDialog(EditUserActivity.this,"Info.",permissions).show();
+
         } else {
+
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, CAMERA_REQUEST);
+
         }
     }
 
@@ -187,9 +202,17 @@ public class EditUserActivity extends AppCompatActivity {
         switch (requestCode) {
             case GALLERY_REQUEST:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(this, "Permission Granted Successfully! ", Toast.LENGTH_LONG).show();
+                    MyMethods.InfoDialog(EditUserActivity.this,"Info.",permissionSuccess).show();
                 } else {
-                    Toast.makeText(this, "Permission Denied 🙁 ", Toast.LENGTH_LONG).show();
+                    MyMethods.InfoDialog(EditUserActivity.this,"Info.",permissionFail).show();
+                }
+                break;
+
+            case CAMERA_REQUEST:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    MyMethods.InfoDialog(EditUserActivity.this,"Info.",permissionSuccess).show();
+                } else {
+                    MyMethods.InfoDialog(EditUserActivity.this,"Info.",permissionFail).show();
                 }
                 break;
         }
