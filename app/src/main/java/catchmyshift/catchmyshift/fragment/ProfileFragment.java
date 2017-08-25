@@ -54,6 +54,7 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
     private GoogleMap googleMap;
 
     @BindString(R.string.title_Loading) String loadingText;
+    @BindString(R.string.title_edit_profile)String editProfText;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -75,6 +76,7 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
         btnEdit.setText(loadingText);
         Intent intent = new Intent().setClass(getContext(), EditUserActivity.class);
         startActivity(intent);
+        btnEdit.setText(editProfText);
     }
 
     @Override
