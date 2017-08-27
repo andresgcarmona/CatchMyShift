@@ -92,4 +92,17 @@ public class MyMethods {
         });
         return dialog;
     }
+
+    public static Dialog LoadingDialog(Context context, String title, String content){
+
+        final Dialog dialog = new Dialog(context);
+        dialog.setContentView(R.layout.loading_dialog);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView titledialog = (TextView) dialog.findViewById(R.id.titleDialogP);
+        titledialog.setText(title);
+        TextView contentDialog = (TextView) dialog.findViewById(R.id.contentDialogP);
+        contentDialog.setText(content);
+
+        return dialog;
+    }
 }

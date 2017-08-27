@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/runded_dialog">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <ImageView
         android:layout_width="match_parent"
@@ -11,12 +9,12 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:scaleType="fitStart"
-        android:src="@drawable/warningvd"
-        android:tint="#ff9100"
+        android:src="@drawable/refreshvd"
+        android:tint="#008cff"
         />
 
     <TextView
-        android:id="@+id/titleDialog"
+        android:id="@+id/titleDialogP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -26,7 +24,7 @@
         />
 
     <TextView
-        android:id="@+id/contentDialog"
+        android:id="@+id/contentDialogP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -38,15 +36,10 @@
         android:text="Content"
         />
 
-    <TextView
-        android:id="@+id/okDialog"
+    <ProgressBar
+        style="?android:attr/progressBarStyle"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:background="@drawable/rounded_grey"
-        android:foreground="?android:attr/selectableItemBackground"
-        android:clickable="true"
-        android:text="@string/title_accept"
-        />
+        android:layout_height="wrap_content" />
+
 
 </LinearLayout>
