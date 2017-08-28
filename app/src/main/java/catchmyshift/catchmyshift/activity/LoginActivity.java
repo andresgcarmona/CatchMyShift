@@ -1,6 +1,7 @@
 package catchmyshift.catchmyshift.activity;
 
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -40,8 +41,8 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.button_login) Button btnLogin;
     @BindView(R.id.text_createAccoutn) TextView createAccount;
     @BindView(R.id.edittext_email) TextInputEditText email;
-    @BindView(R.id.edittext_password) TextInputEditText password;
     @BindString(R.string.title_Loading)String loadingText;
+    @BindView(R.id.edittext_password) TextInputEditText password;
     @BindString(R.string.loading) String titleLoadingText;
     @BindString(R.string.title_error_userpassword)String errorUserPassText;
     @BindString(R.string.dialog_error_data)String errorLoadData;
@@ -64,10 +65,7 @@ public class LoginActivity extends AppCompatActivity {
     @OnClick(R.id.button_login)
     public void Login(){
 
-        Log.e("JMMC_EMAIL",email.getText().toString());
-        Log.e("JMMC_PASSWORD",password.getText().toString());
-
-        if(email.getText().toString().equals("")||password.getText().toString().equals("")){
+        if(email.getText().equals("")||password.getText().equals("")){
             MyMethods.InfoDialog(LoginActivity.this,"Advertencia","los campos email y contraseña no deben estar vacíos");
         }
         else {
@@ -85,6 +83,20 @@ public class LoginActivity extends AppCompatActivity {
 
         btnLogin.setEnabled(false);
         //MyMethods.LoadingDialog(LoginActivity.this,titleLoadingText,loadingText).show();
+
+
+
+        final Dialog progressDialog = new Dialog(LoginActivity.this);
+        progressDialog.setContentView(R.layout.loading_dialog);
+        progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView titledialog = (TextView) progressDialog.findViewById(R.id.titleDialogP);
+        titledialog.setText(titleLoadingText);
+        TextView contentDialog = (TextView) progressDialog.findViewById(R.id.contentDialogP);
+        contentDialog.setText(loadingText);
+        progressDialog.show();
+
+
+
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_DATA,
                 new Response.Listener<String>(){
@@ -123,6 +135,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onErrorResponse(VolleyError error) {
                         btnLogin.setEnabled(true);
                         MyMethods.InfoDialog(LoginActivity.this,"Error.",errorUserPassText).show();
+                        progressDialog.hide();
                     }
                 }) {
             @Override
