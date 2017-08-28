@@ -121,14 +121,15 @@
 
 
             <TextView
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:text="@string/title_MySkills"
                 android:layout_marginTop="16dp"
-                android:textSize="17dp"
-                />
+                android:text="@string/title_MySkills"
+                android:textSize="17dp" />
+
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
