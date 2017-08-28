@@ -93,6 +93,7 @@ public class LoginActivity extends AppCompatActivity {
         titledialog.setText(titleLoadingText);
         TextView contentDialog = (TextView) progressDialog.findViewById(R.id.contentDialogP);
         contentDialog.setText(loadingText);
+        progressDialog.setCancelable(false);
         progressDialog.show();
 
 
