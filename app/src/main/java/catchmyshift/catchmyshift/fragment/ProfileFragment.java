@@ -56,6 +56,7 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
     private View v;
     LocationManager locationManager;
     private GoogleMap googleMap;
+    private String avatar;
 
     @BindString(R.string.title_Loading) String loadingText;
     @BindString(R.string.title_edit_profile)String editProfText;
@@ -117,7 +118,6 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
     }
 
     public void LoadData(){
-        String avatar;
         try {
             Bundle bundle = this.getArguments();
             if (bundle != null) {
