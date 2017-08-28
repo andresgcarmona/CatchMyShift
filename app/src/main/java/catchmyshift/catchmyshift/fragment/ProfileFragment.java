@@ -61,6 +61,7 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
 
     @BindString(R.string.title_Loading) String loadingText;
     @BindString(R.string.title_edit_profile)String editProfText;
+    @BindString(R.string.title_no_data)String noDataText;
     @BindView(R.id.userAvatar) ImageView avatarUserIV;
     @BindView(R.id.idNameUser) TextView userFullname;
     @BindView(R.id.idEmailUser) TextView userEmail;
@@ -139,9 +140,8 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
                 }
                 else
                 {
-                    userAbout.setText("-");
+                    userAbout.setText(noDataText);
                 }
-
             }
         }
         catch (Exception e){

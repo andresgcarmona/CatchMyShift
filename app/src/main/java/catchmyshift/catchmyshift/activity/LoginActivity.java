@@ -1,6 +1,10 @@
 package catchmyshift.catchmyshift.activity;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +28,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -34,8 +39,12 @@ public class LoginActivity extends AppCompatActivity {
 
     @BindView(R.id.button_login) Button btnLogin;
     @BindView(R.id.text_createAccoutn) TextView createAccount;
-    @BindView(R.id.edittext_email) EditText email;
-    @BindView(R.id.edittext_password) EditText password;
+    @BindView(R.id.edittext_email) TextInputEditText email;
+    @BindView(R.id.edittext_password) TextInputEditText password;
+    @BindString(R.string.title_Loading)String loadingText;
+    @BindString(R.string.loading) String titleLoadingText;
+    @BindString(R.string.title_error_userpassword)String errorUserPassText;
+    @BindString(R.string.dialog_error_data)String errorLoadData;
 
     View currentView;
     private String URL_DATA = "http://67.205.138.130/api/login";
@@ -55,10 +64,11 @@ public class LoginActivity extends AppCompatActivity {
     @OnClick(R.id.button_login)
     public void Login(){
 
-        btnLogin.setEnabled(false);
-        if(email.getText().equals("")||password.getText().equals("")){
+        Log.e("JMMC_EMAIL",email.getText().toString());
+        Log.e("JMMC_PASSWORD",password.getText().toString());
+
+        if(email.getText().toString().equals("")||password.getText().toString().equals("")){
             MyMethods.InfoDialog(LoginActivity.this,"Advertencia","los campos email y contraseña no deben estar vacíos");
-            btnLogin.setEnabled(true);
         }
         else {
             RequestLogin();
@@ -73,7 +83,8 @@ public class LoginActivity extends AppCompatActivity {
 
     public void RequestLogin(){
 
-       // MyMethods.LoadingDialog(LoginActivity.this,"Cargando","Cargando Datos...").show();
+        btnLogin.setEnabled(false);
+        //MyMethods.LoadingDialog(LoginActivity.this,titleLoadingText,loadingText).show();
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_DATA,
                 new Response.Listener<String>(){
@@ -98,9 +109,11 @@ public class LoginActivity extends AppCompatActivity {
                             }
                             else
                             {
-                                MyMethods.InfoDialog(LoginActivity.this,"Info.","Error al obtener datos");
+                                btnLogin.setEnabled(true);
+                                MyMethods.InfoDialog(LoginActivity.this,"Info.",errorLoadData).show();
                             }
                         } catch (JSONException e) {
+                            btnLogin.setEnabled(true);
                             e.printStackTrace();
                         }
                     }
@@ -108,8 +121,8 @@ public class LoginActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        //MyMethods.Danger(currentView,"Usuario y contraseña incorrectos",getApplicationContext()).show();
-                        MyMethods.InfoDialog(LoginActivity.this,"Error.","Usuario y/o contraseña incorrectos").show();
+                        btnLogin.setEnabled(true);
+                        MyMethods.InfoDialog(LoginActivity.this,"Error.",errorUserPassText).show();
                     }
                 }) {
             @Override

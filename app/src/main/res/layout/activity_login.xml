@@ -67,26 +67,25 @@
             >
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/textInputLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorTransparent"
                 >
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/edittext_email"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:textSize="15sp"
+                    android:layout_height="50dp"
+                    android:paddingLeft="8dp"
                     android:inputType="textWebEmailAddress"
+                    android:background="@drawable/rounded_inputtxt"
+                    android:layout_margin="8dp"
+                    android:textSize="17sp"
                     android:hint="@string/title_login_email" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-                android:id="@+id/textInputLayout4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:passwordToggleEnabled="true"
@@ -94,15 +93,17 @@
                 android:background="@color/colorTransparent"
                 >
 
-                <EditText
+                <android.support.design.widget.TextInputEditText
                     android:id="@+id/edittext_password"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:textSize="15sp"
+                    android:layout_height="50dp"
+                    android:paddingLeft="8dp"
+                    android:background="@drawable/rounded_inputtxt"
+                    android:layout_margin="8dp"
+                    android:textSize="17sp"
                     android:hint="@string/title_login_password"
                     android:inputType="textPassword" />
+
             </android.support.design.widget.TextInputLayout>
 
         </LinearLayout>
@@ -114,6 +115,7 @@
             android:gravity="bottom"
             tools:layout_editor_absoluteY="8dp"
             tools:layout_editor_absoluteX="8dp">
+
             <Button
                 android:id="@+id/button_login"
                 android:layout_width="match_parent"

@@ -229,4 +229,10 @@
     <string name="title_user_languages">Idiomas</string>
     <string name="title_user_academics">Formación Académica</string>
 
+    <string name="dialog_error_data">Error al cargar datos</string>
+    <string name="dialog_success_data">Datos cargados</string>
+    <string name="title_no_data">No hay datos registrados</string>
+    <string name="loading">Cargando</string>
+    <string name="title_error_userpassword">Usuario y/o contraseña incorrectos</string>
+
 </resources>

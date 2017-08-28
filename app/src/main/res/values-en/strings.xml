@@ -232,4 +232,10 @@
     <string name="title_user_languages">Languages</string>
     <string name="title_user_academics">Academic Levels</string>
 
+    <string name="dialog_error_data">Error to load Data</string>
+    <string name="dialog_success_data">Data loaded</string>
+    <string name="title_no_data">There is no data yet</string>
+    <string name="loading">Loading</string>
+    <string name="title_error_userpassword">User or password are invalid</string>
+
 </resources>
