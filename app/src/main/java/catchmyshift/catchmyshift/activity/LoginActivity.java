@@ -52,29 +52,16 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void RequestLogin(){
+        MyMethods.InProgress(findViewById(R.id.intent_activity), "Cargando", getApplicationContext());
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_DATA,
                 new Response.Listener<String>(){
                     @Override
                     public void onResponse(String response){
                         try {
-                            Log.e("JMMC", "PASE TRY");
                             JSONObject objetUser = new JSONObject(response);
-                            Log.e("JMMC", "1");
                             String status = objetUser.getString("status");
-                            Log.e("JMMC", "2");
-                            /*for(int i =0; i<arrayUser.length();i++){
-                                object = arrayUser.getJSONObject(i);
-                                Log.e("JMMC", "2.1");
-                                /*Log.e("JMMC_User",objectUser.getString("email"));
-                                Log.e("JMMC_Avatar",objectUser.getString("avatar"));
-                                Log.e("JMMC_FullName",objectUser.getString("fullname"));
-                                Log.e("JMMC_Settings",objectUser.getString("settings"));
-                                status = object.getString("status");Log.e("end","----------------------------------------------------------");
 
-                            }*/
-                            Log.e("JMMC", "3");
                             if (status.equals("200")){
-                                Log.e("JMMC_Settings", "si soy");
                                 JSONObject userObject = objetUser.getJSONObject("user");
 
                                 btnLogin.setEnabled(false);
@@ -84,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                             }
                             else
                             {
+                                MyMethods.Danger(currentView,"ERROR to load data",getApplicationContext()).show();
                                 Log.e("JMMC_Settings", "no soy");
                             }
                         } catch (JSONException e) {
@@ -95,8 +83,8 @@ public class LoginActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Log.e("JMMC",error.getCause().getMessage());
-                        MyMethods.Danger(currentView,"ERROR to load data",getApplicationContext()).show();
+                        //MyMethods.Danger(currentView,"Usuario y contraseña incorrectos",getApplicationContext()).show();
+                        MyMethods.InfoDialog(LoginActivity.this,"Error.","Usuario y contraseña incorrectos").show();
                     }
                 }) {
             @Override
