@@ -221,14 +221,21 @@ public class UserActivity extends AppCompatActivity
     }
 
     public void LoadUserFragment(){
-        String avatar;
+        String avatar, fullname, email, about;
         try{
             Bundle extras = getIntent().getExtras();
             avatar = extras.getString("avatar");
+            fullname = extras.getString("fullname");
+            email = extras.getString("email");
+            about = extras.getString("about");
 
 
             Bundle bundle = new Bundle();
             bundle.putString("avatar",avatar);
+            bundle.putString("fullname", fullname);
+            bundle.putString("email", email);
+            bundle.putString("about", about);
+
 
             ProfileFragment profileFragment = new ProfileFragment();
             profileFragment.setArguments(bundle);

@@ -224,4 +224,9 @@
     <string name="permisonSuccess">Permiso Garantizado!, Seleccione Nuevamente la Opción</string>
     <string name="permisonFail">Permiso denegado 🙁 </string>
 
+    <string name="title_user_about">Acerca de</string>
+    <string name="title_user_workingxp">Experiencia Laboral</string>
+    <string name="title_user_languages">Idiomas</string>
+    <string name="title_user_academics">Formación Académica</string>
+
 </resources>

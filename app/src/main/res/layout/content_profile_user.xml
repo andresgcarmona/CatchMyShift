@@ -49,19 +49,18 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginLeft="32dp"
                         android:layout_marginRight="32dp"
-                        android:text="@string/title_MyInterests"
+                        android:text="@string/title_user_about"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/idAbout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="36dp"
                         android:layout_marginRight="32dp"
                         android:layout_marginTop="5dp"
                         android:textSize="17sp"
-                        android:text="El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña toca el saxofón detrás del palenque de paja.
-El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña toca el saxofón detrás del palenque de paja."
                         />
 
                     <TextView
@@ -70,19 +69,58 @@ El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña toca el s
                         android:layout_marginLeft="32dp"
                         android:layout_marginRight="32dp"
                         android:layout_marginTop="10dp"
-                        android:text="@string/title_MySkills"
+                        android:text="@string/title_user_workingxp"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/idWorkingxp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="36dp"
                         android:layout_marginRight="32dp"
                         android:layout_marginTop="5dp"
                         android:textSize="17sp"
-                        android:text="El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña toca el saxofón detrás del palenque de paja.
-El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña toca el saxofón detrás del palenque de paja."
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginRight="32dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/title_user_academics"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/idAcademicsL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="36dp"
+                        android:layout_marginRight="32dp"
+                        android:layout_marginTop="5dp"
+                        android:textSize="17sp"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginRight="32dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/title_user_languages"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/idLanguages"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="36dp"
+                        android:layout_marginRight="32dp"
+                        android:layout_marginTop="5dp"
+                        android:textSize="17sp"
                         />
                 </LinearLayout>
 

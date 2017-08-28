@@ -24,6 +24,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -56,11 +57,14 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
     private View v;
     LocationManager locationManager;
     private GoogleMap googleMap;
-    private String avatar;
+    private String avatar, fullname, email, about;
 
     @BindString(R.string.title_Loading) String loadingText;
     @BindString(R.string.title_edit_profile)String editProfText;
     @BindView(R.id.userAvatar) ImageView avatarUserIV;
+    @BindView(R.id.idNameUser) TextView userFullname;
+    @BindView(R.id.idEmailUser) TextView userEmail;
+    @BindView(R.id.idAbout) TextView userAbout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -122,7 +126,22 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
             Bundle bundle = this.getArguments();
             if (bundle != null) {
                 avatar=bundle.getString("avatar");
+                fullname=bundle.getString("fullname");
+                email = bundle.getString("email");
+                about = bundle.getString("about");
+
                 Picasso.with(getContext()).load(avatar).into(avatarUserIV);
+                userFullname.setText(fullname);
+                userEmail.setText(email);
+                if(!about.equals("null"))
+                {
+                    userAbout.setText(about);
+                }
+                else
+                {
+                    userAbout.setText("-");
+                }
+
             }
         }
         catch (Exception e){

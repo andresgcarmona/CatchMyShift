@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void RequestLogin(){
 
-        MyMethods.LoadingDialog(LoginActivity.this,"Cargando","Cargando Datos...").show();
+       // MyMethods.LoadingDialog(LoginActivity.this,"Cargando","Cargando Datos...").show();
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_DATA,
                 new Response.Listener<String>(){
@@ -88,7 +88,11 @@ public class LoginActivity extends AppCompatActivity {
                                 Log.e("JMMC-USUARIO:",userObject.toString());
                                 btnLogin.setEnabled(false);
                                 Intent intent = new Intent().setClass(getApplicationContext(), UserActivity.class);
+
                                 intent.putExtra("avatar",userObject.getString("avatar"));
+                                intent.putExtra("fullname",userObject.getString("fullname"));
+                                intent.putExtra("email", userObject.getString("email"));
+                                intent.putExtra("about", userObject.getString("about"));
                                 startActivity(intent);
                                 finish();
                             }
