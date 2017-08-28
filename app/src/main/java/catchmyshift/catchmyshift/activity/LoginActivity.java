@@ -51,8 +51,30 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+
+    @OnClick(R.id.button_login)
+    public void Login(){
+
+        btnLogin.setEnabled(false);
+        if(email.getText().equals("")||password.getText().equals("")){
+            MyMethods.InfoDialog(LoginActivity.this,"Advertencia","los campos email y contraseña no deben estar vacíos");
+            btnLogin.setEnabled(true);
+        }
+        else {
+            RequestLogin();
+        }
+    }
+
+    @OnClick(R.id.text_createAccoutn)
+    public void CreateAccount(){
+        Intent intent = new Intent().setClass(getApplicationContext(),CreateUserActivity.class);
+        startActivity(intent);
+    }
+
     public void RequestLogin(){
-        MyMethods.InProgress(findViewById(R.id.intent_activity), "Cargando", getApplicationContext());
+
+        MyMethods.LoadingDialog(LoginActivity.this,"Cargando","Cargando Datos...").show();
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_DATA,
                 new Response.Listener<String>(){
                     @Override
@@ -63,20 +85,19 @@ public class LoginActivity extends AppCompatActivity {
 
                             if (status.equals("200")){
                                 JSONObject userObject = objetUser.getJSONObject("user");
-
+                                Log.e("JMMC-USUARIO:",userObject.toString());
                                 btnLogin.setEnabled(false);
                                 Intent intent = new Intent().setClass(getApplicationContext(), UserActivity.class);
+                                intent.putExtra("avatar",userObject.getString("avatar"));
                                 startActivity(intent);
                                 finish();
                             }
                             else
                             {
-                                MyMethods.Danger(currentView,"ERROR to load data",getApplicationContext()).show();
-                                Log.e("JMMC_Settings", "no soy");
+                                MyMethods.InfoDialog(LoginActivity.this,"Info.","Error al obtener datos");
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Log.e("JMMC", "error 1");
                         }
                     }
                 },
@@ -84,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         //MyMethods.Danger(currentView,"Usuario y contraseña incorrectos",getApplicationContext()).show();
-                        MyMethods.InfoDialog(LoginActivity.this,"Error.","Usuario y contraseña incorrectos").show();
+                        MyMethods.InfoDialog(LoginActivity.this,"Error.","Usuario y/o contraseña incorrectos").show();
                     }
                 }) {
             @Override
@@ -109,6 +130,7 @@ public class LoginActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
+/*
     private void TestingUsers() {
 
         MyMethods.InProgress(currentView,"Loading...",getApplicationContext()).show();
@@ -166,23 +188,6 @@ public class LoginActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
-
-    @OnClick(R.id.button_login)
-    public void Login(){
-        /*btnLogin.setEnabled(false);
-        Intent intent = new Intent().setClass(getApplicationContext(), UserActivity.class);
-        startActivity(intent);
-        finish();*/
-        Log.e("JMMC-INICIO", "Entre metodo");
-        RequestLogin();
-            Log.e("JMMC-FINAL", "SALI metodo");
-    }
-
-    @OnClick(R.id.text_createAccoutn)
-    public void CreateAccount(){
-        Intent intent = new Intent().setClass(getApplicationContext(),CreateUserActivity.class);
-        startActivity(intent);
-    }
-
+*/
 
 }

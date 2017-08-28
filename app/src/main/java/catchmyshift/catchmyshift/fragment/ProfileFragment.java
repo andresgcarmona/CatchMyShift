@@ -17,11 +17,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -32,6 +34,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import butterknife.BindString;
 import butterknife.BindView;
@@ -55,6 +59,7 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
 
     @BindString(R.string.title_Loading) String loadingText;
     @BindString(R.string.title_edit_profile)String editProfText;
+    @BindView(R.id.userAvatar) ImageView avatarUserIV;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -67,6 +72,7 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
         mMapView.onCreate(savedInstanceState);
         mMapView.onResume(); // needed to get the map to display immediately
         mMapView.getMapAsync(this);
+        LoadData();
         return v;
 
     }
@@ -108,6 +114,20 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
                     e.printStackTrace();
                 }
             }
+    }
+
+    public void LoadData(){
+        String avatar;
+        try {
+            Bundle bundle = this.getArguments();
+            if (bundle != null) {
+                avatar=bundle.getString("avatar");
+                Picasso.with(getContext()).load(avatar).into(avatarUserIV);
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
 

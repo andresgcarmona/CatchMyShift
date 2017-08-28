@@ -64,9 +64,8 @@ public class UserActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.getMenu().getItem(0).setChecked(true);
         navigationView.setNavigationItemSelectedListener(this);
-        ProfileFragment profileFragment = new ProfileFragment();
-        manager = getSupportFragmentManager();
-        manager.beginTransaction().replace(R.id.layout_content_user,profileFragment,profileFragment.getTag()).commit();
+
+        LoadUserFragment();
     }
 
     private void hideRevealView() {
@@ -93,9 +92,7 @@ public class UserActivity extends AppCompatActivity
         hideRevealView();
         switch (view.getId()){
             case R.id.nav_profile:
-                ProfileFragment profileFragment = new ProfileFragment();
-                manager = getSupportFragmentManager();
-                manager.beginTransaction().replace(R.id.layout_content_user,profileFragment,profileFragment.getTag()).commit();
+                LoadUserFragment();
                 break;
 
             case R.id.nav_searchJob:
@@ -221,5 +218,28 @@ public class UserActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
+    }
+
+    public void LoadUserFragment(){
+        String avatar;
+        try{
+            Bundle extras = getIntent().getExtras();
+            avatar = extras.getString("avatar");
+
+
+            Bundle bundle = new Bundle();
+            bundle.putString("avatar",avatar);
+
+            ProfileFragment profileFragment = new ProfileFragment();
+            profileFragment.setArguments(bundle);
+            manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.layout_content_user,profileFragment,profileFragment.getTag()).commit();
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+
     }
 }
