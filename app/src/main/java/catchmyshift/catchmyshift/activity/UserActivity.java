@@ -18,8 +18,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 
-import java.util.List;
-import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import catchmyshift.catchmyshift.utilities.MyMethods;
