@@ -74,10 +74,8 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
 
     @OnClick(R.id.idEditUser)
     public void EditUser(Button btnEdit){
-        btnEdit.setText(loadingText);
         Intent intent = new Intent().setClass(getContext(), EditUserActivity.class);
         startActivity(intent);
-        btnEdit.setText(editProfText);
     }
 
     @Override
