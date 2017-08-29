@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimaryDark">#5db4ef</color>
     <color name="colorPrimary">#48a0dc</color>
-    <color name="colorPrimaryDark">#48a0dc</color>
     <color name="colorAccent">#88c057</color>
 
     <color name="colorAccentBtn">#546a79</color>
@@ -30,9 +30,5 @@
     <color name="colorIconsForms">#aaaaaa</color>
 
     <color name="colorTransparent">#bfffffff</color>
-
-
-    <color name="subMenuUser1">#60a9df</color>
-    <color name="subMenuUser2">#78b5e3</color>
 
 </resources>
