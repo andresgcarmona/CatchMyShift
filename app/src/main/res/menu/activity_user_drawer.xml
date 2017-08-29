@@ -3,27 +3,31 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/option1"
-            android:icon="@drawable/profilevd"
-            android:title="@string/title_navdraw_profile" />
+            android:id="@+id/opAbout"
+            android:icon="@drawable/aboutvd"
+            android:title="@string/title_user_about" />
         <item
-            android:id="@+id/option2"
-            android:icon="@drawable/searchvd"
-            android:title="@string/title_navdraw_searchJob" />
+            android:id="@+id/opWorkingExperience"
+            android:icon="@drawable/workingvd"
+            android:title="@string/title_user_workingxp" />
         <item
-            android:id="@+id/option3"
-            android:icon="@drawable/payvd"
-            android:title="@string/title_navdraw_Pay" />
+            android:id="@+id/opAcademicLevels"
+            android:icon="@drawable/academicvd"
+            android:title="@string/title_user_academics" />
         <item
-            android:id="@+id/option4"
-            android:icon="@drawable/myeventsvd"
-            android:title="@string/title_navdraw_myEvents" />
+            android:id="@+id/opLanguages"
+            android:icon="@drawable/languagesvd"
+            android:title="@string/title_user_languages" />
         <item
-            android:id="@+id/option5"
-            android:icon="@drawable/settingsvd"
-            android:title="@string/title_navdraw_settings" />
+            android:id="@+id/opCompanies"
+            android:icon="@drawable/companiesvd"
+            android:title="@string/title_mycompanies" />
         <item
-            android:id="@+id/option6"
+            android:id="@+id/opJobs"
+            android:icon="@drawable/jobsvd"
+            android:title="@string/title_myjobs" />
+        <item
+            android:id="@+id/opLogOut"
             android:icon="@drawable/backvd"
             android:title="@string/title_navdraw_logoff" />
     </group>

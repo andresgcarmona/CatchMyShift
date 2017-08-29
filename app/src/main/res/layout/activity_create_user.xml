@@ -56,6 +56,17 @@
                     android:hint="@string/title_login_email" />
 
                 <EditText
+                    android:id="@+id/textCellphoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="8dp"
+                    android:inputType="phone"
+                    android:background="@drawable/rounded_inputtxt"
+                    android:layout_margin="8dp"
+                    android:textSize="17sp"
+                    android:hint="@string/title_cellphone_number" />
+
+                <EditText
                     android:id="@+id/textPassword"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
