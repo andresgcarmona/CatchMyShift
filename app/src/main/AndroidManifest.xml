@@ -102,7 +102,6 @@
 
         <activity android:name=".activity.EditUserActivity"
             android:parentActivityName=".activity.UserActivity"
-            android:label="@string/title_edit_profile"
             >
         </activity>
 

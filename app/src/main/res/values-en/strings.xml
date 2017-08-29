@@ -225,7 +225,7 @@
     <string name="title_accept">Ok</string>
 
     <string name="permisonSuccess">Permission Granted Successfully!, select the option</string>
-    <string name="permisonFail">Permission Denied 🙁 </string>
+    <string name="permisonFail">Permission Denied</string>
 
     <string name="title_user_about">About</string>
     <string name="title_user_workingxp">Working Experience</string>
