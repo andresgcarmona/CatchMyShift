@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import catchmyshift.catchmyshift.R;
 
 /**
@@ -85,6 +87,31 @@ public class MyMethods {
 
         TextView okDialog = (TextView) dialog.findViewById(R.id.okDialog);
         okDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.hide();
+            }
+        });
+        return dialog;
+    }
+
+    public static Dialog VerifyDialog(Context context, String title){
+        final Dialog dialog = new Dialog(context);
+        dialog.setContentView(R.layout.confirmemail_dialog);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView titledialog = (TextView) dialog.findViewById(R.id.titleEmail);
+        titledialog.setText(title);
+
+        TextView closeDialog = (TextView) dialog.findViewById(R.id.btnClose);
+        closeDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.hide();
+            }
+        });
+
+        TextView confirmDialog = (TextView) dialog.findViewById(R.id.btnResend);
+        confirmDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.hide();

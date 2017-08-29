@@ -239,7 +239,6 @@ public class UserActivity extends AppCompatActivity
     }
 
     public void LoadUserFragment(){
-
         try {
             FileInputStream fileIn = openFileInput("cms.sm");
             InputStreamReader InputRead = new InputStreamReader(fileIn);

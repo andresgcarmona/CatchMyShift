@@ -238,4 +238,8 @@
     <string name="loading">Loading</string>
     <string name="title_error_userpassword">User or password are invalid</string>
 
+    <string name="title_verify_account">We need to verify that this email address belongs to you. Check your email and follow the instruction we sent you.</string>
+    <string name="title_verify_account2">If you don’t see a message in your inbox, make sure that the email address listed above is correct and check your spam or junk mail folders. The email was sent from dontreplay@catchmyshift.com</string>
+    <string name="title_resend_verification">Resend verification email</string>
+
 </resources>

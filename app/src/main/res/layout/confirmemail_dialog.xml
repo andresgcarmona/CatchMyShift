@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/runded_dialog"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/mailvd"
+        android:tint="@color/colorPrimary"
+        />
+
+    <TextView
+        android:id="@+id/titleEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:text="EMAIL"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:textSize="17.5sp"
+        android:textStyle="normal"
+        android:text="@string/title_verify_account"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:text="@string/title_verify_account2"
+        />
+
+    <TextView
+        android:id="@+id/btnResend"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:background="@drawable/norounded"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/title_resend_verification"
+        />
+
+    <TextView
+        android:id="@+id/btnClose"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:background="@drawable/rounded_grey"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:text="@string/title_close"
+        />
+</LinearLayout>
