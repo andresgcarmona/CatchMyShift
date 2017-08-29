@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -18,6 +19,22 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -38,6 +55,9 @@ public class UserActivity extends AppCompatActivity
 
     private LinearLayout mRevealView;
     private boolean hidden = true;
+
+    private String URL_DATAUSER = "http://67.205.138.130/api/user";
+    static final int READ_BLOCK_SIZE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -220,33 +240,76 @@ public class UserActivity extends AppCompatActivity
     }
 
     public void LoadUserFragment(){
-        String avatar, fullname, email, about;
-        try{
-            Bundle extras = getIntent().getExtras();
-            avatar = extras.getString("avatar");
-            fullname = extras.getString("fullname");
-            email = extras.getString("email");
-            about = extras.getString("about");
 
+        try {
+            FileInputStream fileIn = openFileInput("cms.sm");
+            InputStreamReader InputRead = new InputStreamReader(fileIn);
 
-            Bundle bundle = new Bundle();
-            bundle.putString("avatar",avatar);
-            bundle.putString("fullname", fullname);
-            bundle.putString("email", email);
-            bundle.putString("about", about);
+            char[] inputBuffer = new char[READ_BLOCK_SIZE];
+            String FULL_TOKEN = "";
+            int charRead;
 
-
-            ProfileFragment profileFragment = new ProfileFragment();
-            profileFragment.setArguments(bundle);
-            manager = getSupportFragmentManager();
-            manager.beginTransaction().replace(R.id.layout_content_user,profileFragment,profileFragment.getTag()).commit();
-
+            while ((charRead = InputRead.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                FULL_TOKEN += readstring;
+            }
+            InputRead.close();
+            ValidateUser(FULL_TOKEN.toString());
         }
         catch (Exception e){
-            Toast.makeText(getApplicationContext(),"error userActivity",Toast.LENGTH_LONG).show();
-            e.printStackTrace();
+
         }
 
 
+    }
+
+
+    public void ValidateUser(final String FULL_TOKEN){
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_DATAUSER,
+                new Response.Listener<String>(){
+                    @Override
+                    public void onResponse(String response){
+                        try {
+                            String avatar, fullname, email, about;
+
+                            JSONObject objetUser = new JSONObject(response);
+
+                            avatar = objetUser.getString("avatar");
+                            fullname = objetUser.getString("fullname");
+                            email = objetUser.getString("email");
+                            about = objetUser.getString("about");
+
+                            Bundle bundle = new Bundle();
+                            bundle.putString("avatar",avatar);
+                            bundle.putString("fullname", fullname);
+                            bundle.putString("email", email);
+                            bundle.putString("about", about);
+
+                            ProfileFragment profileFragment = new ProfileFragment();
+                            profileFragment.setArguments(bundle);
+                            manager = getSupportFragmentManager();
+                            manager.beginTransaction().replace(R.id.layout_content_user,profileFragment,profileFragment.getTag()).commit();
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {}
+
+                }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Authorization", FULL_TOKEN);
+                Log.e("JMMC", "HEADERS_USERACTIVITY");
+                return headers;
+            }};
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
 }

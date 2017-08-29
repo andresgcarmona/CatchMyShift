@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -23,6 +24,9 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,9 +42,9 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.button_login) Button btnLogin;
     @BindView(R.id.text_createAccoutn) TextView createAccount;
     @BindView(R.id.edittext_email) TextInputEditText email;
-    @BindString(R.string.title_Loading)String loadingText;
     @BindView(R.id.edittext_password) TextInputEditText password;
     @BindString(R.string.loading) String titleLoadingText;
+    @BindString(R.string.title_Loading)String loadingText;
     @BindString(R.string.title_error_userpassword)String errorUserPassText;
     @BindString(R.string.dialog_error_data)String errorLoadData;
 
@@ -161,9 +165,11 @@ public class LoginActivity extends AppCompatActivity {
                             if (!token.equals("null")){
                                 FULL_TOKEN = Bearer.concat(token);
                                 Log.e("JMMC_TOKEN ", FULL_TOKEN);
-
-                                ValidateUser(FULL_TOKEN);
-
+                                SaveToken(FULL_TOKEN);
+                                btnLogin.setEnabled(false);
+                                Intent intent = new Intent().setClass(getApplicationContext(), UserActivity.class);
+                                startActivity(intent);
+                                finish();
                             }
                             else
                             {
@@ -207,6 +213,19 @@ public class LoginActivity extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+    }
+
+    public void SaveToken(String FULL_TOKEN) {
+        try {
+        FileOutputStream fileout=openFileOutput("cms.sm", MODE_PRIVATE);
+        OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
+            outputWriter.write(FULL_TOKEN.toString());
+            outputWriter.close();
+        }
+        catch (Exception e) {
+
+        }
+
     }
 
     public void ValidateUser(final String FULL_TOKEN){
