@@ -12,12 +12,14 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -45,6 +47,7 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
     LocationManager locationManager;
     private GoogleMap googleMap;
     private String avatar, fullname, email, about;
+    String URL_DATA="http://67.205.138.130/";
 
     @BindString(R.string.title_Loading) String loadingText;
     @BindString(R.string.title_edit_profile)String editProfText;
@@ -118,9 +121,24 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
                 email = bundle.getString("email");
                 about = bundle.getString("about");
 
-                Picasso.with(getContext()).load(avatar).into(avatarUserIV);
+
+                String comparation = avatar.substring(0,1);
+                Log.e("JMMC_ AVATAR RESULT", comparation);
+
+                if(comparation.equals("h")){
+                    Picasso.with(getContext()).load(avatar).fit().into(avatarUserIV);
+                    Toast.makeText(getContext(),"es HTTP, " + avatar,Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    String FULL_URL_AVATAR = URL_DATA.concat(avatar);
+                    Picasso.with(getContext()).load(FULL_URL_AVATAR).fit().into(avatarUserIV);
+                    Toast.makeText(getContext(),"es LOCAL, " + FULL_URL_AVATAR,Toast.LENGTH_LONG).show();
+                }
+
                 userFullname.setText(fullname);
                 userEmail.setText(email);
+
                 if(!about.equals("null"))
                 {
                     userAbout.setText(about);
@@ -132,6 +150,7 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
             }
         }
         catch (Exception e){
+            Toast.makeText(getContext(),"error",Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
     }

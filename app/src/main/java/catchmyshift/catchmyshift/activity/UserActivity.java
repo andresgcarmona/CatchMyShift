@@ -17,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -242,6 +243,7 @@ public class UserActivity extends AppCompatActivity
 
         }
         catch (Exception e){
+            Toast.makeText(getApplicationContext(),"error userActivity",Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
 
