@@ -60,13 +60,12 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_profile, container, false);
         ButterKnife.bind(this,v);
 
         mMapView = (MapView) v.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);
-        mMapView.onResume(); // needed to get the map to display immediately
+        mMapView.onResume();
         mMapView.getMapAsync(this);
         LoadData();
         return v;
@@ -127,13 +126,11 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
 
                 if(comparation.equals("h")){
                     Picasso.with(getContext()).load(avatar).fit().into(avatarUserIV);
-                    Toast.makeText(getContext(),"es HTTP, " + avatar,Toast.LENGTH_LONG).show();
                 }
                 else
                 {
                     String FULL_URL_AVATAR = URL_DATA.concat(avatar);
                     Picasso.with(getContext()).load(FULL_URL_AVATAR).fit().into(avatarUserIV);
-                    Toast.makeText(getContext(),"es LOCAL, " + FULL_URL_AVATAR,Toast.LENGTH_LONG).show();
                 }
 
                 userFullname.setText(fullname);
