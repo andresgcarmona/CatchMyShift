@@ -48,24 +48,30 @@ import catchmyshift.catchmyshift.utilities.MyMethods;
 
 public class LoginActivity extends AppCompatActivity {
 
-    @BindView(R.id.button_login) Button btnLogin;
-    @BindView(R.id.text_createAccoutn) TextView createAccount;
-    @BindView(R.id.edittext_email) TextInputEditText email;
-    @BindView(R.id.edittext_password) TextInputEditText password;
-
-    @BindString(R.string.title_Loading)String loadingText;
-    @BindString(R.string.loading) String titleLoadingText;
-    @BindString(R.string.title_Loading)String loadingText;
-    @BindString(R.string.title_error_userpassword)String errorUserPassText;
-    @BindString(R.string.dialog_error_data)String errorLoadData;
+    @BindView(R.id.button_login)
+    Button btnLogin;
+    @BindView(R.id.text_createAccoutn)
+    TextView createAccount;
+    @BindView(R.id.edittext_email)
+    TextInputEditText email;
+    @BindView(R.id.edittext_password)
+    TextInputEditText password;
+    @BindString(R.string.loading)
+    String titleLoadingText;
+    @BindString(R.string.title_Loading)
+    String loadingText;
+    @BindString(R.string.title_error_userpassword)
+    String errorUserPassText;
+    @BindString(R.string.dialog_error_data)
+    String errorLoadData;
 
     View currentView;
 
     //OAUTH REQUEST
-    private String URL_DATA_OAUTH="http://67.205.138.130/oauth/token";
+    private String URL_DATA_OAUTH = "http://67.205.138.130/oauth/token";
     private String GRANT_TYPE = "client_credentials";
     private String CLIENT_ID = "3";
-    private String CLIENT_SECRET= "CT0uLNU8YmacWlnfXsbSpmsEcDhyPsxCXLfTKBXc";
+    private String CLIENT_SECRET = "CT0uLNU8YmacWlnfXsbSpmsEcDhyPsxCXLfTKBXc";
 
 
     //GET TOKEN REQUEST
@@ -89,35 +95,34 @@ public class LoginActivity extends AppCompatActivity {
 
 
     @OnClick(R.id.button_login)
-    public void Login(){
+    public void Login() {
 
-        if(email.getText().equals("")||password.getText().equals("")){
-            MyMethods.InfoDialog(LoginActivity.this,"Advertencia","los campos email y contraseña no deben estar vacíos");
-        }
-        else {
+        if (email.getText().equals("") || password.getText().equals("")) {
+            MyMethods.InfoDialog(LoginActivity.this, "Advertencia", "los campos email y contraseña no deben estar vacíos");
+        } else {
             RequestOauthToken();
         }
     }
 
     @OnClick(R.id.text_createAccoutn)
-    public void CreateAccount(){
-        Intent intent = new Intent().setClass(getApplicationContext(),CreateUserActivity.class);
+    public void CreateAccount() {
+        Intent intent = new Intent().setClass(getApplicationContext(), CreateUserActivity.class);
         startActivity(intent);
     }
 
 
-    public void RequestOauthToken(){
+    public void RequestOauthToken() {
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_DATA_OAUTH,
-                new Response.Listener<String>(){
+                new Response.Listener<String>() {
                     @Override
-                    public void onResponse(String response){
+                    public void onResponse(String response) {
                         try {
                             String OAUTH_TOKEN;
                             JSONObject objetUser = new JSONObject(response);
                             String access_token = objetUser.getString("access_token");
                             OAUTH_TOKEN = Bearer.concat(access_token);
-                            Log.e("JMMC_OAUTHtoken",OAUTH_TOKEN);
+                            Log.e("JMMC_OAUTHtoken", OAUTH_TOKEN);
                             //llamar metodo request_Login
                             RequestLogin(OAUTH_TOKEN);
 
@@ -129,29 +134,31 @@ public class LoginActivity extends AppCompatActivity {
                 },
                 new Response.ErrorListener() {
                     @Override
-                    public void onErrorResponse(VolleyError error) {}
+                    public void onErrorResponse(VolleyError error) {
+                    }
 
                 }) {
             @Override
             public Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String, String> params = new HashMap<String, String>();
 
-                params.put("grant_type", GRANT_TYPE );
-                params.put("client_id", CLIENT_ID );
-                params.put("client_secret", CLIENT_SECRET );
+                params.put("grant_type", GRANT_TYPE);
+                params.put("client_id", CLIENT_ID);
+                params.put("client_secret", CLIENT_SECRET);
                 params.put("scope", "");
 
 
                 Log.e("JMMC", "HEADERS_VERYFIED_OAUTH");
 
                 return params;
-            }};
+            }
+        };
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
 
-    public void RequestLogin(final String OAUTH_TOKEN){
+    public void RequestLogin(final String OAUTH_TOKEN) {
 
         btnLogin.setEnabled(false);
 
@@ -167,14 +174,14 @@ public class LoginActivity extends AppCompatActivity {
 
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_DATA,
-                new Response.Listener<String>(){
+                new Response.Listener<String>() {
                     @Override
-                    public void onResponse(String response){
+                    public void onResponse(String response) {
                         try {
                             JSONObject objetUser = new JSONObject(response);
                             String token = objetUser.getString("token");
 
-                            if (!token.equals("null")){
+                            if (!token.equals("null")) {
                                 FULL_TOKEN = Bearer.concat(token);
                                 Log.e("JMMC_TOKEN ", FULL_TOKEN);
                                 SaveToken(FULL_TOKEN);
@@ -182,14 +189,12 @@ public class LoginActivity extends AppCompatActivity {
                                 Intent intent = new Intent().setClass(getApplicationContext(), UserActivity.class);
                                 startActivity(intent);
                                 finish();
-                            }
-                            else
-                            {
+                            } else {
                                 btnLogin.setEnabled(true);
-                                MyMethods.InfoDialog(LoginActivity.this,"Info.",errorLoadData).show();
+                                MyMethods.InfoDialog(LoginActivity.this, "Info.", errorLoadData).show();
                             }
                         } catch (JSONException e) {
-                            MyMethods.InfoDialog(LoginActivity.this,"Info.",errorLoadData).show();
+                            MyMethods.InfoDialog(LoginActivity.this, "Info.", errorLoadData).show();
                             btnLogin.setEnabled(true);
                             e.printStackTrace();
                         }
@@ -199,7 +204,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         btnLogin.setEnabled(true);
-                        MyMethods.InfoDialog(LoginActivity.this,"Error.",errorUserPassText).show();
+                        MyMethods.InfoDialog(LoginActivity.this, "Error.", errorUserPassText).show();
                         progressDialog.hide();
                     }
                 }) {
@@ -228,7 +233,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.text_linkedIn)
-    public void SignInLinked(){
+    public void SignInLinked() {
         LISessionManager.getInstance(getApplicationContext()).init(this, scope(), new AuthListener() {
             @Override
             public void onAuthSuccess() {
@@ -242,11 +247,11 @@ public class LoginActivity extends AppCompatActivity {
         }, true);
     }
 
-    public static Scope scope(){
+    public static Scope scope() {
         return Scope.build(Scope.R_BASICPROFILE, Scope.W_SHARE, Scope.R_EMAILADDRESS);
     }
 
-    private void getInfo(){
+    private void getInfo() {
         String url = "https://api.linkedin.com/v1/people/~:(id,first-name,last-name,public-profile-url,picture-url,email-address,picture-urls::(original))";
         APIHelper apiHelper = APIHelper.getInstance(getApplicationContext());
         apiHelper.getRequest(this, url, new ApiListener() {
@@ -279,12 +284,11 @@ public class LoginActivity extends AppCompatActivity {
         LISessionManager.getInstance(getApplicationContext()).onActivityResult(this, requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
     }
-/*
-    private void TestingUsers() {
+
     public void SaveToken(String FULL_TOKEN) {
         try {
-        FileOutputStream fileout=openFileOutput("cms.sm", MODE_PRIVATE);
-        OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
+            FileOutputStream fileout=openFileOutput("cms.sm", MODE_PRIVATE);
+            OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
             outputWriter.write(FULL_TOKEN.toString());
             outputWriter.close();
         }
@@ -293,6 +297,12 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
+}
+
+
+/*
+    private void TestingUsers() {
+
 
     public void ValidateUser(final String FULL_TOKEN){
 
@@ -345,3 +355,4 @@ public class LoginActivity extends AppCompatActivity {
 
 
 }
+*/
