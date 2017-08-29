@@ -1,7 +1,6 @@
 package catchmyshift.catchmyshift.activity;
 
 import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -11,7 +10,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
@@ -30,7 +28,6 @@ import com.linkedin.platform.listeners.ApiResponse;
 import com.linkedin.platform.listeners.AuthListener;
 import com.linkedin.platform.utils.Scope;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -128,6 +125,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
                         } catch (JSONException e) {
+                            MyMethods.InfoDialog(LoginActivity.this, "Error", errorLoadData).show();
                             e.printStackTrace();
                         }
                     }
@@ -135,8 +133,8 @@ public class LoginActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        MyMethods.InfoDialog(LoginActivity.this, "Error", errorLoadData).show();
                     }
-
                 }) {
             @Override
             public Map<String, String> getParams() throws AuthFailureError {
