@@ -21,6 +21,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 import java.io.ByteArrayOutputStream;
 
 import butterknife.BindString;
@@ -52,6 +54,8 @@ public class EditUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_user);
         ButterKnife.bind(this);
+
+        LoadDataUser();
     }
 
     @OnClick(R.id.cameraUserProfile)
@@ -148,7 +152,6 @@ public class EditUserActivity extends AppCompatActivity {
         return temp;
     }
 
-
     private void requestPermission() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
 
@@ -162,6 +165,7 @@ public class EditUserActivity extends AppCompatActivity {
         }
     }
 
+
     private boolean checkPermission() {
         int result = ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (result == PackageManager.PERMISSION_GRANTED) {
@@ -170,7 +174,6 @@ public class EditUserActivity extends AppCompatActivity {
             return false;
         }
     }
-
 
     private void requestPermissionCAM() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
@@ -183,6 +186,7 @@ public class EditUserActivity extends AppCompatActivity {
 
         }
     }
+
 
     private boolean checkPermissionCAM() {
         int result = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
@@ -212,5 +216,12 @@ public class EditUserActivity extends AppCompatActivity {
                 }
                 break;
         }
+    }
+
+    public void LoadDataUser() {
+        Intent intent = getIntent();
+        String avatar = intent.getStringExtra("avatar");
+        Picasso.with(getApplicationContext()).load(avatar).into(imageUser);
+        Log.e("JMMC_INTENTAVATAR",avatar);
     }
 }

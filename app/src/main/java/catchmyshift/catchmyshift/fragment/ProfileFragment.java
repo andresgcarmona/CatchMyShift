@@ -5,6 +5,7 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
@@ -75,6 +76,17 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
     @OnClick(R.id.idEditUser)
     public void EditUser(Button btnEdit){
         Intent intent = new Intent().setClass(getContext(), EditUserActivity.class);
+        String comparation = avatar.substring(0,1);
+        if(comparation.equals("h")){
+            intent.putExtra("avatar",avatar);
+        }
+        else
+        {
+            String FULL_URL_AVATAR = URL_DATA.concat(avatar);
+            intent.putExtra("avatar",FULL_URL_AVATAR);
+        }
+
+        Log.e("JMMC_INTENTAVATAR",intent.toString());
         startActivity(intent);
     }
 
@@ -149,6 +161,8 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
             e.printStackTrace();
         }
     }
+
+
 }
 
 
