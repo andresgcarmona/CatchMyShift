@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import catchmyshift.catchmyshift.R;
-import catchmyshift.catchmyshift.activity.CompanyActivity;
-import catchmyshift.catchmyshift.activity.CreateCompanyActivity;
 
 public class LoginActivityCompany extends AppCompatActivity {
     private Button btnLogin;

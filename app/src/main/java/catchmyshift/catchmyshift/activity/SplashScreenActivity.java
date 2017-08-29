@@ -1,22 +1,15 @@
 package catchmyshift.catchmyshift.activity;
 
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Base64;
-import android.util.Log;
 
 import com.q42.android.scrollingimageview.ScrollingImageView;
 
-import java.security.MessageDigest;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import catchmyshift.catchmyshift.R;
-import catchmyshift.catchmyshift.activity.MainActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 

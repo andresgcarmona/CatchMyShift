@@ -34,6 +34,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -53,14 +55,28 @@ public class LoginActivity extends AppCompatActivity {
 
     @BindString(R.string.title_Loading)String loadingText;
     @BindString(R.string.loading) String titleLoadingText;
+    @BindString(R.string.title_Loading)String loadingText;
     @BindString(R.string.title_error_userpassword)String errorUserPassText;
     @BindString(R.string.dialog_error_data)String errorLoadData;
 
+    View currentView;
+
+    //OAUTH REQUEST
+    private String URL_DATA_OAUTH="http://67.205.138.130/oauth/token";
+    private String GRANT_TYPE = "client_credentials";
+    private String CLIENT_ID = "3";
+    private String CLIENT_SECRET= "CT0uLNU8YmacWlnfXsbSpmsEcDhyPsxCXLfTKBXc";
+
+
+    //GET TOKEN REQUEST
     private String URL_DATA = "http://67.205.138.130/api/login";
     private String ACCEPT = "application/json";
-    private String AUTHORIZATION = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImVjZTkyZTA2NzdlYjUzYmY5ZjhjMjUxYjNiMTU1YjA3YmRhNmQxZDQ4OTIwYTVhZDM4MDBiYzg2MmEwYzAzNzc4MGM3YWRiMDZmYjY5OGY5In0.eyJhdWQiOiIzIiwianRpIjoiZWNlOTJlMDY3N2ViNTNiZjlmOGMyNTFiM2IxNTViMDdiZGE2ZDFkNDg5MjBhNWFkMzgwMGJjODYyYTBjMDM3NzgwYzdhZGIwNmZiNjk4ZjkiLCJpYXQiOjE1MDM4NzMxNTgsIm5iZiI6MTUwMzg3MzE1OCwiZXhwIjoxNTM1NDA5MTU4LCJzdWIiOiIiLCJzY29wZXMiOltdfQ.ITkGEZWj2ZbvMBiiLKANKWwN6q9qsbqWVtn7u0ry24GDz8J6GXEMehajEJRVDTwGPVVA8xbOL_J3HwsWarJZIE1jMREHdG90jC32v9m2uNoHgGb4Sya1n0eL-pQfwYBY_vrWMpC3uthdMHEYYE40GmHft0CD7JKqt4t1IAnqQa2eabYkoUAsV_F7N8I4pka9xSBZFc20IR0K2rDWMGkN5SXQt4oSbgxVFe1S8NoGxj3VHGkTT_ekP5y_8NxMQjd6UxojdzwE7LVAbix36A6XcqoUiOByUFjbzQILvb5ISEowmU7ZSS8xgvFKKGZyoQURiiKixSysXSgZzzCxVzzoM6P58wDupJ9YQef2vEaIqjMuE2j9njgDavp9vCiQX1tJ7WH-JF__C-1bC5_V7m8KqLGH_FEbBn1UHKlHy0rl4PfB5c0OifBG4KbPRLu1VWRMQSsVJKQGR9ZBSmB0m49gJ2aRRt1VaqzyNVYPpTBClmfXEPvHQRsBmgLCuaobpLOHwbzkQ1loblPBwGtJ2iWuKCNRjQUVxNBC47vnpJwDQE7YGjnKrM2h8tjJRpmyEJ4a-FlNmY_7eyfyGfjMyfXa_dE9ouceZ_34U-AxCSOS52KfwXwOm0qAOENu8_aH7DXqHAJvxgc0Fu7-K1DteBupgDNGteQvYKNDrGVghxyCqoU";
 
-    View currentView;
+    //VALIDATE USER REQUEST
+    private String URL_DATAUSER = "http://67.205.138.130/api/user";
+    private String Bearer = "Bearer ";
+    private String FULL_TOKEN;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
             MyMethods.InfoDialog(LoginActivity.this,"Advertencia","los campos email y contraseña no deben estar vacíos");
         }
         else {
-            RequestLogin();
+            RequestOauthToken();
         }
     }
 
@@ -89,12 +105,55 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void RequestLogin(){
+
+    public void RequestOauthToken(){
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_DATA_OAUTH,
+                new Response.Listener<String>(){
+                    @Override
+                    public void onResponse(String response){
+                        try {
+                            String OAUTH_TOKEN;
+                            JSONObject objetUser = new JSONObject(response);
+                            String access_token = objetUser.getString("access_token");
+                            OAUTH_TOKEN = Bearer.concat(access_token);
+                            Log.e("JMMC_OAUTHtoken",OAUTH_TOKEN);
+                            //llamar metodo request_Login
+                            RequestLogin(OAUTH_TOKEN);
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {}
+
+                }) {
+            @Override
+            public Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String, String> params = new HashMap<String, String>();
+
+                params.put("grant_type", GRANT_TYPE );
+                params.put("client_id", CLIENT_ID );
+                params.put("client_secret", CLIENT_SECRET );
+                params.put("scope", "");
+
+
+                Log.e("JMMC", "HEADERS_VERYFIED_OAUTH");
+
+                return params;
+            }};
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+    }
+
+    public void RequestLogin(final String OAUTH_TOKEN){
 
         btnLogin.setEnabled(false);
-        //MyMethods.LoadingDialog(LoginActivity.this,titleLoadingText,loadingText).show();
-
-
 
         final Dialog progressDialog = new Dialog(LoginActivity.this);
         progressDialog.setContentView(R.layout.loading_dialog);
@@ -107,26 +166,20 @@ public class LoginActivity extends AppCompatActivity {
         progressDialog.show();
 
 
-
-
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_DATA,
                 new Response.Listener<String>(){
                     @Override
                     public void onResponse(String response){
                         try {
                             JSONObject objetUser = new JSONObject(response);
-                            String status = objetUser.getString("status");
+                            String token = objetUser.getString("token");
 
-                            if (status.equals("200")){
-                                JSONObject userObject = objetUser.getJSONObject("user");
-                                Log.e("JMMC-USUARIO:",userObject.toString());
+                            if (!token.equals("null")){
+                                FULL_TOKEN = Bearer.concat(token);
+                                Log.e("JMMC_TOKEN ", FULL_TOKEN);
+                                SaveToken(FULL_TOKEN);
                                 btnLogin.setEnabled(false);
                                 Intent intent = new Intent().setClass(getApplicationContext(), UserActivity.class);
-
-                                intent.putExtra("avatar",userObject.getString("avatar"));
-                                intent.putExtra("fullname",userObject.getString("fullname"));
-                                intent.putExtra("email", userObject.getString("email"));
-                                intent.putExtra("about", userObject.getString("about"));
                                 startActivity(intent);
                                 finish();
                             }
@@ -136,6 +189,7 @@ public class LoginActivity extends AppCompatActivity {
                                 MyMethods.InfoDialog(LoginActivity.this,"Info.",errorLoadData).show();
                             }
                         } catch (JSONException e) {
+                            MyMethods.InfoDialog(LoginActivity.this,"Info.",errorLoadData).show();
                             btnLogin.setEnabled(true);
                             e.printStackTrace();
                         }
@@ -149,14 +203,16 @@ public class LoginActivity extends AppCompatActivity {
                         progressDialog.hide();
                     }
                 }) {
+
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 HashMap<String, String> headers = new HashMap<String, String>();
                 headers.put("Accept", ACCEPT);
-                headers.put("Authorization", AUTHORIZATION);
+                headers.put("Authorization", OAUTH_TOKEN);
                 Log.e("JMMC", "HEADERS");
                 return headers;
             }
+
             @Override
             public Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String, String> params = new HashMap<String, String>();
@@ -225,38 +281,46 @@ public class LoginActivity extends AppCompatActivity {
     }
 /*
     private void TestingUsers() {
+    public void SaveToken(String FULL_TOKEN) {
+        try {
+        FileOutputStream fileout=openFileOutput("cms.sm", MODE_PRIVATE);
+        OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
+            outputWriter.write(FULL_TOKEN.toString());
+            outputWriter.close();
+        }
+        catch (Exception e) {
 
-        MyMethods.InProgress(currentView,"Loading...",getApplicationContext()).show();
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_DATA,
-                new Response.Listener<String>() {
+        }
+
+    }
+
+    public void ValidateUser(final String FULL_TOKEN){
+
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_DATAUSER,
+                new Response.Listener<String>(){
                     @Override
-                    public void onResponse(String response) {
-                        MyMethods.Success(currentView,"Data loaded",getApplicationContext()).show();
+                    public void onResponse(String response){
                         try {
 
-                            JSONArray arrayUser = new JSONArray(response);
+                            JSONObject objetUser = new JSONObject(response);
+                            //String user = objetUser.getString("avatar");
 
-                            for(int i =0; i<arrayUser.length();i++){
-                                JSONObject objectUser = arrayUser.getJSONObject(i);
 
-                                Log.e("JMMC_User",objectUser.getString("email"));
-                                Log.e("JMMC_Avatar",objectUser.getString("avatar"));
-                                Log.e("JMMC_FullName",objectUser.getString("fullname"));
-                                Log.e("JMMC_Settings",objectUser.getString("settings"));
+                            Log.e("JMMC",objetUser.toString());
+                            Log.e("JMMC_AVATAR",objetUser.getString("avatar"));
 
-                                if (objectUser.getString("settings")==null|| objectUser.getString("settings").equals("null")){
-                                    Log.e("JMMC_Settings", "si soy");
-                                }
-                                else
-                                {
-                                    Log.e("JMMC_Settings", "no soy");
-                                    JSONObject settingsObject = objectUser.getJSONObject("settings");
-                                    Log.e("JMMC_EmailPublic", settingsObject.getString("is_email_public"));
-                                }
+                            btnLogin.setEnabled(false);
+                            Intent intent = new Intent().setClass(getApplicationContext(), UserActivity.class);
 
-                                Log.e("end","----------------------------------------------------------");
+                            intent.putExtra("FULL_TOKEN",FULL_TOKEN);
+                            intent.putExtra("avatar",objetUser.getString("avatar"));
+                            intent.putExtra("fullname",objetUser.getString("fullname"));
+                            intent.putExtra("email", objetUser.getString("email"));
+                            intent.putExtra("about", objetUser.getString("about"));
+                            startActivity(intent);
+                            finish();
 
-                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -264,23 +328,20 @@ public class LoginActivity extends AppCompatActivity {
                 },
                 new Response.ErrorListener() {
                     @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e("JMMC",error.getCause().getMessage());
-                        MyMethods.Danger(currentView,"ERROR to load data",getApplicationContext()).show();
-                    }
-                }){
+                    public void onErrorResponse(VolleyError error) {}
+
+                }) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
-                HashMap < String, String > headers = new HashMap< String, String >();
-                headers.put("Accept",ACCEPT);
-                headers.put("Authorization",AUTHORIZATION);
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Authorization", FULL_TOKEN);
+                Log.e("JMMC", "HEADERS_VERYFIED");
                 return headers;
-            }
-        };
+            }};
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
-*/
+
 
 }

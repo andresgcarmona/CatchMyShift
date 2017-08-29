@@ -6,18 +6,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
-import android.location.Geocoder;
 import android.location.Location;
-import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,18 +19,16 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Target;
 
 import butterknife.BindString;
 import butterknife.BindView;
@@ -44,9 +36,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import catchmyshift.catchmyshift.R;
 import catchmyshift.catchmyshift.activity.EditUserActivity;
-
-import static android.content.Context.LOCATION_SERVICE;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,6 +47,7 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
     LocationManager locationManager;
     private GoogleMap googleMap;
     private String avatar, fullname, email, about;
+    String URL_DATA="http://67.205.138.130/";
 
     @BindString(R.string.title_Loading) String loadingText;
     @BindString(R.string.title_edit_profile)String editProfText;
@@ -70,13 +60,12 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_profile, container, false);
         ButterKnife.bind(this,v);
 
         mMapView = (MapView) v.findViewById(R.id.mapView);
         mMapView.onCreate(savedInstanceState);
-        mMapView.onResume(); // needed to get the map to display immediately
+        mMapView.onResume();
         mMapView.getMapAsync(this);
         LoadData();
         return v;
@@ -131,9 +120,22 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
                 email = bundle.getString("email");
                 about = bundle.getString("about");
 
-                Picasso.with(getContext()).load(avatar).into(avatarUserIV);
+
+                String comparation = avatar.substring(0,1);
+                Log.e("JMMC_ AVATAR RESULT", comparation);
+
+                if(comparation.equals("h")){
+                    Picasso.with(getContext()).load(avatar).fit().into(avatarUserIV);
+                }
+                else
+                {
+                    String FULL_URL_AVATAR = URL_DATA.concat(avatar);
+                    Picasso.with(getContext()).load(FULL_URL_AVATAR).fit().into(avatarUserIV);
+                }
+
                 userFullname.setText(fullname);
                 userEmail.setText(email);
+
                 if(!about.equals("null"))
                 {
                     userAbout.setText(about);
@@ -145,6 +147,7 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
             }
         }
         catch (Exception e){
+            Toast.makeText(getContext(),"error",Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
     }
