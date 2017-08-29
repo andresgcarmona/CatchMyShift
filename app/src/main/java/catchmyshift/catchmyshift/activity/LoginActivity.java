@@ -21,6 +21,14 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.linkedin.platform.APIHelper;
+import com.linkedin.platform.LISessionManager;
+import com.linkedin.platform.errors.LIApiError;
+import com.linkedin.platform.errors.LIAuthError;
+import com.linkedin.platform.listeners.ApiListener;
+import com.linkedin.platform.listeners.ApiResponse;
+import com.linkedin.platform.listeners.AuthListener;
+import com.linkedin.platform.utils.Scope;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,16 +49,18 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.button_login) Button btnLogin;
     @BindView(R.id.text_createAccoutn) TextView createAccount;
     @BindView(R.id.edittext_email) TextInputEditText email;
-    @BindString(R.string.title_Loading)String loadingText;
     @BindView(R.id.edittext_password) TextInputEditText password;
+
+    @BindString(R.string.title_Loading)String loadingText;
     @BindString(R.string.loading) String titleLoadingText;
     @BindString(R.string.title_error_userpassword)String errorUserPassText;
     @BindString(R.string.dialog_error_data)String errorLoadData;
 
-    View currentView;
     private String URL_DATA = "http://67.205.138.130/api/login";
     private String ACCEPT = "application/json";
     private String AUTHORIZATION = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImVjZTkyZTA2NzdlYjUzYmY5ZjhjMjUxYjNiMTU1YjA3YmRhNmQxZDQ4OTIwYTVhZDM4MDBiYzg2MmEwYzAzNzc4MGM3YWRiMDZmYjY5OGY5In0.eyJhdWQiOiIzIiwianRpIjoiZWNlOTJlMDY3N2ViNTNiZjlmOGMyNTFiM2IxNTViMDdiZGE2ZDFkNDg5MjBhNWFkMzgwMGJjODYyYTBjMDM3NzgwYzdhZGIwNmZiNjk4ZjkiLCJpYXQiOjE1MDM4NzMxNTgsIm5iZiI6MTUwMzg3MzE1OCwiZXhwIjoxNTM1NDA5MTU4LCJzdWIiOiIiLCJzY29wZXMiOltdfQ.ITkGEZWj2ZbvMBiiLKANKWwN6q9qsbqWVtn7u0ry24GDz8J6GXEMehajEJRVDTwGPVVA8xbOL_J3HwsWarJZIE1jMREHdG90jC32v9m2uNoHgGb4Sya1n0eL-pQfwYBY_vrWMpC3uthdMHEYYE40GmHft0CD7JKqt4t1IAnqQa2eabYkoUAsV_F7N8I4pka9xSBZFc20IR0K2rDWMGkN5SXQt4oSbgxVFe1S8NoGxj3VHGkTT_ekP5y_8NxMQjd6UxojdzwE7LVAbix36A6XcqoUiOByUFjbzQILvb5ISEowmU7ZSS8xgvFKKGZyoQURiiKixSysXSgZzzCxVzzoM6P58wDupJ9YQef2vEaIqjMuE2j9njgDavp9vCiQX1tJ7WH-JF__C-1bC5_V7m8KqLGH_FEbBn1UHKlHy0rl4PfB5c0OifBG4KbPRLu1VWRMQSsVJKQGR9ZBSmB0m49gJ2aRRt1VaqzyNVYPpTBClmfXEPvHQRsBmgLCuaobpLOHwbzkQ1loblPBwGtJ2iWuKCNRjQUVxNBC47vnpJwDQE7YGjnKrM2h8tjJRpmyEJ4a-FlNmY_7eyfyGfjMyfXa_dE9ouceZ_34U-AxCSOS52KfwXwOm0qAOENu8_aH7DXqHAJvxgc0Fu7-K1DteBupgDNGteQvYKNDrGVghxyCqoU";
+
+    View currentView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -161,6 +171,58 @@ public class LoginActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
+    @OnClick(R.id.text_linkedIn)
+    public void SignInLinked(){
+        LISessionManager.getInstance(getApplicationContext()).init(this, scope(), new AuthListener() {
+            @Override
+            public void onAuthSuccess() {
+                getInfo();
+            }
+
+            @Override
+            public void onAuthError(LIAuthError error) {
+
+            }
+        }, true);
+    }
+
+    public static Scope scope(){
+        return Scope.build(Scope.R_BASICPROFILE, Scope.W_SHARE, Scope.R_EMAILADDRESS);
+    }
+
+    private void getInfo(){
+        String url = "https://api.linkedin.com/v1/people/~:(id,first-name,last-name,public-profile-url,picture-url,email-address,picture-urls::(original))";
+        APIHelper apiHelper = APIHelper.getInstance(getApplicationContext());
+        apiHelper.getRequest(this, url, new ApiListener() {
+            @Override
+            public void onApiSuccess(ApiResponse apiResponse) {
+
+                try {
+                    JSONObject jsonObject = apiResponse.getResponseDataAsJson();
+                    String firstName = jsonObject.getString("firstName");
+                    String lastName = jsonObject.getString("lastName");
+                    String pictureUrl = jsonObject.getString("pictureUrl");
+                    String emailAddress = jsonObject.getString("emailAddress");
+                    Log.e("JMMC LinkedIn = ", firstName + " " + lastName + " email = " + emailAddress);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Log.e("JMMC ERROR", e.getMessage());
+                }
+
+            }
+
+            @Override
+            public void onApiError(LIApiError LIApiError) {
+                Log.e("Error Info: ", LIApiError.getMessage());
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        LISessionManager.getInstance(getApplicationContext()).onActivityResult(this, requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 /*
     private void TestingUsers() {
 
