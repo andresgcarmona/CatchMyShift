@@ -189,11 +189,11 @@ public class UserActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         int id = item.getItemId();
         switch (id){
-            case R.id.option1:
+            case R.id.opAbout:
                 drawer.closeDrawer(GravityCompat.START);
 
                 break;
-            case R.id.option2:
+            case R.id.opWorkingExperience:
 
                 drawer.closeDrawer(GravityCompat.START);
                 //mapUserFragment = new MapUserFragment();
@@ -202,23 +202,26 @@ public class UserActivity extends AppCompatActivity
                 //fragmentTransaction.commit();
 
                 break;
-            case R.id.option3:
+            case R.id.opAcademicLevels:
 
                 drawer.closeDrawer(GravityCompat.START);
                 break;
-            case R.id.option4:
+            case R.id.opLanguages:
 
                 drawer.closeDrawer(GravityCompat.START);
                 break;
-            case R.id.option5:
+            case R.id.opCompanies:
 
                 drawer.closeDrawer(GravityCompat.START);
                 break;
-            case R.id.option6:
+            case R.id.opJobs:
                 drawer.closeDrawer(GravityCompat.START);
 
                 break;
+            case R.id.opLogOut:
+                drawer.closeDrawer(GravityCompat.START);
 
+                break;
             default:
 
                 drawer.closeDrawer(GravityCompat.START);
