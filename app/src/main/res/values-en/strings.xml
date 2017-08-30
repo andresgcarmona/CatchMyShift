@@ -246,4 +246,19 @@
 
     <string name="title_mycompanies">My Companies</string>
     <string name="title_myjobs">My Jobs</string>
+
+    <string name="title_puesto">Job position</string>
+    <string name="title_sector_industrial">Your industry sector</string>
+    <string name="title_company_we">Company</string>
+    <string name="title_descripcion">Description</string>
+    <string name="title_start_date">Start date</string>
+    <string name="title_finish_date">End date</string>
+    <string name="title_nombre_supervisor">Supervisor name</string>
+    <string name="title_numero_supervisor">Supervisor number</string>
+    <string name="title_trabajo_actual">Current job</string>
+    <string name="title_describe_puesto">Enter your job position</string>
+    <string name="title_describe_industria">Select the industry</string>
+    <string name="title_empresa">Company</string>
+    <string name="title_descripcion_empleo">Write something about this job</string>
+    <string name="title_dateform">MM/DD/YYYY</string>
 </resources>

@@ -244,4 +244,18 @@
     <string name="title_mycompanies">Mis empresas</string>
     <string name="title_myjobs">Mis trabajos</string>
 
+    <string name="title_puesto">Puesto</string>
+    <string name="title_sector_industrial">Sector Industrial</string>
+    <string name="title_company_we">Compañía</string>
+    <string name="title_descripcion">Descripción</string>
+    <string name="title_start_date">Fecha de inicio</string>
+    <string name="title_finish_date">Fecha de término</string>
+    <string name="title_nombre_supervisor">Nombre del supervisor</string>
+    <string name="title_numero_supervisor">Numero del supervisor</string>
+    <string name="title_trabajo_actual">Trabajo actual</string>
+    <string name="title_describe_puesto">Escribe tu puesto</string>
+    <string name="title_describe_industria">Selecciona la industria</string>
+    <string name="title_empresa">Empresa</string>
+    <string name="title_descripcion_empleo">Describe el empleo</string>
+    <string name="title_dateform">MM/DD/YYYY</string>
 </resources>

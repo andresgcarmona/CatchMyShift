@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="catchmyshift.catchmyshift.activity.WExperienceActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/title_user_workingxp"
+                android:layout_marginTop="16dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/txt_puesto"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="8dp"
+                    android:inputType="text"
+                    android:background="@drawable/rounded_inputtxt"
+                    android:layout_margin="8dp"
+                    android:textSize="17sp"
+                    android:hint="@string/title_puesto"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/title_sector_industrial"
+                android:layout_marginTop="16dp"
+                android:textSize="17dp"
+                />
+
+            <Spinner
+                android:id="@+id/sp_sector_industrial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:prompt="@string/title_describe_industria"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/txt_company"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="8dp"
+                    android:inputType="text"
+                    android:background="@drawable/rounded_inputtxt"
+                    android:layout_margin="8dp"
+                    android:textSize="17sp"
+                    android:hint="@string/title_company_we"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/txt_descripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="8dp"
+                    android:inputType="text"
+                    android:background="@drawable/rounded_inputtxt"
+                    android:layout_margin="8dp"
+                    android:textSize="17sp"
+                    android:hint="@string/title_descripcion"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+
+
+                <TextView
+                    android:id="@+id/idfecha_inicial"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="left|center"
+                    android:paddingLeft="8dp"
+                    android:background="@drawable/rounded_inputtxt"
+                    android:drawableRight="@drawable/datecompanyvd"
+                    android:layout_margin="8dp"
+                    android:textSize="17sp"
+                    android:hint="@string/title_start_date"/>
+
+
+                <TextView
+                    android:id="@+id/idfecha_final"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="left|center"
+                    android:paddingLeft="8dp"
+                    android:background="@drawable/rounded_inputtxt"
+                    android:drawableRight="@drawable/datecompanyvd"
+                    android:layout_margin="8dp"
+                    android:textSize="17sp"
+                    android:hint="@string/title_finish_date"/>
+
+
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/txt_supervisor_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="8dp"
+                    android:inputType="text"
+                    android:background="@drawable/rounded_inputtxt"
+                    android:layout_margin="8dp"
+                    android:textSize="17sp"
+                    android:hint="@string/title_nombre_supervisor"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/txt_supervisor_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="8dp"
+                    android:inputType="text"
+                    android:background="@drawable/rounded_inputtxt"
+                    android:layout_margin="8dp"
+                    android:textSize="17sp"
+                    android:hint="@string/title_numero_supervisor"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Switch
+                android:id="@+id/sw_trabajo_actual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title_trabajo_actual"
+                android:textSize="17dp"
+                android:paddingLeft="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal"
+                android:gravity="bottom">
+                <RelativeLayout
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/confirmEditProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:drawableLeft="@drawable/okvd"
+                        android:drawableTint="@color/colorWhiteText"
+                        android:paddingLeft="16dp"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:background="@color/colorAccent"
+                        android:clickable="true"
+                        android:layout_alignParentLeft="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/cancelEditProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:drawableRight="@drawable/cancelvd"
+                        android:drawableTint="@color/colorWhiteText"
+                        android:paddingRight="16dp"
+                        android:layout_alignParentRight="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:background="@color/colorAccentBtn"
+                        android:clickable="true" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

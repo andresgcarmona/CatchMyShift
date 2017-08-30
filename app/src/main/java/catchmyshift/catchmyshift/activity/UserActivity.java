@@ -196,6 +196,8 @@ public class UserActivity extends AppCompatActivity
             case R.id.opWorkingExperience:
 
                 drawer.closeDrawer(GravityCompat.START);
+                Intent weintent = new Intent().setClass(getApplicationContext(), WExperienceActivity.class);
+                startActivity(weintent);
                 //mapUserFragment = new MapUserFragment();
                 //manager = getSupportFragmentManager();
                 //fragmentTransaction = manager.beginTransaction().replace(R.id.layout_content_user, mapUserFragment,mapUserFragment.getTag());
