@@ -287,8 +287,6 @@
     <string name="title_warning">Warning</string>
     <string name="title_setemail">You must enter an email address</string>
     <string name="title_equalpass">Your password and confirm password field must be equals</string>
-    <string name="title_setpassword">Set a password</string>
-    <string name="title_setvalidEmail">Set a valid email address</string>
 
     <string name="title_nuevo_empleo">New Vancancy</string>
     <string name="title_nombre_empleo">Job name</string>
