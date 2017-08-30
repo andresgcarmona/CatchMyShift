@@ -92,15 +92,16 @@
             android:name=".activity.CreateUserActivity"
             android:label="@string/title_blank"
             android:parentActivityName=".activity.LoginActivity" />
-        <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.MainActivity" />
         <activity
             android:name=".activity.EditUserActivity"
+            android:parentActivityName=".activity.UserActivity" />
+        <activity
+            android:name=".activity.WExperienceActivity"
             android:parentActivityName=".activity.UserActivity"></activity>
-        <activity android:name=".activity.WExperienceActivity"
-            android:parentActivityName=".activity.UserActivity"
-            >
-        </activity>
-
+        <activity
+            android:name=".activity.EducationActivity"
+            android:parentActivityName=".activity.UserActivity"></activity>
     </application>
 
 </manifest>

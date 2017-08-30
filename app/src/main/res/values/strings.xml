@@ -258,4 +258,11 @@
     <string name="title_empresa">Empresa</string>
     <string name="title_descripcion_empleo">Describe el empleo</string>
     <string name="title_dateform">MM/DD/YYYY</string>
+
+    <string name="title_educacion">Educación</string>
+    <string name="title_nivel_estudio">Nivel de estudio</string>
+    <string name="title_estado_nivel_estudio">Estado de nivel de estudio</string>
+    <string name="title_institucion">Institución</string>
+    <string name="title_start_year">Año de inicio</string>
+    <string name="title_finish_year">Año de término</string>
 </resources>
