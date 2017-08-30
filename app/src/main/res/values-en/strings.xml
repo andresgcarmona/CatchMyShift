@@ -272,4 +272,10 @@
     <string name="title_lenguajes">Language</string>
     <string name="title_lenguajes_nivel">Level</string>
     <string name="title_comentarios">Comments (optional)</string>
+
+    <string name="title_warning">Warning</string>
+    <string name="title_setemail">You must set an email address</string>
+    <string name="title_equalpass">Your password and confirm password field must be equals</string>
+    <string name="title_setpassword">Set a password</string>
+    <string name="title_setvalidEmail">Set a valid email address</string>
 </resources>
