@@ -288,5 +288,7 @@
     <string name="title_setpassword">Ingrese una contraseña</string>
     <string name="title_setvalidEmail">Ingrese una dirección de correo valida</string>
 
+    <string name="title_userpassMust">Ingrese un usuario y contraseña</string>
+
 
 </resources>
