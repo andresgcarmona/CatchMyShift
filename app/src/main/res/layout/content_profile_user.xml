@@ -26,16 +26,6 @@
             android:text="@string/title_edit_profile"
             />
 
-        <RelativeLayout
-            android:id="@+id/mapUserReplaceContent"
-            android:layout_width="match_parent"
-            android:layout_height="200dp">
-            <com.google.android.gms.maps.MapView
-                android:id="@+id/mapView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </RelativeLayout>
-
 
                 <LinearLayout
                     android:layout_width="match_parent"

@@ -41,7 +41,7 @@ import catchmyshift.catchmyshift.activity.EditUserActivity;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ProfileFragment extends Fragment implements OnMapReadyCallback{
+public class ProfileFragment extends Fragment {
 
     private MapView mMapView;
     private View v;
@@ -63,11 +63,6 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
                              Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_profile, container, false);
         ButterKnife.bind(this,v);
-
-        mMapView = (MapView) v.findViewById(R.id.mapView);
-        mMapView.onCreate(savedInstanceState);
-        mMapView.onResume();
-        mMapView.getMapAsync(this);
         LoadData();
         return v;
 
@@ -90,37 +85,6 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
 
         Log.e("JMMC_INTENTAVATAR",intent.toString());
         startActivity(intent);
-    }
-
-    @Override
-    public void onMapReady(GoogleMap mMap) {
-        googleMap = mMap;
-        if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                ActivityCompat.requestPermissions(getActivity(),
-                        new String[]{android.Manifest.permission.ACCESS_COARSE_LOCATION,
-                                android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
-            }
-            return;
-        }
-        else
-            {
-                try
-                {
-                    googleMap.setMyLocationEnabled(true);
-                    locationManager = (LocationManager)getActivity().getSystemService(Context.LOCATION_SERVICE);
-                    Criteria cri = new Criteria();
-
-                    Location loc = locationManager.getLastKnownLocation(locationManager.getBestProvider(cri,false));
-                    CameraPosition camPos = new CameraPosition.Builder().target(new LatLng(loc.getLatitude(),loc.getLongitude())).zoom(15.1f).build();
-                    CameraUpdate camUpdate = CameraUpdateFactory.newCameraPosition(camPos);
-                    googleMap.moveCamera(camUpdate);
-                }
-                catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
     }
 
     public void LoadData(){
