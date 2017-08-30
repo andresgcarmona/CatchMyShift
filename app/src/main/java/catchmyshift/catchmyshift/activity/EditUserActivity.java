@@ -2,6 +2,7 @@ package catchmyshift.catchmyshift.activity;
 
 
 import android.Manifest;
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -18,12 +19,14 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
+import java.util.Calendar;
 
 import butterknife.BindString;
 import butterknife.BindView;
@@ -41,6 +44,7 @@ public class EditUserActivity extends AppCompatActivity {
     @BindString(R.string.permission) String permissions;
     @BindString(R.string.permisonSuccess) String permissionSuccess;
     @BindString(R.string.permisonFail) String permissionFail;
+    @BindView(R.id.idfecha_nac)TextView fechaNacimiento;
 
     Dialog myDialog;
     Button cameraOption, galleryOpcion;
@@ -48,6 +52,7 @@ public class EditUserActivity extends AppCompatActivity {
     private Bitmap bitmap;
     private final int GALLERY_REQUEST = 0;
     private final int CAMERA_REQUEST=1;
+    private int mYear, mMonth, mDay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +61,29 @@ public class EditUserActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         LoadDataUser();
+    }
+
+    @OnClick(R.id.idfecha_nac)
+    public void SetBirthday(){
+        // Get Current Date
+        final Calendar c = Calendar.getInstance();
+        mYear = c.get(Calendar.YEAR);
+        mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
+
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                new DatePickerDialog.OnDateSetListener() {
+
+                    @Override
+                    public void onDateSet(DatePicker view, int year,
+                                          int monthOfYear, int dayOfMonth) {
+
+                        fechaNacimiento.setText((monthOfYear + 1) + "/" + dayOfMonth + "/" + year);
+
+                    }
+                }, mYear, mMonth, mDay);
+        datePickerDialog.show();
     }
 
     @OnClick(R.id.cameraUserProfile)

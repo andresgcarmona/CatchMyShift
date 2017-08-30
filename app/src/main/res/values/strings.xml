@@ -224,7 +224,7 @@
     <string name="permisonSuccess">Permiso Garantizado!, Seleccione Nuevamente la Opción</string>
     <string name="permisonFail">Permiso Denegado</string>
 
-    <string name="title_user_about">Acerca de</string>
+    <string name="title_user_about">Sobre ti</string>
     <string name="title_user_workingxp">Experiencia Laboral</string>
     <string name="title_user_languages">Idiomas</string>
     <string name="title_user_academics">Formación Académica</string>
@@ -306,6 +306,14 @@
     <string name="title_ejemplo_pago">Ej. 512.23</string>
 
     <string name="title_userpassMust">Ingrese un usuario y contraseña</string>
+
+    <string name="title_informacion_personal">Información de usuario</string>
+    <string name="title_segundo_nombre">Segundo nombre (opcional)</string>
+    <string name="title_apellidos">Apellidos</string>
+    <string name="title_fechanac">Fecha de nacimiento</string>
+    <string name="title_sobreti">Sobre ti</string>
+    <string name="title_informacion_locacion">Ubicación e idioma</string>
+    <string name="title_avatar_usuario">Foto de perfil</string>
 
 
 </resources>

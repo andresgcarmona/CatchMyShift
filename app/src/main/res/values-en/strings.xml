@@ -308,4 +308,12 @@
     <string name="title_setvalidEmail">Enter a valid email address</string>
 
     <string name="title_userpassMust">Enter a user and password</string>
+
+    <string name="title_informacion_personal">User’s information</string>
+    <string name="title_segundo_nombre">Middle name (optional)</string>
+    <string name="title_apellidos">Last name</string>
+    <string name="title_fechanac">Birthday</string>
+    <string name="title_sobreti">About you</string>
+    <string name="title_informacion_locacion">User’s location &amp; language</string>
+    <string name="title_avatar_usuario">Public avatar</string>
 </resources>

@@ -31,4 +31,6 @@
 
     <color name="colorTransparent">#bfffffff</color>
 
+    <color name="colorLineSeparator">#a2a9ae</color>
+
 </resources>
