@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="catchmyshift.catchmyshift.activity.JobActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/title_nuevo_empleo"
+                android:layout_margin="16dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/title_company_name"
+                android:layout_marginTop="16dp"
+                android:textSize="17sp"
+                />
+
+            <Spinner
+                android:id="@+id/sp_company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/id_nombreempleo"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="8dp"
+                    android:inputType="text"
+                    android:background="@drawable/rounded_inputtxt"
+                    android:layout_margin="8dp"
+                    android:textSize="17sp"
+                    android:hint="@string/title_nombre_empleo"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/id_puesto"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="8dp"
+                    android:inputType="text"
+                    android:background="@drawable/rounded_inputtxt"
+                    android:layout_margin="8dp"
+                    android:textSize="17sp"
+                    android:hint="@string/title_puesto"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/id_tareas"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="8dp"
+                    android:inputType="text"
+                    android:background="@drawable/rounded_inputtxt"
+                    android:layout_margin="8dp"
+                    android:textSize="17sp"
+                    android:hint="@string/title_tareas"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/id_requerimientos"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="8dp"
+                    android:inputType="text"
+                    android:background="@drawable/rounded_inputtxt"
+                    android:layout_margin="8dp"
+                    android:textSize="17sp"
+                    android:hint="@string/title_requerimientos"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/title_pais"
+                android:layout_marginTop="16dp"
+                android:textSize="17sp"
+                />
+
+            <Spinner
+                android:id="@+id/sp_pais"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/id_direccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="8dp"
+                    android:inputType="text"
+                    android:background="@drawable/rounded_inputtxt"
+                    android:layout_margin="8dp"
+                    android:textSize="17sp"
+                    android:hint="@string/title_direccion"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/title_estado"
+                android:layout_marginTop="16dp"
+                android:textSize="17sp"
+                />
+
+            <Spinner
+                android:id="@+id/sp_estado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/title_city"
+                android:layout_marginTop="16dp"
+                android:textSize="17sp"
+                />
+
+            <Spinner
+                android:id="@+id/sp_ciudad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/id_codigopostal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="8dp"
+                    android:inputType="text"
+                    android:background="@drawable/rounded_inputtxt"
+                    android:layout_margin="8dp"
+                    android:textSize="17sp"
+                    android:hint="@string/title_codigo_postal"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/title_numero_vacantes"
+                android:layout_marginTop="16dp"
+                android:textSize="17sp"
+                />
+
+            <Spinner
+                android:id="@+id/sp_numerovacantes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/title_salario_persona"
+                android:layout_marginTop="16dp"
+                android:textSize="17sp"
+                />
+
+            <Spinner
+                android:id="@+id/sp_currency"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/rounded_inputtxt"
+                android:textSize="17sp"
+                android:hint="@string/title_ejemplo_pago"
+                />
+
+            <TextView
+                android:id="@+id/idfecha_inicial"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="left|center"
+                android:paddingLeft="8dp"
+                android:background="@drawable/rounded_inputtxt"
+                android:drawableRight="@drawable/datecompanyvd"
+                android:layout_margin="8dp"
+                android:textSize="17sp"
+                android:hint="@string/title_start_date"/>
+
+
+            <TextView
+                android:id="@+id/idfecha_final"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="left|center"
+                android:paddingLeft="8dp"
+                android:background="@drawable/rounded_inputtxt"
+                android:drawableRight="@drawable/datecompanyvd"
+                android:layout_margin="8dp"
+                android:textSize="17sp"
+                android:hint="@string/title_finish_date"/>
+
+            <TextView
+                android:id="@+id/idhora_inicial"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="left|center"
+                android:paddingLeft="8dp"
+                android:background="@drawable/rounded_inputtxt"
+                android:drawableRight="@drawable/timevd"
+                android:layout_margin="8dp"
+                android:textSize="17sp"
+                android:hint="@string/title_start_time_job"/>
+
+
+            <TextView
+                android:id="@+id/idhora_final"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="left|center"
+                android:paddingLeft="8dp"
+                android:background="@drawable/rounded_inputtxt"
+                android:drawableRight="@drawable/timevd"
+                android:layout_margin="8dp"
+                android:textSize="17sp"
+                android:hint="@string/title_end_time_job"/>
+
+            <Switch
+                android:id="@+id/sw_trabajo_actual"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:paddingLeft="8dp"
+                android:text="@string/title_publicar_trabajo"
+                android:background="@drawable/rounded_inputtxt"
+                android:textColor="#676767"
+                android:textSize="17sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/title_informacion_pago"
+                android:layout_marginTop="16dp"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/title_numero_vacantes"
+                android:layout_marginTop="16dp"
+                android:textSize="17sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/title_salario"
+                android:layout_marginTop="16dp"
+                android:textSize="17sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/title_dias_laboral"
+                android:layout_marginTop="16dp"
+                android:textSize="17sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/title_catch_fee"
+                android:layout_marginTop="16dp"
+                android:textSize="17sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/title_total"
+                android:layout_marginTop="16dp"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="32dp"
+                android:orientation="horizontal"
+                android:gravity="bottom">
+                <RelativeLayout
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/confirmEditProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:drawableLeft="@drawable/okvd"
+                        android:drawableTint="@color/colorWhiteText"
+                        android:paddingLeft="16dp"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:background="@color/colorAccent"
+                        android:clickable="true"
+                        android:layout_alignParentLeft="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <Button
+                        android:id="@+id/cancelEditProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:drawableRight="@drawable/cancelvd"
+                        android:drawableTint="@color/colorWhiteText"
+                        android:paddingRight="16dp"
+                        android:layout_alignParentRight="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:background="@color/colorAccentBtn"
+                        android:clickable="true" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

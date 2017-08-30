@@ -218,17 +218,21 @@ public class UserActivity extends AppCompatActivity
                 startActivity(lintent);
                 break;
             case R.id.opCompanies:
+
+                drawer.closeDrawer(GravityCompat.START);
                 Intent cintent = new Intent().setClass(getApplicationContext(), CompaniesActivity.class);
                 startActivity(cintent);
-                drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.opJobs:
                 drawer.closeDrawer(GravityCompat.START);
+                Intent jintent = new Intent().setClass(getApplicationContext(), JobActivity.class);
+                startActivity(jintent);
 
                 break;
             case R.id.opLogOut:
                 drawer.closeDrawer(GravityCompat.START);
-
+                Intent lointent = new Intent().setClass(getApplicationContext(), LoginActivity.class);
+                startActivity(lointent);
                 break;
             default:
 

@@ -289,4 +289,21 @@
     <string name="title_equalpass">Your password and confirm password field must be equals</string>
     <string name="title_setpassword">Set a password</string>
     <string name="title_setvalidEmail">Set a valid email address</string>
+
+    <string name="title_nuevo_empleo">New Vancancy</string>
+    <string name="title_nombre_empleo">Job name</string>
+    <string name="title_tareas">Tasks</string>
+    <string name="title_requerimientos">Requirements</string>
+    <string name="title_pais">Country</string>
+    <string name="title_numero_vacantes">Number vacancies</string>
+    <string name="title_salario_persona">Salary per person (daily)</string>
+    <string name="title_start_time_job">Start time</string>
+    <string name="title_end_time_job">End time</string>
+    <string name="title_publicar_trabajo">Publish job?</string>
+    <string name="title_informacion_pago">Payment info</string>
+    <string name="title_total">Total</string>
+    <string name="title_salario">Salary</string>
+    <string name="title_dias_laboral">Days to work</string>
+    <string name="title_catch_fee">Catch My Shift fee</string>
+    <string name="title_ejemplo_pago">Ex. 512.23</string>
 </resources>

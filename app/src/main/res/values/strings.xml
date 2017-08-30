@@ -99,9 +99,6 @@
     <string name="title_quantity_employments_company">Cantidad Empleados</string>
     <string name="title_job_address_company">Dirección de Empleo</string>
     <string name="title_start_date_company">Fecha de Inicio</string>
-    <string name="title_start_time_company">Hora de Inicio</string>
-    <string name="title_end_date_company">Fecha Final</string>
-    <string name="title_end_time_company">Hora Final</string>
     <string name="title_payment_day_company">Pago Diario por Persona</string>
     <string name="title_summary">Resumen</string>
     <string name="title_date_time">Fecha y Hora</string>
@@ -288,5 +285,21 @@
     <string name="title_setpassword">Ingrese una contraseña</string>
     <string name="title_setvalidEmail">Ingrese una dirección de correo valida</string>
 
-
+    <string name="title_nuevo_empleo">Nueva vacante</string>
+    <string name="title_nombre_empleo">Nombre referencia del empleo</string>
+    <string name="title_tareas">Tareas a desempeñar</string>
+    <string name="title_requerimientos">Requerimientos</string>
+    <string name="title_pais">País</string>
+    <string name="title_numero_vacantes">Número de vacantes</string>
+    <string name="title_salario_persona">Salario por persona (por día)</string>
+    <string name="title_start_time_job">Hora de inicio</string>
+    <string name="title_end_time_job">Hora de término</string>
+    <string name="title_publicar_trabajo">¿Publicar trabajo?</string>
+    <string name="title_informacion_pago">Información de pago</string>
+    <string name="title_total">Total</string>
+    <string name="title_salario">Salario</string>
+    <string name="title_dias_laboral">Días a laborar</string>
+    <string name="title_catch_fee">Catch My Shift fee</string>
+    <string name="title_ejemplo_pago">Ej. 512.23</string>
+    
 </resources>

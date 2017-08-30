@@ -98,7 +98,9 @@
             android:parentActivityName=".activity.UserActivity" />
         <activity
             android:name=".activity.CompaniesActivity"
-            android:parentActivityName=".activity.UserActivity"/>
+            android:parentActivityName=".activity.UserActivity" />
+        <activity android:name=".activity.JobActivity"
+            android:parentActivityName=".activity.UserActivity" />
     </application>
 
 </manifest>
