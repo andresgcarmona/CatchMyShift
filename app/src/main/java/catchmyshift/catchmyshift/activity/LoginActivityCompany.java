@@ -37,7 +37,7 @@ public class LoginActivityCompany extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try{
-                    Intent intent = new Intent().setClass(getApplicationContext(),CreateCompanyActivity.class);
+                    Intent intent = new Intent().setClass(getApplicationContext(),CompaniesActivity.class);
                     startActivity(intent);
                 }
 

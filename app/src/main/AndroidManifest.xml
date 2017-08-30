@@ -80,15 +80,6 @@
                 android:value="catchmyshift.catchmyshift.activity.UserActivity" />
         </activity>
         <activity
-            android:name=".activity.CreateCompanyActivity"
-            android:label="@string/title_activity_create_company"
-            android:parentActivityName=".activity.LoginActivityCompany"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="catchmyshift.catchmyshift.activity.LoginActivityCompany" />
-        </activity>
-        <activity
             android:name=".activity.CreateUserActivity"
             android:label="@string/title_blank"
             android:parentActivityName=".activity.LoginActivity" />
@@ -104,7 +95,10 @@
             android:parentActivityName=".activity.UserActivity" />
         <activity
             android:name=".activity.LanguagesActivity"
-            android:parentActivityName=".activity.UserActivity"></activity>
+            android:parentActivityName=".activity.UserActivity" />
+        <activity
+            android:name=".activity.CompaniesActivity"
+            android:parentActivityName=".activity.UserActivity"/>
     </application>
 
 </manifest>

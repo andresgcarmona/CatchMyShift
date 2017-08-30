@@ -218,7 +218,8 @@ public class UserActivity extends AppCompatActivity
                 startActivity(lintent);
                 break;
             case R.id.opCompanies:
-
+                Intent cintent = new Intent().setClass(getApplicationContext(), CompaniesActivity.class);
+                startActivity(cintent);
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.opJobs:

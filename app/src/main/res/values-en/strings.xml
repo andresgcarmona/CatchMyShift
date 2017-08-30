@@ -272,4 +272,15 @@
     <string name="title_lenguajes">Language</string>
     <string name="title_lenguajes_nivel">Level</string>
     <string name="title_comentarios">Comments (optional)</string>
+
+    <string name="title_logo_empresa">Company logo</string>
+    <string name="title_logo_especificaciones">The maximum file size allowed is 200KB. "\n" Minimum image size 200px by 200px</string>
+    <string name="title_company_name">Company name</string>
+    <string name="title_company_descripcion">Company description</string>
+    <string name="title_estado">State</string>
+    <string name="title_municipio">Country</string>
+    <string name="title_codigo_postal">Zip code</string>
+    <string name="title_direccion">Address</string>
+    <string name="title_horario_apertura">Openning time (optional)</string>
+    <string name="title_horario_cierre">Closing time (optional)</string>
 </resources>
