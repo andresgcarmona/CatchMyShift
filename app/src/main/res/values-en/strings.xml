@@ -283,4 +283,10 @@
     <string name="title_direccion">Address</string>
     <string name="title_horario_apertura">Openning time (optional)</string>
     <string name="title_horario_cierre">Closing time (optional)</string>
+
+    <string name="title_warning">Warning</string>
+    <string name="title_setemail">You must set an email address</string>
+    <string name="title_equalpass">Your password and confirm password field must be equals</string>
+    <string name="title_setpassword">Set a password</string>
+    <string name="title_setvalidEmail">Set a valid email address</string>
 </resources>

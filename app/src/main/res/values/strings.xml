@@ -281,4 +281,12 @@
     <string name="title_horario_apertura">Horario de apertura (opcional)</string>
     <string name="title_horario_cierre">Horario de cierre (opcional)</string>
 
+
+    <string name="title_warning">Advertencia</string>
+    <string name="title_setemail">La dirección de correo es requerida</string>
+    <string name="title_equalpass">Los campos contraseña y confimar contraseña deben de ser iguales</string>
+    <string name="title_setpassword">Ingrese una contraseña</string>
+    <string name="title_setvalidEmail">Ingrese una dirección de correo valida</string>
+
+
 </resources>
