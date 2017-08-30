@@ -316,4 +316,10 @@
     <string name="title_sobreti">About you</string>
     <string name="title_informacion_locacion">User’s location &amp; language</string>
     <string name="title_avatar_usuario">Public avatar</string>
+
+    <string name="title_trabajos_publicados">Job published</string>
+    <string name="title_contacto_empresa">Company contact</string>
+    <string name="title_billing">Billing Information</string>
+    <string name="title_settings">Configuration</string>
+    <string name="title_edit_company">Edit company info</string>
 </resources>

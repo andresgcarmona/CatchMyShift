@@ -8,10 +8,12 @@
     tools:context="catchmyshift.catchmyshift.fragment.ContactCompanyFragment"
     tools:showIn="@layout/fragment_contact_company">
 
+
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingTop="20dp"
     >
 
     <TextView
@@ -21,42 +23,53 @@
         android:textStyle="bold"
         android:textAlignment="center"
         android:layout_marginTop="16dp"
-        android:text="@string/title_company" />
+        android:text="@string/title_company_name" />
 
     <TextView
+        android:id="@+id/id_direccion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:textSize="19sp"
-        android:textStyle="bold|italic"
-        android:text="5556503912"
-        android:drawableLeft="@drawable/companyphonevd"/>
+        android:textSize="16sp"
+        android:text="@string/title_direccion"
+        android:drawableLeft="@drawable/locationvd"/>
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:textSize="19sp"
-        android:textStyle="bold|italic"
-        android:drawableLeft="@drawable/companyemailvd"
-        android:text="company@company.com" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/title_MyInterests" />
+        android:text="@string/title_trabajos_publicados" />
+
+    <TextView
+        android:id="@+id/id_trabajospublicados"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña toca el saxofón detrás del palenque de paja. " />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/title_contacto_empresa" />
 
     <TextView
         android:layout_width="match_parent"
@@ -71,13 +84,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/title_MySkills" />
+        android:text="@string/title_billing" />
 
     <TextView
         android:layout_width="match_parent"
@@ -89,6 +102,46 @@
         android:layout_marginBottom="8dp"
         android:text="El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña toca el saxofón detrás del palenque de paja. " />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/title_settings" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña toca el saxofón detrás del palenque de paja. " />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:paddingTop="20dp"
+        >
+
+        <Button
+            android:id="@+id/button_editcompany"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="@color/colorAccent"
+            android:clickable="true"
+            android:text="@string/title_edit_company"
+            android:textColor="@color/colorWhiteText"
+            android:textSize="18sp" />
+    </LinearLayout>
 </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

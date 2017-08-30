@@ -37,6 +37,7 @@ import java.util.Map;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import catchmyshift.catchmyshift.fragment.ContactCompanyFragment;
 import catchmyshift.catchmyshift.utilities.MyMethods;
 import catchmyshift.catchmyshift.fragment.PaymentFragment;
 import catchmyshift.catchmyshift.fragment.ProfileFragment;
@@ -220,8 +221,11 @@ public class UserActivity extends AppCompatActivity
             case R.id.opCompanies:
 
                 drawer.closeDrawer(GravityCompat.START);
-                Intent cintent = new Intent().setClass(getApplicationContext(), CompaniesActivity.class);
-                startActivity(cintent);
+                LoadContactCompanyFragment();
+                //Intent intent = new Intent().setClass(getApplicationContext(), ContactCompanyFragment.class);
+                //startActivity(intent);
+                /*Intent cintent = new Intent().setClass(getApplicationContext(), CompaniesActivity.class);
+                startActivity(cintent);*/
                 break;
             case R.id.opJobs:
                 drawer.closeDrawer(GravityCompat.START);
@@ -251,6 +255,13 @@ public class UserActivity extends AppCompatActivity
         } else {
             super.onBackPressed();
         }
+    }
+
+    public void  LoadContactCompanyFragment(){
+
+        ContactCompanyFragment contactCompanyFragment = new ContactCompanyFragment();
+        manager = getSupportFragmentManager();
+        manager.beginTransaction().replace(R.id.layout_content_user,contactCompanyFragment,contactCompanyFragment.getTag()).commit();
     }
 
     public void LoadUserFragment(){
