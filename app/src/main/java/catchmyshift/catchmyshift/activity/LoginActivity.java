@@ -61,6 +61,8 @@ public class LoginActivity extends AppCompatActivity {
     String errorUserPassText;
     @BindString(R.string.dialog_error_data)
     String errorLoadData;
+    @BindString(R.string.title_warning)String warning;
+    @BindString(R.string.title_userpassMust)String mustuserPassword;
 
     View currentView;
 
@@ -94,10 +96,12 @@ public class LoginActivity extends AppCompatActivity {
     @OnClick(R.id.button_login)
     public void Login() {
 
-        if (email.getText().equals("") || password.getText().equals("")) {
-            MyMethods.InfoDialog(LoginActivity.this, "Advertencia", "los campos email y contraseña no deben estar vacíos");
-        } else {
+        Log.e("JMMMTEXTO",">"+email.getText().toString()+"<"+">"+password.getText().toString()+"<");
+        if (!email.getText().toString().equals("") && !password.getText().toString().equals("")) {
             RequestOauthToken();
+        }
+        else {
+            MyMethods.InfoDialog(LoginActivity.this, warning, mustuserPassword).show();
         }
     }
 

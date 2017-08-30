@@ -285,7 +285,7 @@
     <string name="title_horario_cierre">Closing time (optional)</string>
 
     <string name="title_warning">Warning</string>
-    <string name="title_setemail">You must set an email address</string>
+    <string name="title_setemail">You must enter an email address</string>
     <string name="title_equalpass">Your password and confirm password field must be equals</string>
     <string name="title_setpassword">Set a password</string>
     <string name="title_setvalidEmail">Set a valid email address</string>
@@ -306,4 +306,8 @@
     <string name="title_dias_laboral">Days to work</string>
     <string name="title_catch_fee">Catch My Shift fee</string>
     <string name="title_ejemplo_pago">Ex. 512.23</string>
+    <string name="title_setpassword">Enter a password</string>
+    <string name="title_setvalidEmail">Enter a valid email address</string>
+
+    <string name="title_userpassMust">Enter a user and password</string>
 </resources>
