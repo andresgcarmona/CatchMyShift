@@ -55,7 +55,7 @@
                 android:background="@color/colorAccentBtn"
                 android:clickable="true"
                 android:text="@string/title_searchEmployees"
-                android:textColor="@color/colorWhiteText"
+                android:textColor="@color/colorGreyText"
                 android:textSize="18sp" />
         </LinearLayout>
 
