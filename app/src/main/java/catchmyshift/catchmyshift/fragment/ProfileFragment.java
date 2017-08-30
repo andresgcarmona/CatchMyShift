@@ -86,6 +86,8 @@ public class ProfileFragment extends Fragment implements OnMapReadyCallback{
             intent.putExtra("avatar",FULL_URL_AVATAR);
         }
 
+
+
         Log.e("JMMC_INTENTAVATAR",intent.toString());
         startActivity(intent);
     }
