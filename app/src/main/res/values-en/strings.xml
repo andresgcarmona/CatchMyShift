@@ -264,8 +264,8 @@
 
     <string name="title_educacion">Education</string>
     <string name="title_nivel_estudio">Degree</string>
-    <string name="title_estado_nivel_estudio">Estado de nivel de estudio</string>
-    <string name="title_institucion">Institución</string>
-    <string name="title_start_year">Año de inicio</string>
-    <string name="title_finish_year">Año de término</string>
+    <string name="title_estado_nivel_estudio">Degree status</string>
+    <string name="title_institucion">Institute</string>
+    <string name="title_start_year">Start year</string>
+    <string name="title_finish_year">Finish year</string>
 </resources>

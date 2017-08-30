@@ -8,21 +8,142 @@
     android:orientation="vertical"
     tools:context="catchmyshift.catchmyshift.activity.EducationActivity">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+        android:layout_marginTop="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/title_educacion"
+            android:layout_margin="16dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/id_nivelEstudio"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="8dp"
+                android:inputType="text"
+                android:background="@drawable/rounded_inputtxt"
+                android:layout_margin="8dp"
+                android:textSize="17sp"
+                android:hint="@string/title_nivel_estudio"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/id_nivelEstudioStatus"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="8dp"
+                android:inputType="text"
+                android:background="@drawable/rounded_inputtxt"
+                android:layout_margin="8dp"
+                android:textSize="17sp"
+                android:hint="@string/title_estado_nivel_estudio"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/id_institucion"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="8dp"
+                android:inputType="text"
+                android:background="@drawable/rounded_inputtxt"
+                android:layout_margin="8dp"
+                android:textSize="17sp"
+                android:hint="@string/title_institucion"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/idanio_inicial"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="left|center"
+            android:paddingLeft="8dp"
+            android:background="@drawable/rounded_inputtxt"
+            android:drawableRight="@drawable/datecompanyvd"
+            android:layout_margin="8dp"
+            android:textSize="17sp"
+            android:hint="@string/title_start_year"/>
+
+        <TextView
+            android:id="@+id/idanio_final"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="left|center"
+            android:paddingLeft="8dp"
+            android:background="@drawable/rounded_inputtxt"
+            android:drawableRight="@drawable/datecompanyvd"
+            android:layout_margin="8dp"
+            android:textSize="17sp"
+            android:hint="@string/title_finish_year"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="8dp"
-            android:orientation="vertical">
+            android:layout_marginTop="32dp"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+            <RelativeLayout
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
 
+                <Button
+                    android:id="@+id/confirmEditProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:drawableLeft="@drawable/okvd"
+                    android:drawableTint="@color/colorWhiteText"
+                    android:paddingLeft="16dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:background="@color/colorAccent"
+                    android:clickable="true"
+                    android:layout_alignParentLeft="true" />
+            </RelativeLayout>
 
+            <RelativeLayout
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/cancelEditProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:drawableRight="@drawable/cancelvd"
+                    android:drawableTint="@color/colorWhiteText"
+                    android:paddingRight="16dp"
+                    android:layout_alignParentRight="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:background="@color/colorAccentBtn"
+                    android:clickable="true" />
+
+            </RelativeLayout>
 
         </LinearLayout>
-    </ScrollView>
+
+    </LinearLayout>
 
 </LinearLayout>

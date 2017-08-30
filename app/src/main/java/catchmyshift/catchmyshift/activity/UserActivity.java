@@ -207,6 +207,9 @@ public class UserActivity extends AppCompatActivity
             case R.id.opAcademicLevels:
 
                 drawer.closeDrawer(GravityCompat.START);
+                Intent alintent = new Intent().setClass(getApplicationContext(), EducationActivity.class);
+                startActivity(alintent);
+
                 break;
             case R.id.opLanguages:
 
