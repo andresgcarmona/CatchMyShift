@@ -98,9 +98,12 @@
             android:parentActivityName=".activity.UserActivity" />
         <activity
             android:name=".activity.WExperienceActivity"
-            android:parentActivityName=".activity.UserActivity"></activity>
+            android:parentActivityName=".activity.UserActivity" />
         <activity
             android:name=".activity.EducationActivity"
+            android:parentActivityName=".activity.UserActivity" />
+        <activity
+            android:name=".activity.LanguagesActivity"
             android:parentActivityName=".activity.UserActivity"></activity>
     </application>
 

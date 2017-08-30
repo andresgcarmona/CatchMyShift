@@ -268,4 +268,8 @@
     <string name="title_institucion">Institute</string>
     <string name="title_start_year">Start year</string>
     <string name="title_finish_year">Finish year</string>
+
+    <string name="title_lenguajes">Language</string>
+    <string name="title_lenguajes_nivel">Level</string>
+    <string name="title_comentarios">Comments (optional)</string>
 </resources>

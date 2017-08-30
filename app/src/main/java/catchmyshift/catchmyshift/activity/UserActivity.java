@@ -214,6 +214,8 @@ public class UserActivity extends AppCompatActivity
             case R.id.opLanguages:
 
                 drawer.closeDrawer(GravityCompat.START);
+                Intent lintent = new Intent().setClass(getApplicationContext(), LanguagesActivity.class);
+                startActivity(lintent);
                 break;
             case R.id.opCompanies:
 

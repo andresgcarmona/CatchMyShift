@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="catchmyshift.catchmyshift.activity.EducationActivity">
+    tools:context="catchmyshift.catchmyshift.activity.LanguagesActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/title_educacion"
+            android:text="@string/title_lenguajes"
             android:layout_margin="16dp"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -29,13 +29,13 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:text="@string/title_nivel_estudio"
+            android:text="@string/title_lenguajes"
             android:layout_marginTop="16dp"
             android:textSize="17dp"
             />
 
         <Spinner
-            android:id="@+id/sp_nivelestudio"
+            android:id="@+id/sp_lenguaje"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -44,13 +44,13 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:text="@string/title_estado_nivel_estudio"
+            android:text="@string/title_lenguajes_nivel"
             android:layout_marginTop="16dp"
             android:textSize="17dp"
             />
 
         <Spinner
-            android:id="@+id/sp_nivelestudio_status"
+            android:id="@+id/sp_lenguaje_nivel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/id_institucion"
+                android:id="@+id/txt_puesto"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:paddingLeft="8dp"
@@ -67,33 +67,9 @@
                 android:background="@drawable/rounded_inputtxt"
                 android:layout_margin="8dp"
                 android:textSize="17sp"
-                android:hint="@string/title_institucion"/>
+                android:hint="@string/title_comentarios"/>
 
         </android.support.design.widget.TextInputLayout>
-
-        <TextView
-            android:id="@+id/idanio_inicial"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:gravity="left|center"
-            android:paddingLeft="8dp"
-            android:background="@drawable/rounded_inputtxt"
-            android:drawableRight="@drawable/datecompanyvd"
-            android:layout_margin="8dp"
-            android:textSize="17sp"
-            android:hint="@string/title_start_year"/>
-
-        <TextView
-            android:id="@+id/idanio_final"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:gravity="left|center"
-            android:paddingLeft="8dp"
-            android:background="@drawable/rounded_inputtxt"
-            android:drawableRight="@drawable/datecompanyvd"
-            android:layout_margin="8dp"
-            android:textSize="17sp"
-            android:hint="@string/title_finish_year"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -139,6 +115,7 @@
             </RelativeLayout>
 
         </LinearLayout>
+
 
     </LinearLayout>
 
