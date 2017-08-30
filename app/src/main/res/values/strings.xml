@@ -315,5 +315,11 @@
     <string name="title_informacion_locacion">Ubicación e idioma</string>
     <string name="title_avatar_usuario">Foto de perfil</string>
 
+    <string name="title_trabajos_publicados">Trabajos publicados</string>
+    <string name="title_contacto_empresa">Contacto Empresa</string>
+    <string name="title_billing">Información de Pagos</string>
+    <string name="title_settings">Configuración</string>
+    <string name="title_edit_company">Editar información de la empresa</string>
+
 
 </resources>
