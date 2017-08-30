@@ -52,10 +52,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:foreground="?android:attr/selectableItemBackground"
-                android:background="@color/colorAccentBtn"
+                android:background="@color/colorMainBtn"
                 android:clickable="true"
                 android:text="@string/title_searchEmployees"
-                android:textColor="@color/colorGreyText"
+                android:textColor="@color/colorWhiteText"
                 android:textSize="18sp" />
         </LinearLayout>
 
