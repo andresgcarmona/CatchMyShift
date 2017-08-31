@@ -47,7 +47,7 @@ public class ProfileFragment extends Fragment {
     private View v;
     LocationManager locationManager;
     private GoogleMap googleMap;
-    private String avatar, fullname, email, about;
+    private String avatar, fullname, email, about, job_position, company, start_date, end_date;
     String URL_DATA="http://67.205.138.130/";
 
     @BindString(R.string.title_Loading) String loadingText;
@@ -57,6 +57,7 @@ public class ProfileFragment extends Fragment {
     @BindView(R.id.idNameUser) TextView userFullname;
     @BindView(R.id.idEmailUser) TextView userEmail;
     @BindView(R.id.idAbout) TextView userAbout;
+    @BindView(R.id.idWorkingxp) TextView workingExp;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -95,7 +96,10 @@ public class ProfileFragment extends Fragment {
                 fullname=bundle.getString("fullname");
                 email = bundle.getString("email");
                 about = bundle.getString("about");
-
+                job_position = bundle.getString("job_position");
+                company = bundle.getString("company");
+                start_date = bundle.getString("start_date");
+                end_date = bundle.getString("end_date");
 
                 String comparation = avatar.substring(0,1);
                 Log.e("JMMC_ AVATAR RESULT", comparation);
@@ -119,6 +123,13 @@ public class ProfileFragment extends Fragment {
                 else
                 {
                     userAbout.setText(noDataText);
+                }
+
+                if(!job_position.equals("null")){
+                    workingExp.setText(job_position + "\n" + company + "\n" + start_date + " - " + end_date);
+                }
+                else{
+                    workingExp.setText(noDataText);
                 }
             }
         }

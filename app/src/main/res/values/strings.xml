@@ -329,5 +329,7 @@
     <string name="title_tarjeta_credito">Tarjeta de crédito</string>
     <string name="title_o">O</string>
 
+    <string name="title_apply">Aplicar</string>
+    <string name="title_fecha_publicado">Fecha de publicación</string>
 
 </resources>

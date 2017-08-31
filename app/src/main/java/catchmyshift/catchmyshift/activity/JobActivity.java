@@ -2,6 +2,7 @@ package catchmyshift.catchmyshift.activity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.DatePicker;
@@ -110,5 +111,12 @@ public class JobActivity extends AppCompatActivity {
         }, hour, minute, true);
 
         mTimePicker.show();
+    }
+
+    @OnClick(R.id.confirmEditJob)
+    public void ViewDetails(){
+        // Get Current Date
+        Intent intent = new Intent().setClass(getApplicationContext(), JobDetailActivity.class);
+        startActivity(intent);
     }
 }
