@@ -119,8 +119,8 @@ public class UserActivity extends AppCompatActivity
                 break;
 
             case R.id.nav_searchJob:
-                Intent inst = new Intent().setClass(getApplicationContext(), MapsUserActivity.class);
-                startActivity(inst);
+                Intent searJobIntent = new Intent().setClass(getApplicationContext(),SearchJobActivity.class);
+                startActivity(searJobIntent);
                 break;
 
             case R.id.nav_pay:

@@ -108,6 +108,16 @@
             android:label="@string/title_metodo_pago"
             android:parentActivityName=".activity.UserActivity" />
         <activity android:name=".activity.JobDetailActivity"></activity>
+        <activity
+            android:name=".activity.MetodoPagoActivity"
+            android:label="@string/title_metodo_pago"
+            android:parentActivityName=".activity.UserActivity" />
+        <activity
+            android:name=".activity.SearchJobActivity"
+            android:parentActivityName=".activity.UserActivity"
+            android:label="@string/title_SearchJob"
+            ></activity>
+
     </application>
 
 </manifest>
