@@ -333,5 +333,6 @@
     <string name="title_o">OR</string>
 
     <string name="title_vacancy_number">Number of vacancies:</string>
+    <string name="title_SearchJob">Search Job</string>
 
 </resources>

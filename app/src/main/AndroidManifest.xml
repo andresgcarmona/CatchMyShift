@@ -109,7 +109,9 @@
             android:parentActivityName=".activity.UserActivity" />
         <activity
             android:name=".activity.SearchJobActivity"
-            android:parentActivityName=".activity.UserActivity"></activity>
+            android:parentActivityName=".activity.UserActivity"
+            android:label="@string/title_SearchJob"
+            ></activity>
 
     </application>
 
