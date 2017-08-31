@@ -331,4 +331,7 @@
 
     <string name="title_tarjeta_credito">Credit Card</string>
     <string name="title_o">OR</string>
+
+    <string name="title_vacancy_number">Number of vacancies:</string>
+
 </resources>

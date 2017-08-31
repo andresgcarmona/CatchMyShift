@@ -127,7 +127,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:text="@string/title_o"
-                android:textColor="@color/colorEditText"/>
+                android:textColor="@color/colorGrayText"/>
 
             <View
                 android:layout_width="match_parent"
@@ -204,7 +204,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:drawableRight="@drawable/cancelvd"
-                    android:drawableTint="@color/colorWhiteText"
+                    android:drawableTint="@color/colorGrayText"
                     android:paddingRight="16dp"
                     android:layout_alignParentRight="true"
                     android:foreground="?android:attr/selectableItemBackground"
