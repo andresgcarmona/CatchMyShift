@@ -100,9 +100,13 @@
             android:name=".activity.CompaniesActivity"
             android:label="@string/title_company"
             android:parentActivityName=".activity.UserActivity" />
-
-        <activity android:name=".activity.JobActivity"
+        <activity
+            android:name=".activity.JobActivity"
             android:parentActivityName=".activity.UserActivity" />
+
+        <activity android:name=".activity.MetodoPagoActivity"
+            android:parentActivityName=".activity.UserActivity"
+            android:label="@string/title_metodo_pago"/>
     </application>
 
 </manifest>

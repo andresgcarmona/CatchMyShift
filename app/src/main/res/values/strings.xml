@@ -321,5 +321,13 @@
     <string name="title_settings">Configuración</string>
     <string name="title_edit_company">Editar información de la empresa</string>
 
+    <string name="title_metodo_pago">Agregar método de pago</string>
+    <string name="title_numero_tarjeta">Número de tarjeta</string>
+    <string name="title_nombre_titular">Nombre del titular</string>
+    <string name="title_fecha_vencimiento">Fecha de vencimiento</string>
+    <string name="title_cvv">CVV</string>
+    <string name="title_tarjeta_credito">Tarjeta de crédito</string>
+    <string name="title_o">O</string>
+
 
 </resources>

@@ -322,4 +322,13 @@
     <string name="title_billing">Billing Information</string>
     <string name="title_settings">Configuration</string>
     <string name="title_edit_company">Edit company info</string>
+
+    <string name="title_metodo_pago">New payment method</string>
+    <string name="title_numero_tarjeta">Credit card number</string>
+    <string name="title_nombre_titular">Cardholder Name</string>
+    <string name="title_fecha_vencimiento">Exp Date</string>
+    <string name="title_cvv">CVV</string>
+
+    <string name="title_tarjeta_credito">Credit Card</string>
+    <string name="title_o">OR</string>
 </resources>
