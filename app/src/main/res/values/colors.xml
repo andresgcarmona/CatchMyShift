@@ -4,14 +4,14 @@
     <color name="colorPrimary">#546a79</color>
     <color name="colorAccent">#88c057</color>
 
-    <color name="colorAccentBtn">#48a0dc</color>
-    <color name="colorAccent2">#88c057</color>
-    <color name="colorEditText">#6c8385</color>
+    <color name="colorAccentBtn">#efefef</color>
+    <color name="colorMainBtn">#57b1e6</color>
 
     <color name="colorBtnWhite">#f4f4f4</color>
-    <color name="colorBtLinkedin">#00c0f5</color>
 
     <color name="colorWhiteText">#ffffff</color>
+    <color name="colorGrayText">#7a7a7a</color>
+
     <color name="colorSoftDarkBrownText">#645b52</color>
     <color name="colorNavDrawText">#40372f</color>
     <color name="colorBackgndNav">#5d6164</color>

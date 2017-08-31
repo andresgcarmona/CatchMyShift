@@ -23,9 +23,9 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="16dp"
                 android:gravity="center"
                 android:text="@string/title_nuevo_empleo"
-                android:layout_margin="16dp"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 />
@@ -33,10 +33,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:text="@string/title_company_name"
-                android:layout_marginTop="16dp"
                 android:textSize="17sp"
                 />
 
@@ -56,10 +56,10 @@
                     android:id="@+id/id_nombreempleo"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:layout_margin="8dp"
                     android:paddingLeft="8dp"
                     android:inputType="text"
                     android:background="@drawable/rounded_inputtxt"
-                    android:layout_margin="8dp"
                     android:textSize="17sp"
                     android:hint="@string/title_nombre_empleo"/>
 
@@ -73,10 +73,10 @@
                     android:id="@+id/id_puesto"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:layout_margin="8dp"
                     android:paddingLeft="8dp"
                     android:inputType="text"
                     android:background="@drawable/rounded_inputtxt"
-                    android:layout_margin="8dp"
                     android:textSize="17sp"
                     android:hint="@string/title_puesto"/>
 
@@ -91,9 +91,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:paddingLeft="8dp"
-                    android:inputType="text"
-                    android:background="@drawable/rounded_inputtxt"
                     android:layout_margin="8dp"
+                    android:background="@drawable/rounded_inputtxt"
+                    android:inputType="text"
                     android:textSize="17sp"
                     android:hint="@string/title_tareas"/>
 
@@ -107,10 +107,10 @@
                     android:id="@+id/id_requerimientos"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:layout_margin="8dp"
                     android:paddingLeft="8dp"
                     android:inputType="text"
                     android:background="@drawable/rounded_inputtxt"
-                    android:layout_margin="8dp"
                     android:textSize="17sp"
                     android:hint="@string/title_requerimientos"/>
 
@@ -121,8 +121,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:text="@string/title_pais"
                 android:layout_marginTop="16dp"
+                android:text="@string/title_pais"
                 android:textSize="17sp"
                 />
 
@@ -142,10 +142,10 @@
                     android:id="@+id/id_direccion"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:paddingLeft="8dp"
-                    android:inputType="text"
-                    android:background="@drawable/rounded_inputtxt"
                     android:layout_margin="8dp"
+                    android:paddingLeft="8dp"
+                    android:background="@drawable/rounded_inputtxt"
+                    android:inputType="text"
                     android:textSize="17sp"
                     android:hint="@string/title_direccion"/>
 
@@ -156,8 +156,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:text="@string/title_estado"
                 android:layout_marginTop="16dp"
+                android:text="@string/title_estado"
                 android:textSize="17sp"
                 />
 
@@ -172,10 +172,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:text="@string/title_city"
-                android:layout_marginTop="16dp"
                 android:textSize="17sp"
                 />
 
@@ -195,10 +195,10 @@
                     android:id="@+id/id_codigopostal"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:layout_margin="8dp"
                     android:paddingLeft="8dp"
                     android:inputType="text"
                     android:background="@drawable/rounded_inputtxt"
-                    android:layout_margin="8dp"
                     android:textSize="17sp"
                     android:hint="@string/title_codigo_postal"/>
 
@@ -209,8 +209,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:text="@string/title_numero_vacantes"
                 android:layout_marginTop="16dp"
+                android:text="@string/title_numero_vacantes"
                 android:textSize="17sp"
                 />
 
@@ -227,8 +227,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:text="@string/title_salario_persona"
                 android:layout_marginTop="16dp"
+                android:text="@string/title_salario_persona"
                 android:textSize="17sp"
                 />
 
@@ -243,9 +243,9 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:paddingLeft="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
+                android:paddingLeft="8dp"
                 android:background="@drawable/rounded_inputtxt"
                 android:textSize="17sp"
                 android:hint="@string/title_ejemplo_pago"
@@ -255,11 +255,12 @@
                 android:id="@+id/idfecha_inicial"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:gravity="left|center"
+                android:layout_margin="8dp"
                 android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:background="@drawable/rounded_inputtxt"
                 android:drawableRight="@drawable/datecompanyvd"
-                android:layout_margin="8dp"
+                android:gravity="left|center"
                 android:textSize="17sp"
                 android:hint="@string/title_start_date"/>
 
@@ -270,6 +271,7 @@
                 android:layout_height="50dp"
                 android:gravity="left|center"
                 android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:background="@drawable/rounded_inputtxt"
                 android:drawableRight="@drawable/datecompanyvd"
                 android:layout_margin="8dp"
@@ -280,11 +282,12 @@
                 android:id="@+id/idhora_inicial"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:gravity="left|center"
+                android:layout_margin="8dp"
                 android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:background="@drawable/rounded_inputtxt"
                 android:drawableRight="@drawable/timevd"
-                android:layout_margin="8dp"
+                android:gravity="left|center"
                 android:textSize="17sp"
                 android:hint="@string/title_start_time_job"/>
 
@@ -293,11 +296,12 @@
                 android:id="@+id/idhora_final"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:gravity="left|center"
+                android:layout_margin="8dp"
                 android:paddingLeft="8dp"
+                android:paddingRight="8dp"
                 android:background="@drawable/rounded_inputtxt"
                 android:drawableRight="@drawable/timevd"
-                android:layout_margin="8dp"
+                android:gravity="left|center"
                 android:textSize="17sp"
                 android:hint="@string/title_end_time_job"/>
 
@@ -410,7 +414,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:drawableRight="@drawable/cancelvd"
-                        android:drawableTint="@color/colorWhiteText"
+                        android:drawableTint="@color/colorGrayText"
                         android:paddingRight="16dp"
                         android:layout_alignParentRight="true"
                         android:foreground="?android:attr/selectableItemBackground"
