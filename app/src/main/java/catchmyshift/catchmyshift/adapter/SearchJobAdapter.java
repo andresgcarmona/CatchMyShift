@@ -61,6 +61,7 @@ public class SearchJobAdapter extends RecyclerView.Adapter<SearchJobAdapter.View
                 searchJobIntent.putExtra("requirements",searchJobListItem.getJobRequirements().toString());
                 searchJobIntent.putExtra("lat",searchJobListItem.getJobLat().toString());
                 searchJobIntent.putExtra("lon",searchJobListItem.getJobLong().toString());
+                searchJobIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(searchJobIntent);
             }
         });
