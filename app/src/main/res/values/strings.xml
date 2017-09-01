@@ -288,49 +288,53 @@
     <string name="title_setpassword">Ingrese una contraseña</string>
     <string name="title_setvalidEmail">Ingrese una dirección de correo valida</string>
 
-    <string name="title_nuevo_empleo">Nueva vacante</string>
-    <string name="title_nombre_empleo">Nombre referencia del empleo</string>
-    <string name="title_tareas">Tareas a desempeñar</string>
-    <string name="title_requerimientos">Requerimientos</string>
-    <string name="title_pais">País</string>
-    <string name="title_numero_vacantes">Número de vacantes</string>
-    <string name="title_salario_persona">Salario por persona (por día)</string>
+    <string name="title_new_vacancy">Nueva vacante</string>
+    <string name="title_name_vacancy">Nombre referencia del empleo</string>
+    <string name="title_task">Tareas a desempeñar</string>
+    <string name="title_requirements">Requerimientos</string>
+    <string name="title_country">País</string>
+    <string name="title_number_vacancy">Número de vacantes</string>
+    <string name="title_salary_person">Salario por persona (por día)</string>
     <string name="title_start_time_job">Hora de inicio</string>
     <string name="title_end_time_job">Hora de término</string>
-    <string name="title_publicar_trabajo">¿Publicar trabajo?</string>
-    <string name="title_informacion_pago">Información de pago</string>
+    <string name="title_publish_job">¿Publicar trabajo?</string>
+    <string name="title_info_pay">Información de pago</string>
     <string name="title_total">Total</string>
-    <string name="title_salario">Salario</string>
-    <string name="title_dias_laboral">Días a laborar</string>
+    <string name="title_salary">Salario</string>
+    <string name="title_days_labor">Días a laborar</string>
     <string name="title_catch_fee">Catch My Shift fee</string>
-    <string name="title_ejemplo_pago">Ej. 512.23</string>
-
+    <string name="title_example_pay">Ej. 512.23</string>
     <string name="title_userpassMust">Ingrese un usuario y contraseña</string>
 
-    <string name="title_informacion_personal">Información de usuario</string>
-    <string name="title_segundo_nombre">Segundo nombre (opcional)</string>
-    <string name="title_apellidos">Apellidos</string>
-    <string name="title_fechanac">Fecha de nacimiento</string>
-    <string name="title_sobreti">Sobre ti</string>
-    <string name="title_informacion_locacion">Ubicación e idioma</string>
-    <string name="title_avatar_usuario">Foto de perfil</string>
 
-    <string name="title_trabajos_publicados">Trabajos publicados</string>
-    <string name="title_contacto_empresa">Contacto Empresa</string>
+
+
+    <string name="title_personal_info">Información de usuario</string>
+    <string name="title_middle_name">Segundo nombre (opcional)</string>
+    <string name="title_last_name">Apellidos</string>
+    <string name="title_birth_date">Fecha de nacimiento</string>
+    <string name="title_about_you">Sobre ti</string>
+    <string name="title_info_location">Ubicación e idioma</string>
+    <string name="title_avatar_user">Foto de perfil</string>
+    <string name="title_job_published">Trabajos publicados</string>
+    <string name="title_contact_company">Contacto Empresa</string>
+
+
+
+
+
     <string name="title_billing">Información de Pagos</string>
     <string name="title_settings">Configuración</string>
     <string name="title_edit_company">Editar información de la empresa</string>
 
-    <string name="title_metodo_pago">Agregar método de pago</string>
-    <string name="title_numero_tarjeta">Número de tarjeta</string>
-    <string name="title_nombre_titular">Nombre del titular</string>
-    <string name="title_fecha_vencimiento">Fecha de vencimiento</string>
+    <string name="title_payment_method">Agregar método de pago</string>
+    <string name="title_num_card">Número de tarjeta</string>
+    <string name="title_name_titular">Nombre del titular</string>
+    <string name="title_date_expiration">Fecha de vencimiento</string>
     <string name="title_cvv">CVV</string>
-    <string name="title_tarjeta_credito">Tarjeta de crédito</string>
     <string name="title_o">O</string>
-
     <string name="title_apply">Aplicar</string>
-    <string name="title_fecha_publicado">Fecha de publicación:</string>
+    <string name="title_publish_date">Fecha de publicación:</string>
 
     <string name="title_vacancy_number">Numero de vacantes:</string>
     <string name="title_SearchJob">Buscar Trabajo</string>

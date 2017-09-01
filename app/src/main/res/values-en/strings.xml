@@ -288,52 +288,52 @@
     <string name="title_setemail">You must enter an email address</string>
     <string name="title_equalpass">Your password and confirm password field must be equals</string>
 
-    <string name="title_nuevo_empleo">New Vancancy</string>
-    <string name="title_nombre_empleo">Job name</string>
-    <string name="title_tareas">Tasks</string>
-    <string name="title_requerimientos">Requirements</string>
-    <string name="title_pais">Country</string>
-    <string name="title_numero_vacantes">Number vacancies</string>
-    <string name="title_salario_persona">Salary per person (daily)</string>
+    <string name="title_new_vacancy">New Vancancy</string>
+    <string name="title_name_vacancy">Job name</string>
+    <string name="title_task">Tasks</string>
+    <string name="title_requirements">Requirements</string>
+    <string name="title_country">Country</string>
+    <string name="title_number_vacancy">Number vacancies</string>
+    <string name="title_salary_person">Salary per person (daily)</string>
     <string name="title_start_time_job">Start time</string>
     <string name="title_end_time_job">End time</string>
-    <string name="title_publicar_trabajo">Publish job?</string>
-    <string name="title_informacion_pago">Payment info</string>
+    <string name="title_publish_job">Publish job?</string>
+    <string name="title_info_pay">Payment info</string>
     <string name="title_total">Total</string>
-    <string name="title_salario">Salary</string>
-    <string name="title_dias_laboral">Days to work</string>
+    <string name="title_salary">Salary</string>
+    <string name="title_days_labor">Days to work</string>
     <string name="title_catch_fee">Catch My Shift fee</string>
-    <string name="title_ejemplo_pago">Ex. 512.23</string>
+    <string name="title_example_pay">Ex. 512.23</string>
     <string name="title_setpassword">Enter a password</string>
     <string name="title_setvalidEmail">Enter a valid email address</string>
-
     <string name="title_userpassMust">Enter a user and password</string>
 
-    <string name="title_informacion_personal">User’s information</string>
-    <string name="title_segundo_nombre">Middle name (optional)</string>
-    <string name="title_apellidos">Last name</string>
-    <string name="title_fechanac">Birthday</string>
-    <string name="title_sobreti">About you</string>
-    <string name="title_informacion_locacion">User’s location &amp; language</string>
-    <string name="title_avatar_usuario">Public avatar</string>
 
-    <string name="title_trabajos_publicados">Job published</string>
-    <string name="title_contacto_empresa">Company contact</string>
+
+    <string name="title_personal_info">User’s information</string>
+    <string name="title_middle_name">Middle name (optional)</string>
+    <string name="title_last_name">Last name</string>
+    <string name="title_birth_date">Birthday</string>
+    <string name="title_about_you">About you</string>
+    <string name="title_info_location">User’s location &amp; language</string>
+    <string name="title_avatar_user">Public avatar</string>
+    <string name="title_job_published">Job published</string>
+    <string name="title_contact_company">Company contact</string>
+
     <string name="title_billing">Billing Information</string>
     <string name="title_settings">Configuration</string>
     <string name="title_edit_company">Edit company info</string>
 
-    <string name="title_metodo_pago">New payment method</string>
-    <string name="title_numero_tarjeta">Credit card number</string>
-    <string name="title_nombre_titular">Cardholder Name</string>
-    <string name="title_fecha_vencimiento">Exp Date</string>
+
+
+    <string name="title_payment_method">New payment method</string>
+    <string name="title_num_card">Credit card number</string>
+    <string name="title_name_titular">Cardholder Name</string>
+    <string name="title_date_expiration">Exp Date</string>
     <string name="title_cvv">CVV</string>
-
-    <string name="title_tarjeta_credito">Credit Card</string>
     <string name="title_o">OR</string>
-
     <string name="title_apply">Apply</string>
-    <string name="title_fecha_publicado">Published date:</string>
+    <string name="title_publish_date">Published date:</string>
 
     <string name="title_vacancy_number">Number of vacancies:</string>
     <string name="title_SearchJob">Search Job</string>
