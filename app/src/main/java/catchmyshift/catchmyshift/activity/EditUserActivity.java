@@ -193,7 +193,6 @@ public class EditUserActivity extends AppCompatActivity {
         }
     }
 
-
     private boolean checkPermission() {
         int result = ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (result == PackageManager.PERMISSION_GRANTED) {

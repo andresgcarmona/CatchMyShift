@@ -107,11 +107,11 @@
             android:name=".activity.MetodoPagoActivity"
             android:label="@string/title_metodo_pago"
             android:parentActivityName=".activity.UserActivity" />
-        <activity android:name=".activity.JobDetailActivity"></activity>
+
         <activity
-            android:name=".activity.MetodoPagoActivity"
-            android:label="@string/title_metodo_pago"
-            android:parentActivityName=".activity.UserActivity" />
+            android:name=".activity.JobDetailActivity"
+            android:parentActivityName=".activity.SearchJobActivity"></activity>
+
         <activity
             android:name=".activity.SearchJobActivity"
             android:parentActivityName=".activity.UserActivity"

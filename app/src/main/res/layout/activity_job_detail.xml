@@ -10,7 +10,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,8 +24,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/title_puesto"
-                android:layout_margin="16dp"
-                android:textSize="20sp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 />
 
@@ -33,32 +36,55 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/title_direccion"
-                android:layout_margin="16dp"
-                android:textSize="16sp"
-                />
-
-            <TextView
-                android:id="@+id/idpublish_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/title_fecha_publicado"
-                android:layout_margin="16dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="8dp"
                 android:textSize="16sp"
                 />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_fecha_publicado"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="14sp"
+                    />
+                <TextView
+                    android:id="@+id/idpublish_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20/06/2017"
+                    android:textSize="14sp"
+                    />
+            </LinearLayout>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:background="@color/colorIconsForms" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="horizontal"
+                android:background="@color/colorBtnWhite"
+                >
                 <RelativeLayout
                     android:layout_width="0px"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.40">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/idjob_ImageDetail"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/fondologinpest"/>
+                        android:layout_marginLeft="16dp"
+                        android:src="@drawable/empresafoto" />
 
                 </RelativeLayout>
 
@@ -68,173 +94,256 @@
                     android:layout_weight="1">
 
                     <TextView
-                        android:id="@+id/idnombre_empresa"
+                        android:id="@+id/idCompany"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/title_company_name"
-                        android:layout_margin="16dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
                         android:textStyle="bold"
                         android:textSize="16sp"
+                        android:text="@string/title_company_name"
                         />
+
+                    <TextView
+                        android:id="@+id/idCompany_Name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/idCompany"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Company"
+                        android:textSize="16sp" />
+
 
                     <TextView
                         android:id="@+id/iddescripcion_empresa"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_alignTop="@+id/idnombre_empresa"
                         android:layout_marginStart="15dp"
-                        android:layout_marginTop="25dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_alignTop="@+id/idCompany_Name"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:text="@string/title_company_descripcion" />
+
+                    <TextView
+                        android:id="@+id/idJobCompany_Desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_alignTop="@+id/iddescripcion_empresa"
+                        android:textSize="16sp"
                         android:text="@string/title_company_descripcion"
-                        android:textSize="16sp" />
+
+                        />
 
                 </RelativeLayout>
 
             </LinearLayout>
 
-            <View
-                android:id="@+id/view1"
-                android:layout_width="fill_parent"
-                android:layout_height="2dp"
-                android:layout_alignParentRight="true"
-                android:layout_below="@+id/textView1"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:background="@color/colorIconsForms" />
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="200dp"
                 android:orientation="horizontal"
-                android:layout_marginBottom="20dp">
-
-                <RelativeLayout
-                    android:layout_width="0px"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
                     <com.google.android.gms.maps.MapView
                         android:id="@+id/idmap_job"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
-
                     </com.google.android.gms.maps.MapView>
+                </LinearLayout>
 
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="0px"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="180dp"
-                        android:orientation="horizontal">
-
-                        <RelativeLayout
-                            android:layout_width="0px"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1">
-
-                            <TextView
-                                android:id="@+id/idvacantes"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/title_numero_vacantes"
-                                android:layout_margin="16dp"
-                                android:textSize="12sp"
-                                />
-
-                            <TextView
-                                android:id="@+id/idfecha_inicio"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@+id/idvacantes"
-                                android:layout_marginStart="15dp"
-                                android:paddingTop="40dp"
-                                android:text="@string/title_start_date"
-                                android:layout_margin="16dp"
-                                android:textSize="12sp"
-                                />
-
-                            <TextView
-                                android:id="@+id/idhora_inicio"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@+id/idfecha_inicio"
-                                android:layout_marginStart="30dp"
-                                android:paddingTop="80dp"
-                                android:text="@string/title_start_time_job"
-                                android:layout_margin="16dp"
-                                android:textSize="12sp"
-                                />
-
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="0px"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1">
-
-                            <TextView
-                                android:id="@+id/idsalario"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/title_salario"
-                                android:layout_margin="16dp"
-                                android:textSize="12sp"
-                                />
-
-                            <TextView
-                                android:id="@+id/idfecha_final"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@+id/idsalario"
-                                android:layout_marginStart="15dp"
-                                android:paddingTop="40dp"
-                                android:text="@string/title_finish_date"
-                                android:layout_margin="16dp"
-                                android:textSize="12sp"
-                                />
-
-                            <TextView
-                                android:id="@+id/idhora_final"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_alignTop="@+id/idfecha_final"
-                                android:layout_marginStart="30dp"
-                                android:paddingTop="80dp"
-                                android:text="@string/title_end_time_job"
-                                android:layout_margin="16dp"
-                                android:textSize="12sp"
-                                />
-
-                        </RelativeLayout>
-
-                    </LinearLayout>
-
-
-                </RelativeLayout>
             </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorIconsForms"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                tools:layout_editor_absoluteY="8dp"
-                tools:layout_editor_absoluteX="8dp">
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/button_apply"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:text="@string/title_apply"
-                    android:textColor="@color/colorWhiteText"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:background="@color/colorAccent"
-                    android:clickable="true"
-                    android:textSize="17sp" />
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title_numero_vacantes"
+                        android:textStyle="bold"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/idvacantes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="0"
+                        android:textSize="15sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textStyle="bold"
+                        android:text="@string/title_start_date"
+                        android:textSize="15sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/idfecha_inicio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="20/06/2017"
+                        android:textSize="15sp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textStyle="bold"
+                        android:text="@string/title_finish_date"
+                        android:textSize="15sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/idfecha_final"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="20/06/2017"
+                        android:textSize="15sp"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/colorIconsForms"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/title_start_time_job"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        />
+
+                    <TextView
+                        android:id="@+id/idhora_inicio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:text="7:00 A.M."
+                        android:textSize="15sp"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/title_end_time_job"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        />
+                    <TextView
+                        android:id="@+id/idhora_final"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="6:30 P.M."
+                        android:textSize="15sp"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/colorIconsForms"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/title_salario"
+                        android:textStyle="bold"
+                        android:textSize="15sp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text=" ------- "
+                        android:textSize="13sp"
+                        />
+                    <TextView
+                        android:id="@+id/idsalario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="$2550.00"
+                        android:textAlignment="textEnd"
+                        android:textSize="15sp"
+                        />
+                </LinearLayout>
+
             </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:background="@color/colorIconsForms" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -243,7 +352,7 @@
                 android:layout_marginRight="32dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/title_tareas"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -263,20 +372,37 @@
                 android:layout_marginRight="32dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/title_requerimientos"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/idRequerimientos"
+                android:id="@+id/idRequirements"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="36dp"
                 android:layout_marginRight="32dp"
                 android:layout_marginTop="5dp"
+                android:layout_marginBottom="16dp"
                 android:textSize="17sp"
                 />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
 
-
+                <Button
+                    android:id="@+id/button_apply"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/title_apply"
+                    android:textColor="@color/colorWhiteText"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:background="@color/colorAccent"
+                    android:clickable="true"
+                    android:textSize="17sp" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

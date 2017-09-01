@@ -99,7 +99,18 @@ public class SearchJobActivity extends AppCompatActivity {
                                 SearchJobListItem item = new SearchJobListItem(
                                         jobsObject.getString("job_name"),
                                         jobsObject.getString("address"),
-                                        jobsObject.getString("number_vacancies")
+                                        jobsObject.getString("number_vacancies"),
+                                        jobsObject.getString("publication_date"),
+                                        jobsObject.getString("start_date"),
+                                        jobsObject.getString("end_date"),
+                                        jobsObject.getString("start_time"),
+                                        jobsObject.getString("end_time"),
+                                        jobsObject.getString("salary"),
+                                        jobsObject.getString("tasks"),
+                                        jobsObject.getString("requirements"),
+                                        jobsObject.getString("lat"),
+                                        jobsObject.getString("lon")
+
                                 );
                                 Log.e("JMMC",jobsObject.getString("job_name"));
                                 Log.e("JMMC",jobsObject.getString("address"));
