@@ -19,10 +19,13 @@ public class SearchJobListItem {
     private String jobRequirements;
     private String jobLat;
     private String jobLong;
+    private String companyName;
+    private String companyDescription;
+    private String companyLogo;
 
     public SearchJobListItem(String jobName, String jobAddress, String jobVacancyNum, String jobPubDate, String jobStartDate, String jobEndDate,
                              String jobStartTime, String jobEndTime, String jobSalary, String jobTask, String jobRequirements,
-                             String jobLat, String jobLong){
+                             String jobLat, String jobLong, String companyName, String companyDescription, String companyLogo){
         this.jobName = jobName;
         this.jobAddress=jobAddress;
         this.jobVacancyNum = jobVacancyNum;
@@ -36,6 +39,9 @@ public class SearchJobListItem {
         this.jobRequirements=jobRequirements;
         this.jobLat = jobLat;
         this.jobLong = jobLong;
+        this.companyName = companyName;
+        this.companyDescription = companyDescription;
+        this.companyLogo = companyLogo;
     }
 
     public String getJobName(){return jobName;}
@@ -51,5 +57,8 @@ public class SearchJobListItem {
     public String getJobRequirements(){return jobRequirements;}
     public String getJobLat(){return  jobLat;}
     public String getJobLong(){return jobLong;}
+    public String getCompanyName(){return  companyName;}
+    public String getCompanyDescription(){return companyDescription;}
+    public String getCompanyLogo(){return  companyLogo;}
 
 }

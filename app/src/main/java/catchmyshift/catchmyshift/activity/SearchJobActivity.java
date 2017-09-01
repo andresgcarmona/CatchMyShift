@@ -40,7 +40,7 @@ public class SearchJobActivity extends AppCompatActivity {
     private  RecyclerView.Adapter adapter;
     private List<SearchJobListItem> searchJobListItems;
 
-    private String URL_DATA_SEARCHJOB = "http://67.205.138.130/api/job";
+    private String URL_DATA_SEARCHJOB = "http://67.205.138.130/api/jobs/lists";
     static final int READ_BLOCK_SIZE = 100;
 
     private  SwipeRefreshLayout refreshJobs;
@@ -96,6 +96,7 @@ public class SearchJobActivity extends AppCompatActivity {
                             JSONArray arrayJobs = new JSONArray(response);
                             for(int i =0; i<arrayJobs.length();i++){
                                 JSONObject jobsObject = arrayJobs.getJSONObject(i);
+                                JSONObject companyObject = jobsObject.getJSONObject("company");
                                 SearchJobListItem item = new SearchJobListItem(
                                         jobsObject.getString("job_name"),
                                         jobsObject.getString("address"),
@@ -109,7 +110,10 @@ public class SearchJobActivity extends AppCompatActivity {
                                         jobsObject.getString("tasks"),
                                         jobsObject.getString("requirements"),
                                         jobsObject.getString("lat"),
-                                        jobsObject.getString("lon")
+                                        jobsObject.getString("lon"),
+                                        companyObject.getString("name"),
+                                        companyObject.getString("description"),
+                                        companyObject.getString("logo")
 
                                 );
                                 Log.e("JMMC",jobsObject.getString("job_name"));

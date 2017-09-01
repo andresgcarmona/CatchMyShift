@@ -12,6 +12,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdate;
@@ -43,8 +44,13 @@ public class JobDetailActivity extends AppCompatActivity implements OnMapReadyCa
     @BindView(R.id.idsalario)TextView jobSalary;
     @BindView(R.id.idTask)TextView jobTasks;
     @BindView(R.id.idRequirements)TextView jobRequirements;
+    @BindView(R.id.idCompany_Name) TextView companyName;
+    @BindView(R.id.idJobCompany_Desc) TextView companyDescription;
+    @BindView(R.id.idjob_ImageDetail) ImageView companyLogo;
 
     private Intent intent ;
+
+    String URL_DATA="http://67.205.138.130/";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,7 +94,19 @@ public class JobDetailActivity extends AppCompatActivity implements OnMapReadyCa
         jobSalary.setText("$" + intent.getStringExtra("salary"));
         jobTasks.setText(intent.getStringExtra("tasks"));
         jobRequirements.setText(intent.getStringExtra("requirements"));
+        companyName.setText(intent.getStringExtra("name"));
+        companyDescription.setText(intent.getStringExtra("description"));
 
+        String avatar = intent.getStringExtra("logo");
+        String comparation = avatar.substring(0,1);
+        if(comparation.equals("h")){
+            Picasso.with(JobDetailActivity.this).load(avatar).fit().into(companyLogo);
+        }
+        else
+        {
+            String FULL_URL_AVATAR = URL_DATA.concat(avatar);
+            Picasso.with(JobDetailActivity.this).load(FULL_URL_AVATAR).fit().into(companyLogo);
+        }
 
         //Picasso.with(getApplicationContext()).load(avatar).into(imageUser);
         //Log.e("JMMC_INTENTAVATAR",avatar);
