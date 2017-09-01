@@ -105,7 +105,7 @@
             android:parentActivityName=".activity.UserActivity" />
         <activity
             android:name=".activity.MetodoPagoActivity"
-            android:label="@string/title_metodo_pago"
+            android:label="@string/title_payment_method"
             android:parentActivityName=".activity.UserActivity" />
 
         <activity

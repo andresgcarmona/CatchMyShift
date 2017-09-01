@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:gravity="center"
-                android:text="@string/title_nuevo_empleo"
+                android:text="@string/title_new_vacancy"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 />
@@ -61,7 +61,7 @@
                     android:inputType="text"
                     android:background="@drawable/rounded_inputtxt"
                     android:textSize="17sp"
-                    android:hint="@string/title_nombre_empleo"/>
+                    android:hint="@string/title_name_vacancy"/>
 
             </android.support.design.widget.TextInputLayout>
 
@@ -95,7 +95,7 @@
                     android:background="@drawable/rounded_inputtxt"
                     android:inputType="text"
                     android:textSize="17sp"
-                    android:hint="@string/title_tareas"/>
+                    android:hint="@string/title_task"/>
 
             </android.support.design.widget.TextInputLayout>
 
@@ -112,7 +112,7 @@
                     android:inputType="text"
                     android:background="@drawable/rounded_inputtxt"
                     android:textSize="17sp"
-                    android:hint="@string/title_requerimientos"/>
+                    android:hint="@string/title_requirements"/>
 
             </android.support.design.widget.TextInputLayout>
 
@@ -122,7 +122,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/title_pais"
+                android:text="@string/title_country"
                 android:textSize="17sp"
                 />
 
@@ -210,7 +210,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/title_numero_vacantes"
+                android:text="@string/title_number_vacancy"
                 android:textSize="17sp"
                 />
 
@@ -228,7 +228,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/title_salario_persona"
+                android:text="@string/title_salary_person"
                 android:textSize="17sp"
                 />
 
@@ -248,7 +248,7 @@
                 android:paddingLeft="8dp"
                 android:background="@drawable/rounded_inputtxt"
                 android:textSize="17sp"
-                android:hint="@string/title_ejemplo_pago"
+                android:hint="@string/title_example_pay"
                 />
 
             <TextView
@@ -313,7 +313,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="8dp"
                 android:paddingLeft="8dp"
-                android:text="@string/title_publicar_trabajo"
+                android:text="@string/title_publish_job"
                 android:background="@drawable/rounded_inputtxt"
                 android:textColor="#676767"
                 android:textSize="17sp"/>
@@ -323,7 +323,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:text="@string/title_informacion_pago"
+                android:text="@string/title_info_pay"
                 android:layout_marginTop="16dp"
                 android:textSize="17sp"
                 android:textStyle="bold"
@@ -334,7 +334,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:text="@string/title_numero_vacantes"
+                android:text="@string/title_number_vacancy"
                 android:layout_marginTop="16dp"
                 android:textSize="17sp"
                 />
@@ -344,7 +344,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:text="@string/title_salario"
+                android:text="@string/title_salary"
                 android:layout_marginTop="16dp"
                 android:textSize="17sp"
                 />
@@ -354,7 +354,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:text="@string/title_dias_laboral"
+                android:text="@string/title_days_labor"
                 android:layout_marginTop="16dp"
                 android:textSize="17sp"
                 />

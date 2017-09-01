@@ -37,7 +37,7 @@
                 android:background="@drawable/rounded_inputtxt"
                 android:layout_margin="8dp"
                 android:textSize="16sp"
-                android:hint="@string/title_nombre_titular"/>
+                android:hint="@string/title_name_titular"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -56,7 +56,7 @@
                 android:layout_margin="8dp"
                 android:textSize="16sp"
                 android:drawableRight="@drawable/approvepaymentvd"
-                android:hint="@string/title_numero_tarjeta"/>
+                android:hint="@string/title_num_card"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -82,7 +82,7 @@
                         android:background="@drawable/rounded_inputtxt"
                         android:layout_margin="8dp"
                         android:textSize="16sp"
-                        android:hint="@string/title_fecha_vencimiento"/>
+                        android:hint="@string/title_date_expiration"/>
 
                 </android.support.design.widget.TextInputLayout>
 

@@ -49,7 +49,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/title_fecha_publicado"
+                    android:text="@string/title_publish_date"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="8dp"
@@ -65,7 +65,7 @@
             </LinearLayout>
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="2dp"
+                android:layout_height="1dp"
                 android:background="@color/colorIconsForms" />
 
             <LinearLayout
@@ -169,7 +169,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="16dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -179,9 +179,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/title_numero_vacantes"
+                        android:text="@string/title_number_vacancy"
                         android:textStyle="bold"
-                        android:textSize="15sp" />
+                        android:textSize="17sp" />
 
                     <TextView
                         android:id="@+id/idvacantes"
@@ -189,7 +189,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:text="0"
-                        android:textSize="15sp"/>
+                        android:textSize="17sp"/>
 
                 </LinearLayout>
 
@@ -204,7 +204,7 @@
                         android:layout_marginTop="8dp"
                         android:textStyle="bold"
                         android:text="@string/title_start_date"
-                        android:textSize="15sp"
+                        android:textSize="17sp"
                         />
 
                     <TextView
@@ -214,7 +214,7 @@
                         android:layout_marginLeft="8dp"
                         android:layout_marginTop="8dp"
                         android:text="20/06/2017"
-                        android:textSize="15sp"
+                        android:textSize="17sp"
                         />
                 </LinearLayout>
 
@@ -225,10 +225,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:textStyle="bold"
                         android:text="@string/title_finish_date"
-                        android:textSize="15sp"
+                        android:textSize="17sp"
                         />
 
                     <TextView
@@ -236,9 +235,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
-                        android:layout_marginTop="8dp"
                         android:text="20/06/2017"
-                        android:textSize="15sp"
+                        android:textSize="17sp"
                         />
                 </LinearLayout>
 
@@ -252,6 +250,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:orientation="horizontal"
                     >
                     <TextView
@@ -260,7 +259,7 @@
                         android:layout_marginTop="8dp"
                         android:text="@string/title_start_time_job"
                         android:textStyle="bold"
-                        android:textSize="15sp"
+                        android:textSize="17sp"
                         />
 
                     <TextView
@@ -270,7 +269,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginLeft="8dp"
                         android:text="7:00 A.M."
-                        android:textSize="15sp"
+                        android:textSize="17sp"
                         />
                 </LinearLayout>
                 <LinearLayout
@@ -281,19 +280,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:text="@string/title_end_time_job"
                         android:textStyle="bold"
-                        android:textSize="15sp"
+                        android:textSize="17sp"
                         />
                     <TextView
                         android:id="@+id/idhora_final"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
-                        android:layout_marginTop="8dp"
                         android:text="6:30 P.M."
-                        android:textSize="15sp"
+                        android:textSize="17sp"
                         />
                 </LinearLayout>
 
@@ -312,9 +309,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="@string/title_salario"
+                        android:text="@string/title_salary"
                         android:textStyle="bold"
-                        android:textSize="15sp"
+                        android:textSize="17sp"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -331,7 +328,7 @@
                         android:layout_marginRight="8dp"
                         android:text="$2550.00"
                         android:textAlignment="textEnd"
-                        android:textSize="15sp"
+                        android:textSize="17sp"
                         />
                 </LinearLayout>
 
@@ -339,16 +336,16 @@
 
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="2dp"
+                android:layout_height="1dp"
                 android:background="@color/colorIconsForms" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_marginTop="10dp"
-                android:text="@string/title_tareas"
+                android:text="@string/title_task"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -356,7 +353,7 @@
                 android:id="@+id/idTask"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="36dp"
+                android:layout_marginLeft="32dp"
                 android:layout_marginRight="32dp"
                 android:layout_marginTop="5dp"
                 android:textSize="17sp"
@@ -365,10 +362,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="32dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
                 android:layout_marginTop="10dp"
-                android:text="@string/title_requerimientos"
+                android:text="@string/title_requirements"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -376,7 +373,7 @@
                 android:id="@+id/idRequirements"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="36dp"
+                android:layout_marginLeft="32dp"
                 android:layout_marginRight="32dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="16dp"

@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/title_informacion_personal"
+                android:text="@string/title_personal_info"
                 android:layout_margin="16dp"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:text="@string/title_avatar_usuario"
+                android:text="@string/title_avatar_user"
                 android:layout_marginTop="16dp"
                 android:textSize="17dp"
                 android:layout_marginBottom="20dp"
@@ -108,7 +108,7 @@
                     android:background="@drawable/rounded_inputtxt"
                     android:layout_margin="8dp"
                     android:textSize="17sp"
-                    android:hint="@string/title_segundo_nombre"/>
+                    android:hint="@string/title_middle_name"/>
 
             </android.support.design.widget.TextInputLayout>
 
@@ -125,7 +125,7 @@
                     android:background="@drawable/rounded_inputtxt"
                     android:layout_margin="8dp"
                     android:textSize="17sp"
-                    android:hint="@string/title_apellidos"/>
+                    android:hint="@string/title_last_name"/>
 
             </android.support.design.widget.TextInputLayout>
 
@@ -140,7 +140,7 @@
                 android:drawableRight="@drawable/datecompanyvd"
                 android:layout_margin="8dp"
                 android:textSize="17sp"
-                android:hint="@string/title_fechanac"/>
+                android:hint="@string/title_birth_date"/>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -189,7 +189,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/title_informacion_locacion"
+                android:text="@string/title_info_location"
                 android:layout_margin="16dp"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -200,7 +200,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:text="@string/title_pais"
+                android:text="@string/title_country"
                 android:layout_marginTop="16dp"
                 android:textSize="17dp"
                 />
