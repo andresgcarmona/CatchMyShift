@@ -52,6 +52,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
                     android:text="JobName"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                     android:textSize="18sp"
                     />
@@ -61,6 +63,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     android:textSize="15dp"
                     android:text="JobAddress"
                     />
