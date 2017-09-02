@@ -11,7 +11,9 @@ import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -49,6 +51,7 @@ public class JobDetailActivity extends AppCompatActivity implements OnMapReadyCa
     @BindView(R.id.idCompany_Name) TextView companyName;
     @BindView(R.id.idJobCompany_Desc) TextView companyDescription;
     @BindView(R.id.idjob_ImageDetail) ImageView companyLogo;
+    @BindView(R.id.toolbarJD) Toolbar jobToolbar;
 
     private Intent intent ;
 
@@ -58,7 +61,14 @@ public class JobDetailActivity extends AppCompatActivity implements OnMapReadyCa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_job_detail);
         ButterKnife.bind(this);
-
+        setSupportActionBar(jobToolbar);
+        jobToolbar.setNavigationIcon(R.drawable.cancetblvd);
+        jobToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         mMapView = (MapView) findViewById(R.id.idmap_job);
         mMapView.onCreate(savedInstanceState);
         mMapView.onResume();

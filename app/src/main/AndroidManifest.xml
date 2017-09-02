@@ -110,7 +110,11 @@
 
         <activity
             android:name=".activity.JobDetailActivity"
-            android:parentActivityName=".activity.SearchJobActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label=""
+            >
+
+        </activity>
 
         <activity
             android:name=".activity.SearchJobActivity"
