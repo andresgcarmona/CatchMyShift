@@ -6,7 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="catchmyshift.catchmyshift.activity.JobDetailActivity">
+    tools:context="catchmyshift.catchmyshift.activity.JobDetailActivity"
+    android:background="#fff"
+    >
 
     <ScrollView
         android:layout_width="match_parent"
@@ -35,18 +37,20 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:text="@string/title_puesto"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                     />
+
 
                 <TextView
                     android:id="@+id/id_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/title_direccion"
                     android:layout_marginTop="2dp"
                     android:layout_marginBottom="8dp"
-                    android:textSize="16sp"
+                    android:textStyle="italic"
+                    android:text="@string/title_direccion"
+                    android:textSize="17sp"
                     />
 
                 <TextView
@@ -67,8 +71,10 @@
             </LinearLayout>
 
             <View
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="1dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:background="@color/colorSoftGray" />
 
             <LinearLayout
@@ -167,12 +173,15 @@
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
-                android:background="@color/colorIconsForms" />
+                android:background="@color/colorSoftGray" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -205,7 +214,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textStyle="bold"
+                        android:textStyle="italic|bold"
                         android:text="@string/title_start_date"
                         android:textSize="17sp"
                         />
@@ -228,7 +237,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold"
+                        android:textStyle="italic|bold"
                         android:text="@string/title_finish_date"
                         android:textSize="17sp"
                         />
@@ -261,7 +270,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="@string/title_start_time_job"
-                        android:textStyle="bold"
+                        android:textStyle="italic|bold"
                         android:textSize="17sp"
                         />
 
@@ -284,7 +293,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/title_end_time_job"
-                        android:textStyle="bold"
+                        android:textStyle="italic|bold"
                         android:textSize="17sp"
                         />
                     <TextView
@@ -306,15 +315,17 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    >
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="@string/title_salary"
-                        android:textStyle="bold"
-                        android:textSize="17sp"
+                        android:textStyle="normal"
+                        android:textSize="20sp"
                         />
                     <TextView
                         android:layout_width="wrap_content"
@@ -329,18 +340,22 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:layout_marginRight="8dp"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold|italic"
                         android:text="$2550.00"
                         android:textAlignment="textEnd"
-                        android:textSize="17sp"
+                        android:textSize="20sp"
                         />
                 </LinearLayout>
 
             </LinearLayout>
 
             <View
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_height="1dp"
-                android:background="@color/colorIconsForms" />
+                android:background="@color/colorSoftBlue" />
 
             <TextView
                 android:layout_width="match_parent"
