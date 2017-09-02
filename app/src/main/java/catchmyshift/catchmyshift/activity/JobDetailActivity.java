@@ -20,6 +20,8 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -74,7 +76,7 @@ public class JobDetailActivity extends AppCompatActivity implements OnMapReadyCa
         googleMap = mMap;
         LatLng pp = new LatLng(lat, lon);
         MarkerOptions option = new MarkerOptions();
-        option.position(pp).title(intent.getStringExtra("job_name"));
+        option.position(pp).title(intent.getStringExtra("name").toString()).icon(BitmapDescriptorFactory.fromResource(R.drawable.markervd));
         float zoomLevel = (float) 15.0;
         googleMap.addMarker(option);
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pp, zoomLevel));
