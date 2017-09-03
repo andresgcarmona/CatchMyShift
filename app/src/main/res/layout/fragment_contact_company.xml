@@ -24,7 +24,7 @@
             >
 
             <ImageView
-                android:id="@+id/companyAvatar"
+                android:id="@+id/idcompany_cover"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
@@ -33,6 +33,7 @@
                 />
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/idcompany_logo"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="left|bottom"
