@@ -55,6 +55,7 @@
                     android:maxLines="1"
                     android:ellipsize="end"
                     android:textSize="15dp"
+                    android:textStyle="italic"
                     android:text="01/01/2017 - 06/12/2017"
                     />
 
