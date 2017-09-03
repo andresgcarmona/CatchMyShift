@@ -1,18 +1,12 @@
 package catchmyshift.catchmyshift.fragment;
 
 
-import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.location.Criteria;
-import android.location.Location;
 import android.location.LocationManager;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,14 +16,28 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.CameraUpdate;
-import com.google.android.gms.maps.CameraUpdateFactory;
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.LatLng;
 import com.squareup.picasso.Picasso;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import butterknife.BindString;
 import butterknife.BindView;
@@ -37,6 +45,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import catchmyshift.catchmyshift.R;
 import catchmyshift.catchmyshift.activity.EditUserActivity;
+import catchmyshift.catchmyshift.adapter.WorkExperienceAdapter;
+import catchmyshift.catchmyshift.listitem.WorkExperienceListItem;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -49,6 +59,7 @@ public class ProfileFragment extends Fragment {
     private GoogleMap googleMap;
     private String avatar, fullname, email, about, job_position, company, start_date, end_date;
     String URL_DATA="http://67.205.138.130/";
+    static final int READ_BLOCK_SIZE = 100;
 
     @BindString(R.string.title_Loading) String loadingText;
     @BindString(R.string.title_edit_profile)String editProfText;
@@ -57,14 +68,26 @@ public class ProfileFragment extends Fragment {
     @BindView(R.id.idNameUser) TextView userFullname;
     @BindView(R.id.idEmailUser) TextView userEmail;
     @BindView(R.id.idAbout) TextView userAbout;
-    @BindView(R.id.idWorkingxp) TextView workingExp;
+
+    private RecyclerView.Adapter adapter;
+    private List<WorkExperienceListItem> workExperienceListItems;
+
+    private String URL_DATAWE = "http://67.205.138.130/api/work-experience";
+    RecyclerView workExpRecyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         v = inflater.inflate(R.layout.fragment_profile, container, false);
-        ButterKnife.bind(this,v);
+        workExpRecyclerView = (RecyclerView) v.findViewById(R.id.idworkexperience_recyclerView);
+        workExpRecyclerView.setHasFixedSize(true);
+        workExpRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+        workExperienceListItems = new ArrayList<>();
+
+        ButterKnife.bind(this, v);
         LoadData();
+        LoadToken();
+
         return v;
 
     }
@@ -124,19 +147,82 @@ public class ProfileFragment extends Fragment {
                 {
                     userAbout.setText(noDataText);
                 }
-
-                if(!job_position.equals("null")){
-                    workingExp.setText(job_position + "\n" + company + "\n" + start_date + " - " + end_date);
-                }
-                else{
-                    workingExp.setText(noDataText);
-                }
             }
         }
         catch (Exception e){
             Toast.makeText(getContext(),"error",Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
+    }
+
+    public void LoadToken(){
+        try {
+            FileInputStream fileIn = getActivity().openFileInput("cms.sm");
+            InputStreamReader InputRead = new InputStreamReader(fileIn);
+
+            char[] inputBuffer = new char[READ_BLOCK_SIZE];
+            String FULL_TOKEN = "";
+            int charRead;
+
+            while ((charRead = InputRead.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                FULL_TOKEN += readstring;
+            }
+            InputRead.close();
+            RequestWorkExperience(FULL_TOKEN.toString());
+
+        }
+        catch (Exception e){
+            Log.e("JMCC ERROR", e.getMessage());
+        }
+    }
+
+    public void RequestWorkExperience(final String FULL_TOKEN){
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_DATAWE,
+                new Response.Listener<String>(){
+                    @Override
+                    public void onResponse(String response){
+                        try {
+
+                            JSONArray arrayWE = new JSONArray(response);
+
+                            for(int i = 0; i < arrayWE.length(); i++)
+                            {
+                                JSONObject objectWE = arrayWE.getJSONObject(i);
+
+                                WorkExperienceListItem workExperienceListItem = new WorkExperienceListItem(
+                                        objectWE.getString("job_position"),
+                                        objectWE.getString("company"),
+                                        objectWE.getString("start_date") + " - " + objectWE.getString("end_date"));
+
+                                workExperienceListItems.add(workExperienceListItem);
+                            }
+
+                            adapter = new WorkExperienceAdapter(workExperienceListItems, getContext());
+                            workExpRecyclerView.setAdapter(adapter);
+
+                        } catch (JSONException e) {
+                            Log.e("JMMC_USER",e.getMessage());
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {}
+
+                }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Authorization", FULL_TOKEN);
+                Log.e("JMMC", "HEADERS_USERACTIVITY");
+                return headers;
+            }};
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(stringRequest);
     }
 
 

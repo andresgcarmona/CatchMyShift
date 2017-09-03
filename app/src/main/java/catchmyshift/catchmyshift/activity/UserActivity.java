@@ -58,7 +58,6 @@ public class UserActivity extends AppCompatActivity
     private boolean hidden = true;
 
     private String URL_DATAUSER = "http://67.205.138.130/api/user";
-    private String URL_DATAWE = "http://67.205.138.130/api/work-experience";
     static final int READ_BLOCK_SIZE = 100;
 
     private Bundle bundle = new Bundle();
@@ -284,7 +283,6 @@ public class UserActivity extends AppCompatActivity
             }
             InputRead.close();
             ValidateUser(FULL_TOKEN.toString());
-            RequestWorkExperience(FULL_TOKEN.toString());
 
         }
         catch (Exception e){
@@ -315,58 +313,11 @@ public class UserActivity extends AppCompatActivity
                             bundle.putString("email", email);
                             bundle.putString("about", about);
 
-                        } catch (JSONException e) {
-                            Log.e("JMMC_USER",e.getMessage());
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {}
-
-                }) {
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                HashMap<String, String> headers = new HashMap<String, String>();
-                headers.put("Authorization", FULL_TOKEN);
-                Log.e("JMMC", "HEADERS_USERACTIVITY");
-                return headers;
-            }};
-
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
-    }
-
-    public void RequestWorkExperience(final String FULL_TOKEN){
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_DATAWE,
-                new Response.Listener<String>(){
-                    @Override
-                    public void onResponse(String response){
-                        try {
-                            String job_position = "", company = "", start_date = "", end_date = "";
-
-                            JSONArray arrayWE = new JSONArray(response);
-
-                            for(int i = 0; i < arrayWE.length(); i++)
-                            {
-                                JSONObject objectWE = arrayWE.getJSONObject(i);
-
-                                job_position = objectWE.getString("job_position");
-                                company = objectWE.getString("company");
-                                start_date = objectWE.getString("start_date");
-                                end_date = objectWE.getString("end_date");
-                            }
-
-                            bundle.putString("job_position",job_position);
-                            bundle.putString("company", company);
-                            bundle.putString("start_date", start_date);
-                            bundle.putString("end_date", end_date);
-
                             ProfileFragment profileFragment = new ProfileFragment();
                             profileFragment.setArguments(bundle);
                             manager = getSupportFragmentManager();
                             manager.beginTransaction().replace(R.id.layout_content_user,profileFragment,profileFragment.getTag()).commit();
+
 
                         } catch (JSONException e) {
                             Log.e("JMMC_USER",e.getMessage());
