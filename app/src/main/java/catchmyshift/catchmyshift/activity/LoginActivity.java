@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.design.widget.TextInputEditText;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -41,9 +42,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import catchmyshift.catchmyshift.R;
+import catchmyshift.catchmyshift.fragment.ContactCompanyFragment;
 import catchmyshift.catchmyshift.utilities.MyMethods;
 
 public class LoginActivity extends AppCompatActivity {
+
+    private FragmentManager manager;
 
     @BindView(R.id.button_login)
     Button btnLogin;
@@ -188,6 +192,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Log.e("JMMC_TOKEN ", FULL_TOKEN);
                                 SaveToken(FULL_TOKEN);
                                 btnLogin.setEnabled(false);
+
                                 Intent intent = new Intent().setClass(getApplicationContext(), UserActivity.class);
                                 startActivity(intent);
                                 finish();
