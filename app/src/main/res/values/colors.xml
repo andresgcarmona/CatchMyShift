@@ -4,6 +4,8 @@
     <color name="colorPrimary">#546a79</color>
     <color name="colorAccent">#88c057</color>
 
+    <color name="colorWhite">#fff</color>
+
     <color name="colorAccentBtn">#efefef</color>
     <color name="colorMainBtn">#4f8db9</color>
 

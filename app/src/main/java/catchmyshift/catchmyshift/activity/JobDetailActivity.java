@@ -4,11 +4,15 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Build;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -86,11 +90,20 @@ public class JobDetailActivity extends AppCompatActivity implements OnMapReadyCa
         googleMap = mMap;
         LatLng pp = new LatLng(lat, lon);
         MarkerOptions option = new MarkerOptions();
-        option.position(pp).title(intent.getStringExtra("name").toString()).icon(BitmapDescriptorFactory.fromResource(R.drawable.markervd));
+        option.position(pp).title(intent.getStringExtra("name").toString()).icon(bitmapDescriptorFromVector(JobDetailActivity.this, R.drawable.markervd));
         float zoomLevel = (float) 15.0;
         googleMap.addMarker(option);
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pp, zoomLevel));
 
+    }
+
+    private BitmapDescriptor bitmapDescriptorFromVector(Context context, int vectorResId) {
+        Drawable vectorDrawable = ContextCompat.getDrawable(context, vectorResId);
+        vectorDrawable.setBounds(0, 0, vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight());
+        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        vectorDrawable.draw(canvas);
+        return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
 
     public void LoadDataJobDetail(){
