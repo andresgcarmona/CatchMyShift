@@ -46,8 +46,10 @@ import butterknife.OnClick;
 import catchmyshift.catchmyshift.R;
 import catchmyshift.catchmyshift.activity.EditUserActivity;
 import catchmyshift.catchmyshift.adapter.AcademicLevelAdapter;
+import catchmyshift.catchmyshift.adapter.LanguagesAdapter;
 import catchmyshift.catchmyshift.adapter.WorkExperienceAdapter;
 import catchmyshift.catchmyshift.listitem.AcademicLevelListItem;
+import catchmyshift.catchmyshift.listitem.LanguagesListItem;
 import catchmyshift.catchmyshift.listitem.WorkExperienceListItem;
 
 /**
@@ -75,12 +77,15 @@ public class ProfileFragment extends Fragment {
 
     private List<WorkExperienceListItem> workExperienceListItems;
     private List<AcademicLevelListItem> academicLevelListItems;
+    private List<LanguagesListItem> languagesListItems;
 
     private String URL_DATAWE = "http://67.205.138.130/api/work-experience";
     private String URL_DATAAL = "http://67.205.138.130/api/education";
+    private String URL_DATAL = "http://67.205.138.130/api/language";
 
     RecyclerView workExpRecyclerView;
     RecyclerView academicLevelsRecyclerView;
+    RecyclerView languageRecyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -93,8 +98,13 @@ public class ProfileFragment extends Fragment {
 
         academicLevelsRecyclerView = (RecyclerView) v.findViewById(R.id.idacademiclevels_recyclerView);
         academicLevelsRecyclerView.setHasFixedSize(true);
-        academicLevelsRecyclerView.setLayoutManager(new LinearLayoutManager((this.getActivity())));
+        academicLevelsRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         academicLevelListItems = new ArrayList<>();
+
+        languageRecyclerView = (RecyclerView) v.findViewById(R.id.idlanguages_recyclerView);
+        languageRecyclerView.setHasFixedSize(true);
+        languageRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+        languagesListItems = new ArrayList<>();
 
         ButterKnife.bind(this, v);
         LoadData();
@@ -184,6 +194,7 @@ public class ProfileFragment extends Fragment {
             InputRead.close();
             RequestWorkExperience(FULL_TOKEN.toString());
             RequestAcademicLevel(FULL_TOKEN.toString());
+            RequestLanguage(FULL_TOKEN.toString());
 
         }
         catch (Exception e){
@@ -285,6 +296,52 @@ public class ProfileFragment extends Fragment {
         requestQueue.add(stringRequest);
     }
 
+    public void RequestLanguage(final String FULL_TOKEN){
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_DATAL,
+                new Response.Listener<String>(){
+                    @Override
+                    public void onResponse(String response){
+                        try {
+
+                            JSONArray arrayL = new JSONArray(response);
+
+                            for(int i = 0; i < arrayL.length(); i++)
+                            {
+                                JSONObject objectL = arrayL.getJSONObject(i);
+
+                                LanguagesListItem languagesListItem = new LanguagesListItem(
+                                        objectL.getString("language_id"),
+                                        objectL.getString("level"),
+                                        objectL.getString("comments"));
+
+                                languagesListItems.add(languagesListItem);
+                            }
+
+                            adapter = new LanguagesAdapter(languagesListItems, getContext());
+                            languageRecyclerView.setAdapter(adapter);
+
+                        } catch (JSONException e) {
+                            Log.e("JMMC_USER",e.getMessage());
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {}
+
+                }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Authorization", FULL_TOKEN);
+                Log.e("JMMC", "HEADERS_USERACTIVITY");
+                return headers;
+            }};
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(stringRequest);
+    }
 }
 
 
