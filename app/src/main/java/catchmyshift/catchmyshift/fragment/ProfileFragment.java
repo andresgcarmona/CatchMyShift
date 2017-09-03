@@ -45,7 +45,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import catchmyshift.catchmyshift.R;
 import catchmyshift.catchmyshift.activity.EditUserActivity;
+import catchmyshift.catchmyshift.adapter.AcademicLevelAdapter;
 import catchmyshift.catchmyshift.adapter.WorkExperienceAdapter;
+import catchmyshift.catchmyshift.listitem.AcademicLevelListItem;
 import catchmyshift.catchmyshift.listitem.WorkExperienceListItem;
 
 /**
@@ -70,10 +72,15 @@ public class ProfileFragment extends Fragment {
     @BindView(R.id.idAbout) TextView userAbout;
 
     private RecyclerView.Adapter adapter;
+
     private List<WorkExperienceListItem> workExperienceListItems;
+    private List<AcademicLevelListItem> academicLevelListItems;
 
     private String URL_DATAWE = "http://67.205.138.130/api/work-experience";
+    private String URL_DATAAL = "http://67.205.138.130/api/education";
+
     RecyclerView workExpRecyclerView;
+    RecyclerView academicLevelsRecyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -83,6 +90,11 @@ public class ProfileFragment extends Fragment {
         workExpRecyclerView.setHasFixedSize(true);
         workExpRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         workExperienceListItems = new ArrayList<>();
+
+        academicLevelsRecyclerView = (RecyclerView) v.findViewById(R.id.idacademiclevels_recyclerView);
+        academicLevelsRecyclerView.setHasFixedSize(true);
+        academicLevelsRecyclerView.setLayoutManager(new LinearLayoutManager((this.getActivity())));
+        academicLevelListItems = new ArrayList<>();
 
         ButterKnife.bind(this, v);
         LoadData();
@@ -171,6 +183,7 @@ public class ProfileFragment extends Fragment {
             }
             InputRead.close();
             RequestWorkExperience(FULL_TOKEN.toString());
+            RequestAcademicLevel(FULL_TOKEN.toString());
 
         }
         catch (Exception e){
@@ -225,6 +238,52 @@ public class ProfileFragment extends Fragment {
         requestQueue.add(stringRequest);
     }
 
+    public void RequestAcademicLevel(final String FULL_TOKEN){
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_DATAAL,
+                new Response.Listener<String>(){
+                    @Override
+                    public void onResponse(String response){
+                        try {
+
+                            JSONArray arrayAL = new JSONArray(response);
+
+                            for(int i = 0; i < arrayAL.length(); i++)
+                            {
+                                JSONObject objectAL = arrayAL.getJSONObject(i);
+
+                                AcademicLevelListItem academicLevelListItem = new AcademicLevelListItem(
+                                        objectAL.getString("degree_id") + " - " + objectAL.getString("degree_status_id"),
+                                        objectAL.getString("institute"),
+                                        objectAL.getString("start_year") + " - " + objectAL.getString("end_year"));
+
+                                academicLevelListItems.add(academicLevelListItem);
+                            }
+
+                            adapter = new AcademicLevelAdapter(academicLevelListItems, getContext());
+                            academicLevelsRecyclerView.setAdapter(adapter);
+
+                        } catch (JSONException e) {
+                            Log.e("JMMC_USER",e.getMessage());
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {}
+
+                }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Authorization", FULL_TOKEN);
+                Log.e("JMMC", "HEADERS_USERACTIVITY");
+                return headers;
+            }};
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(stringRequest);
+    }
 
 }
 
