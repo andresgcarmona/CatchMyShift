@@ -338,4 +338,6 @@
     <string name="title_vacancy_number">Number of vacancies:</string>
     <string name="title_SearchJob">Search Job</string>
 
+    <string name="title_remember_me">Remember me</string>
+
 </resources>

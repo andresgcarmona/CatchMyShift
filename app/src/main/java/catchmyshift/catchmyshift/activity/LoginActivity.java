@@ -1,7 +1,9 @@
 package catchmyshift.catchmyshift.activity;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.design.widget.TextInputEditText;
@@ -11,6 +13,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
@@ -49,6 +52,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private FragmentManager manager;
 
+    private SharedPreferences prefs;
+
     @BindView(R.id.button_login)
     Button btnLogin;
     @BindView(R.id.text_createAccoutn)
@@ -57,6 +62,8 @@ public class LoginActivity extends AppCompatActivity {
     TextInputEditText email;
     @BindView(R.id.edittext_password)
     TextInputEditText password;
+    @BindView(R.id.idRemember_me)
+    Switch rememberMe;
     @BindString(R.string.loading)
     String titleLoadingText;
     @BindString(R.string.title_Loading)
@@ -76,7 +83,6 @@ public class LoginActivity extends AppCompatActivity {
     private String CLIENT_ID = "3";
     private String CLIENT_SECRET = "CT0uLNU8YmacWlnfXsbSpmsEcDhyPsxCXLfTKBXc";
 
-
     //GET TOKEN REQUEST
     private String URL_DATA = "http://67.205.138.130/api/login";
     private String ACCEPT = "application/json";
@@ -91,6 +97,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        prefs = getSharedPreferences("Preferences", Context.MODE_PRIVATE);
+
         ButterKnife.bind(this);
         currentView = getWindow().getDecorView().findViewById(android.R.id.content);
 
@@ -192,6 +201,8 @@ public class LoginActivity extends AppCompatActivity {
                                 Log.e("JMMC_TOKEN ", FULL_TOKEN);
                                 SaveToken(FULL_TOKEN);
                                 btnLogin.setEnabled(false);
+
+                                saveOnPreferences(email.getText().toString(), password.getText().toString());
 
                                 Intent intent = new Intent().setClass(getApplicationContext(), UserActivity.class);
                                 startActivity(intent);
@@ -304,7 +315,17 @@ public class LoginActivity extends AppCompatActivity {
         }
 
     }
+
+    private void saveOnPreferences(String email, String password){
+        if (rememberMe.isChecked()){
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString("email",email);
+            editor.putString("password",password);
+            editor.apply();
+        }
+    }
 }
+
 
 
 /*

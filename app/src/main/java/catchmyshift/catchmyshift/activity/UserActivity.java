@@ -238,8 +238,9 @@ public class UserActivity extends AppCompatActivity
                 break;
             case R.id.opLogOut:
                 drawer.closeDrawer(GravityCompat.START);
-                Intent lointent = new Intent().setClass(getApplicationContext(), LoginActivity.class);
-                startActivity(lointent);
+                Intent loginintent = new Intent().setClass(getApplicationContext(), LoginActivity.class);
+                startActivity(loginintent);
+                finish();
                 break;
             default:
 
