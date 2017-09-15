@@ -90,7 +90,7 @@ public class JobDetailActivity extends AppCompatActivity implements OnMapReadyCa
         googleMap = mMap;
         LatLng pp = new LatLng(lat, lon);
         MarkerOptions option = new MarkerOptions();
-        option.position(pp).title(intent.getStringExtra("name").toString()).icon(bitmapDescriptorFromVector(JobDetailActivity.this, R.drawable.markervd));
+        option.position(pp).title(intent.getStringExtra("name").toString()).icon(bitmapDescriptorFromVector(JobDetailActivity.this, R.drawable.markerjobvd));
         float zoomLevel = (float) 15.0;
         googleMap.addMarker(option);
         googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pp, zoomLevel));
