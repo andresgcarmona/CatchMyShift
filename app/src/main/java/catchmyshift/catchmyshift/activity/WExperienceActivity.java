@@ -3,26 +3,55 @@ package catchmyshift.catchmyshift.activity;
 import android.app.DatePickerDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import catchmyshift.catchmyshift.R;
+import catchmyshift.catchmyshift.adapter.SpinnerAdapter;
 
 public class WExperienceActivity extends AppCompatActivity {
 
     @BindView(R.id.idfecha_inicial)TextView fechaInicial;
     @BindView(R.id.idfecha_final)TextView fechaFinal;
+    @BindView(R.id.sp_sector_industrial)
+    Spinner sectorIndustrialSP;
+
     private int mYear, mMonth, mDay;
+    private String URL_DATAIS = "http://67.205.138.130/api/industrial-sectors";
+    static final int READ_BLOCK_SIZE = 100;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wexperience);
         ButterKnife.bind(this);
+
+        LoadToken();
     }
 
     @OnClick(R.id.idfecha_inicial)
@@ -69,4 +98,83 @@ public class WExperienceActivity extends AppCompatActivity {
                 }, mYear, mMonth, mDay);
         datePickerDialog.show();
     }
+
+    public void LoadToken(){
+        try {
+            FileInputStream fileIn = this.openFileInput("cmsoa.sm");
+            InputStreamReader InputRead = new InputStreamReader(fileIn);
+
+            char[] inputBuffer = new char[READ_BLOCK_SIZE];
+            String FULL_TOKEN = "";
+            int charRead;
+
+            while ((charRead = InputRead.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                FULL_TOKEN += readstring;
+            }
+
+            InputRead.close();
+            RequestIndustrialSectors(FULL_TOKEN.toString());
+
+        }
+        catch (Exception e){
+            Log.e("JMCC ERROR", e.getMessage());
+        }
+    }
+
+    public void RequestIndustrialSectors(final String FULL_TOKEN){
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_DATAIS,
+                new Response.Listener<String>(){
+                    @Override
+                    public void onResponse(String response){
+                        try {
+
+                            JSONArray arrayWE = new JSONArray(response);
+
+                            ArrayList<SpinnerAdapter> industrialSectorsArrayList = new ArrayList<SpinnerAdapter>();
+                            ArrayList<String> industrialSectors = new ArrayList<String>();
+
+
+                            for(int i = 0; i < arrayWE.length(); i++)
+                            {
+                                JSONObject objectWE = arrayWE.getJSONObject(i);
+
+                                SpinnerAdapter industrialSectorsItem = new SpinnerAdapter();
+                                industrialSectorsItem.setId(objectWE.getInt("id"));
+                                industrialSectorsItem.setName(objectWE.getString("name"));
+                                industrialSectorsArrayList.add(industrialSectorsItem);
+
+                                industrialSectors.add(objectWE.getString("name"));
+                            }
+
+                            ArrayAdapter spinner_adapter = new ArrayAdapter(WExperienceActivity.this, android.R.layout.simple_spinner_item, industrialSectors);
+                            sectorIndustrialSP.setAdapter(spinner_adapter);
+
+                        } catch (JSONException e) {
+                            Log.e("JMMC_USER",e.getMessage());
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("JMMC","Error " + error.getMessage());
+                    }
+
+                }) {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Authorization", FULL_TOKEN);
+                Log.e("JMMC", "HEADERS_USERACTIVITY");
+                return headers;
+            }};
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.add(stringRequest);
+    }
 }
+
+

@@ -134,6 +134,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                             String access_token = objetUser.getString("access_token");
                             OAUTH_TOKEN = Bearer.concat(access_token);
                             Log.e("JMMC_OAUTHtoken", OAUTH_TOKEN);
+                            SaveOAuthToken(OAUTH_TOKEN);
                             //llamar metodo request_Login
                             RequestLogin(OAUTH_TOKEN);
 
@@ -250,6 +251,20 @@ public class SplashScreenActivity extends AppCompatActivity {
         }
 
     }
+
+    public void SaveOAuthToken(String FULL_TOKEN) {
+        try {
+            FileOutputStream fileout=openFileOutput("cmsoa.sm", MODE_PRIVATE);
+            OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
+            outputWriter.write(FULL_TOKEN.toString());
+            outputWriter.close();
+        }
+        catch (Exception e) {
+
+        }
+
+    }
+
 
 }
 

@@ -61,7 +61,8 @@
                 android:id="@+id/sp_sector_industrial"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
+                android:layout_marginLeft="16dp"
                 android:prompt="@string/title_describe_industria"/>
 
             <android.support.design.widget.TextInputLayout

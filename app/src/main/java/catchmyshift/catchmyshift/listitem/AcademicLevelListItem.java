@@ -16,6 +16,7 @@ public class AcademicLevelListItem {
     }
 
     public String getAcademicDegree() {
+
         return AcademicDegree;
     }
 
