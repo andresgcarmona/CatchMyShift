@@ -81,7 +81,7 @@ public class ProfileFragment extends Fragment {
 
     private String URL_DATAWE = "http://67.205.138.130/api/work-experience";
     private String URL_DATAAL = "http://67.205.138.130/api/education";
-    private String URL_DATAL = "http://67.205.138.130/api/language";
+    private String URL_DATAL = "http://67.205.138.130/api/ulanguage";
 
     RecyclerView workExpRecyclerView;
     RecyclerView academicLevelsRecyclerView;
