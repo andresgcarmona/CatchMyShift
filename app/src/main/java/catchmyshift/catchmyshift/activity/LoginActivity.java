@@ -137,7 +137,6 @@ public class LoginActivity extends AppCompatActivity {
                             String access_token = objetUser.getString("access_token");
                             OAUTH_TOKEN = Bearer.concat(access_token);
                             Log.e("JMMC_OAUTHtoken", OAUTH_TOKEN);
-                            SaveOAuthToken(OAUTH_TOKEN);
                             //llamar metodo request_Login
                             RequestLogin(OAUTH_TOKEN);
 
@@ -202,9 +201,8 @@ public class LoginActivity extends AppCompatActivity {
                                 Log.e("JMMC_TOKEN ", FULL_TOKEN);
                                 SaveToken(FULL_TOKEN);
                                 btnLogin.setEnabled(false);
-
                                 saveOnPreferences(email.getText().toString(), password.getText().toString());
-
+                                SaveOAuthToken(OAUTH_TOKEN);
                                 Intent intent = new Intent().setClass(getApplicationContext(), UserActivity.class);
                                 startActivity(intent);
                                 finish();

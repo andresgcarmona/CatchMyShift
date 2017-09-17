@@ -51,6 +51,16 @@
                     android:layout_gravity="center"
                     android:src="@drawable/fondologinpest"/>
 
+                <ProgressBar
+                    android:id="@+id/progressImage"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:padding="30dp"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"
+                    android:background="@color/colorTransparent"
+                    />
+
 
                 <android.support.design.widget.FloatingActionButton
                     android:id="@+id/cameraUserProfile"
@@ -77,6 +87,7 @@
                 android:textSize="12sp"
                 android:paddingBottom="20dp"
                 />
+
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -208,10 +219,10 @@
             <Spinner
                 android:id="@+id/sp_pais"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_height="50dp"
                 android:layout_marginRight="16dp"
-                android:layout_weight="1"/>
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/rounded_inputtxt"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -226,10 +237,10 @@
             <Spinner
                 android:id="@+id/sp_estado"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_height="50dp"
                 android:layout_marginRight="16dp"
-                android:layout_weight="1"/>
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/rounded_inputtxt"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -244,10 +255,10 @@
             <Spinner
                 android:id="@+id/sp_municipio"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_height="50dp"
                 android:layout_marginRight="16dp"
-                android:layout_weight="1"/>
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/rounded_inputtxt"/>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -260,8 +271,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:paddingLeft="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
                     android:background="@drawable/rounded_inputtxt"
                     android:textSize="17sp"
                     android:hint="@string/title_codigo_postal"/>
@@ -281,10 +292,10 @@
             <Spinner
                 android:id="@+id/sp_idioma"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
+                android:layout_height="50dp"
                 android:layout_marginRight="16dp"
-                android:layout_weight="1"/>
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/rounded_inputtxt"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

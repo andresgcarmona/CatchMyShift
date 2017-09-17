@@ -37,7 +37,10 @@
         <Spinner
             android:id="@+id/sp_nivelestudio"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/rounded_inputtxt"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -52,7 +55,11 @@
         <Spinner
             android:id="@+id/sp_nivelestudio_status"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/rounded_inputtxt"
+            />
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"

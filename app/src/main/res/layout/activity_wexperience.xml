@@ -57,13 +57,15 @@
                 android:textSize="17dp"
                 />
 
-            <Spinner
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
                 android:id="@+id/sp_sector_industrial"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:layout_marginLeft="16dp"
-                android:prompt="@string/title_describe_industria"/>
+                android:layout_height="50dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/rounded_inputtxt"
+                app:hintText="@string/title_describe_industria"
+                />
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"

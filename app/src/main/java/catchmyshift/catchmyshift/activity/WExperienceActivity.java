@@ -16,6 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,6 +29,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -39,7 +41,8 @@ public class WExperienceActivity extends AppCompatActivity {
     @BindView(R.id.idfecha_inicial)TextView fechaInicial;
     @BindView(R.id.idfecha_final)TextView fechaFinal;
     @BindView(R.id.sp_sector_industrial)
-    Spinner sectorIndustrialSP;
+    SearchableSpinner sectorIndustrialSP;
+    @BindString(R.string.title_describe_industria) String titleIndustrial;
 
     private int mYear, mMonth, mDay;
     private String URL_DATAIS = "http://67.205.138.130/api/industrial-sectors";
@@ -50,7 +53,7 @@ public class WExperienceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wexperience);
         ButterKnife.bind(this);
-
+        sectorIndustrialSP.setTitle(titleIndustrial);
         LoadToken();
     }
 

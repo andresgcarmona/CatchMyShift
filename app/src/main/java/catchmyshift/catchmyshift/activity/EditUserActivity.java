@@ -4,15 +4,18 @@ package catchmyshift.catchmyshift.activity;
 import android.Manifest;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
@@ -20,13 +23,29 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindString;
 import butterknife.BindView;
@@ -40,6 +59,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class EditUserActivity extends AppCompatActivity {
 
     @BindView(R.id.userImageProfile) CircleImageView imageUser;
+    @BindView(R.id.progressImage) ProgressBar progressImage;
     @BindString(R.string.title_selectOption) String selectOption;
     @BindString(R.string.permission) String permissions;
     @BindString(R.string.permisonSuccess) String permissionSuccess;
@@ -53,6 +73,8 @@ public class EditUserActivity extends AppCompatActivity {
     private final int GALLERY_REQUEST = 0;
     private final int CAMERA_REQUEST=1;
     private int mYear, mMonth, mDay;
+    String URL_IMAGE = "http://67.205.138.130/api/user/update-avatar";
+    static final int READ_BLOCK_SIZE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -153,9 +175,11 @@ public class EditUserActivity extends AppCompatActivity {
             try {
                 //Getting the Bitmap from Gallery
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
-                Toast.makeText(this, ""+bitmap, Toast.LENGTH_SHORT).show();
                 //Setting the Bitmap to ImageView
                 imageUser.setImageBitmap(bitmap);
+                new UpImage().execute();
+
+                //UploadImage();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -165,20 +189,110 @@ public class EditUserActivity extends AppCompatActivity {
                 Bundle extras = data.getExtras();
                 bitmap = (Bitmap) extras.get("data");
                 imageUser.setImageBitmap(bitmap);
+                new UpImage().execute();
+                //UploadImage();
             }
         }
     }
 
-    public String getStringImage(Bitmap bitmap){
-        Log.i("MyHitesh",""+ bitmap);
-        ByteArrayOutputStream baos = new  ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG,100, baos);
-        byte [] b=baos.toByteArray();
-        String temp= Base64.encodeToString(b, Base64.DEFAULT);
+    public class UpImage extends AsyncTask<Void,Void,String>{
+        @Override
+        protected void onPreExecute() {
+            progressImage.setVisibility(View.VISIBLE);
+        }
 
+        @Override
+        protected String doInBackground(Void... voids) {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+            byte[] b = baos.toByteArray();
+            String temp = Base64.encodeToString(b, Base64.DEFAULT);
+            String s = "";
+            for (int i = 0; i<= 10000; i++){
+                s += "Hola " + i;
+            }
+            return temp;
+        }
 
-        return temp;
+        @Override
+        protected void onPostExecute(String imageConverted) {
+            //ReadToken(imageConverted);
+
+            //eliminar esta linea y descomentar ReadToken
+        progressImage.setVisibility(View.INVISIBLE);
+            Toast.makeText(getApplicationContext(),"Image loaded",Toast.LENGTH_LONG).show();
+        }
     }
+
+    public void  ReadToken(String imageConverted){
+
+        try {
+            FileInputStream fileIn = openFileInput("cms.sm");
+            InputStreamReader InputRead = new InputStreamReader(fileIn);
+
+            char[] inputBuffer = new char[READ_BLOCK_SIZE];
+            String FULL_TOKEN = "";
+            int charRead;
+
+            while ((charRead = InputRead.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                FULL_TOKEN += readstring;
+            }
+            InputRead.close();
+            UploadImageRequest(FULL_TOKEN.toString(), imageConverted);
+
+        }
+        catch (Exception e){
+
+        }
+    }
+
+    public void UploadImageRequest(final String FULL_TOKEN, final String imageConverted){
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_IMAGE, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+
+                    if(jsonObject.getString("avatar").equals("PONER LO QUE VA A IR AQUI EN CASO DE QUE SEA CORRECTA LA INSERCIÓN ")){
+                        progressImage.setVisibility(View.INVISIBLE);
+                    }
+
+                }
+                catch (JSONException e){
+                    Log.e("AVATAR_ERROR",e.getMessage());
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Log.e("JMMC", error.getMessage());
+                Toast.makeText(EditUserActivity.this,"oh rayos..." + error.getMessage(),Toast.LENGTH_LONG ).show();
+            }
+        }
+        ){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String, String> params = new HashMap<>();
+                params.put("avatar",imageConverted);
+                return params;
+            }
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Accept","application/json");
+                headers.put("Authorization", FULL_TOKEN);
+                return headers;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+    }
+
 
     private void requestPermission() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)) {

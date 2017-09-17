@@ -134,7 +134,6 @@ public class SplashScreenActivity extends AppCompatActivity {
                             String access_token = objetUser.getString("access_token");
                             OAUTH_TOKEN = Bearer.concat(access_token);
                             Log.e("JMMC_OAUTHtoken", OAUTH_TOKEN);
-                            SaveOAuthToken(OAUTH_TOKEN);
                             //llamar metodo request_Login
                             RequestLogin(OAUTH_TOKEN);
 
@@ -172,7 +171,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     }
 
     public void RequestLogin(final String OAUTH_TOKEN) {
-        final Dialog progressDialog = new Dialog(SplashScreenActivity.this);
+        /*final Dialog progressDialog = new Dialog(SplashScreenActivity.this);
         progressDialog.setContentView(R.layout.loading_dialog);
         progressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         TextView titledialog = (TextView) progressDialog.findViewById(R.id.titleDialogP);
@@ -182,7 +181,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         progressDialog.setCancelable(false);
         progressDialog.show();
 
-
+*/
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_DATA,
                 new Response.Listener<String>() {
                     @Override
@@ -195,7 +194,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                                 FULL_TOKEN = Bearer.concat(token);
                                 Log.e("JMMC_TOKEN ", FULL_TOKEN);
                                 SaveToken(FULL_TOKEN);
-
+                                SaveOAuthToken(OAUTH_TOKEN);
                                 Intent intent = new Intent().setClass(getApplicationContext(), UserActivity.class);
                                 startActivity(intent);
                                 finish();
@@ -212,7 +211,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         MyMethods.InfoDialog(SplashScreenActivity.this, "Error.", errorUserPassText).show();
-                        progressDialog.hide();
+                        //progressDialog.hide();
                     }
                 }) {
 
