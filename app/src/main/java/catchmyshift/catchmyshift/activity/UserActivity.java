@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -62,6 +63,8 @@ public class UserActivity extends AppCompatActivity
 
     private Bundle bundle = new Bundle();
 
+    private SharedPreferences prefs;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,6 +91,8 @@ public class UserActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         LoadUserFragment();
+
+        prefs = getSharedPreferences("Preferences", Context.MODE_PRIVATE);
     }
 
     private void hideRevealView() {
@@ -138,6 +143,7 @@ public class UserActivity extends AppCompatActivity
                 break;
 
             case R.id.nav_logoff:
+                prefs.edit().clear().apply();
                 Intent intent = new Intent().setClass(getApplicationContext(),LoginActivity.class);
                 startActivity(intent);
                 finish();
@@ -238,6 +244,7 @@ public class UserActivity extends AppCompatActivity
                 break;
             case R.id.opLogOut:
                 drawer.closeDrawer(GravityCompat.START);
+                prefs.edit().clear().apply();
                 Intent loginintent = new Intent().setClass(getApplicationContext(), LoginActivity.class);
                 startActivity(loginintent);
                 finish();

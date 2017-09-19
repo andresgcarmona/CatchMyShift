@@ -98,7 +98,6 @@ public class SplashScreenActivity extends AppCompatActivity {
                     startActivity(mainIntent);
                 }else {
 
-
                     RequestOauthToken();
                 }
                 // Close the activity so the user won't able to go back this
