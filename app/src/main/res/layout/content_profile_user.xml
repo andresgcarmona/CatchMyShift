@@ -62,8 +62,9 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="24dp"
                         android:layout_marginTop="24dp"
-                        android:text="@string/title_user_workingxp"
+                        android:layout_marginBottom="8dp"
                         android:drawablePadding="8dp"
+                        android:text="@string/title_user_workingxp"
                         android:textSize="20sp"
                         android:drawableLeft="@drawable/workxpvd"
                         android:textColor="@color/colorBlue"
@@ -72,7 +73,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="36dp"
+                        android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
                         >
 
@@ -90,6 +91,7 @@
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="32dp"
                         android:layout_marginTop="24dp"
+                        android:layout_marginBottom="8dp"
                         android:drawablePadding="8dp"
                         android:text="@string/title_user_academics"
                         android:textSize="20sp"
@@ -99,7 +101,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="36dp"
+                        android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
                         >
 
@@ -117,6 +119,7 @@
                         android:layout_marginRight="32dp"
                         android:layout_marginTop="24dp"
                         android:drawablePadding="8dp"
+                        android:layout_marginBottom="8dp"
                         android:text="@string/title_user_languages"
                         android:textSize="20sp"
                         android:drawableLeft="@drawable/lenguagevd"
@@ -126,7 +129,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="36dp"
+                        android:layout_marginLeft="16dp"
                         android:layout_marginRight="16dp"
                         >
 
