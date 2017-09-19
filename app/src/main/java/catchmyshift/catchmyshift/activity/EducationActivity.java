@@ -1,11 +1,13 @@
 package catchmyshift.catchmyshift.activity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -41,18 +43,24 @@ public class EducationActivity extends AppCompatActivity {
     @BindView(R.id.sp_nivelestudio)
     Spinner nivelEstudio;
     @BindView(R.id.sp_nivelestudio_status) Spinner nivelEstudioStatus;
+    @BindView(R.id.id_institucion) EditText institucion;
 
     private int mYear, mMonth, mDay;
     private String URL_DATAD = "http://67.205.138.130/api/degrees";
     private String URL_DATADS = "http://67.205.138.130/api/degrees-status";
     static final int READ_BLOCK_SIZE = 100;
+    public static String action = "";
+
+    private Intent intent;
+
+    ArrayAdapter degree_adapter;
+    ArrayAdapter degree_status_adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_education);
         ButterKnife.bind(this);
-
         LoadToken();
     }
 
@@ -120,7 +128,6 @@ public class EducationActivity extends AppCompatActivity {
             InputRead.close();
             RequestDegrees(FULL_TOKEN.toString());
             RequestDegreesStatus(FULL_TOKEN.toString());
-
         }
         catch (Exception e){
             Log.e("JMCC ERROR", e.getMessage());
@@ -152,8 +159,8 @@ public class EducationActivity extends AppCompatActivity {
                                 degrees.add(objectWE.getString("name"));
                             }
 
-                            ArrayAdapter spinner_adapter = new ArrayAdapter(EducationActivity.this, android.R.layout.simple_spinner_item, degrees);
-                            nivelEstudio.setAdapter(spinner_adapter);
+                            degree_adapter = new ArrayAdapter(EducationActivity.this, android.R.layout.simple_spinner_item, degrees);
+                            nivelEstudio.setAdapter(degree_adapter);
 
                         } catch (JSONException e) {
                             Log.e("JMMC_USER",e.getMessage());
@@ -205,8 +212,10 @@ public class EducationActivity extends AppCompatActivity {
                                 degreesStatus.add(objectWE.getString("name"));
                             }
 
-                            ArrayAdapter spinner_adapter = new ArrayAdapter(EducationActivity.this, android.R.layout.simple_spinner_item, degreesStatus);
-                            nivelEstudioStatus.setAdapter(spinner_adapter);
+                            degree_status_adapter = new ArrayAdapter(EducationActivity.this, android.R.layout.simple_spinner_item, degreesStatus);
+                            nivelEstudioStatus.setAdapter(degree_status_adapter);
+
+                            RequestAction();
 
                         } catch (JSONException e) {
                             Log.e("JMMC_USER",e.getMessage());
@@ -231,5 +240,25 @@ public class EducationActivity extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         requestQueue.add(stringRequest);
+    }
+
+    public void RequestAction(){
+        intent = getIntent();
+        action = intent.getStringExtra("action");
+
+        if(action.equals("edit")){
+            String degreeName = intent.getStringExtra("academic_degree_name");
+            int pos = degree_adapter.getPosition(degreeName);
+            nivelEstudio.setSelection(pos);
+
+            String degreeStatusName = intent.getStringExtra("academic_degree_status_name");
+            pos = degree_status_adapter.getPosition(degreeStatusName);
+            nivelEstudioStatus.setSelection(pos);
+
+            institucion.setText(intent.getStringExtra("academic_institution"));
+            anioInicial.setText(intent.getStringExtra("academic_start_year"));
+            anioFinal.setText(intent.getStringExtra("academic_end_year"));
+
+        }
     }
 }

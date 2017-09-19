@@ -261,11 +261,17 @@ public class ProfileFragment extends Fragment {
                             for(int i = 0; i < arrayAL.length(); i++)
                             {
                                 JSONObject objectAL = arrayAL.getJSONObject(i);
+                                JSONObject objectD = objectAL.getJSONObject("degree");
+                                JSONObject objectS = objectAL.getJSONObject("status");
 
                                 AcademicLevelListItem academicLevelListItem = new AcademicLevelListItem(
-                                        objectAL.getString("degree_id") + " - " + objectAL.getString("degree_status_id"),
-                                        objectAL.getString("institute"),
-                                        objectAL.getString("start_year") + " - " + objectAL.getString("end_year"));
+                                        objectAL.getString("id"), objectAL.getString("user_id"), objectAL.getString("degree_id"),
+                                        objectAL.getString("degree_status_id"), objectD.getString("name"), objectS.getString("name"),
+                                        objectD.getString("name") + "-" + objectS.getString("name"), objectAL.getString("institute"),
+                                        objectAL.getString("start_year"), objectAL.getString("end_year"),
+                                        objectAL.getString("start_year") + " - " + objectAL.getString("end_year"),
+                                        objectAL.getString("certificate"), objectAL.getString("certificate_name"),
+                                        objectAL.getString("created_at"), objectAL.getString("updated_at"), objectAL.getString("deleted_at"));
 
                                 academicLevelListItems.add(academicLevelListItem);
                             }
