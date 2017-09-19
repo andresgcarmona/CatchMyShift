@@ -2,12 +2,15 @@ package catchmyshift.catchmyshift.activity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -18,6 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.github.ybq.android.spinkit.SpinKitView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,10 +44,10 @@ public class EducationActivity extends AppCompatActivity {
 
     @BindView(R.id.idanio_inicial)TextView anioInicial;
     @BindView(R.id.idanio_final)TextView anioFinal;
-    @BindView(R.id.sp_nivelestudio)
-    Spinner nivelEstudio;
+    @BindView(R.id.sp_nivelestudio) Spinner nivelEstudio;
     @BindView(R.id.sp_nivelestudio_status) Spinner nivelEstudioStatus;
     @BindView(R.id.id_institucion) EditText institucion;
+    @BindView(R.id.idprogressLoad) SpinKitView progressBar;
 
     private int mYear, mMonth, mDay;
     private String URL_DATAD = "http://67.205.138.130/api/degrees";
@@ -55,6 +59,15 @@ public class EducationActivity extends AppCompatActivity {
 
     ArrayAdapter degree_adapter;
     ArrayAdapter degree_status_adapter;
+
+    public class LoadExtras
+    {
+        public int PDegreeName;
+        public int PDegreeStatus;
+        public String Institution;
+        public String StartYear;
+        public String EndYear;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,6 +148,7 @@ public class EducationActivity extends AppCompatActivity {
     }
 
     public void RequestDegrees(final String FULL_TOKEN){
+        progressBar.setVisibility(View.VISIBLE);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_DATAD,
                 new Response.Listener<String>(){
                     @Override
@@ -215,7 +229,7 @@ public class EducationActivity extends AppCompatActivity {
                             degree_status_adapter = new ArrayAdapter(EducationActivity.this, android.R.layout.simple_spinner_item, degreesStatus);
                             nivelEstudioStatus.setAdapter(degree_status_adapter);
 
-                            RequestAction();
+                            new RequestActionAT().execute();
 
                         } catch (JSONException e) {
                             Log.e("JMMC_USER",e.getMessage());
@@ -242,7 +256,49 @@ public class EducationActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    public void RequestAction(){
+    public class RequestActionAT extends AsyncTask<Void,Void,LoadExtras>{
+
+        @Override
+        protected LoadExtras doInBackground(Void... params) {
+            intent = getIntent();
+            action = intent.getStringExtra("action");
+
+            LoadExtras loadExtras = new LoadExtras();
+
+            if(action.equals("edit")){
+
+                String degreeName = intent.getStringExtra("academic_degree_name");
+                loadExtras.PDegreeName = degree_adapter.getPosition(degreeName);
+
+                String degreeStatusName = intent.getStringExtra("academic_degree_status_name");
+                loadExtras.PDegreeStatus = degree_status_adapter.getPosition(degreeStatusName);
+
+                String instution = intent.getStringExtra("academic_institution");
+                String startYear = intent.getStringExtra("academic_start_year");
+                String endYear = intent.getStringExtra("academic_end_year");
+
+                loadExtras.Institution = instution;
+                loadExtras.StartYear = startYear;
+                loadExtras.EndYear = endYear;
+
+            }
+            return loadExtras;
+        }
+
+        @Override
+        protected void onPostExecute(LoadExtras loadExtras) {
+            nivelEstudio.setSelection(loadExtras.PDegreeName);
+            nivelEstudioStatus.setSelection(loadExtras.PDegreeStatus);
+
+            institucion.setText(loadExtras.Institution);
+            anioInicial.setText(loadExtras.StartYear);
+            anioFinal.setText(loadExtras.EndYear);
+
+            progressBar.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    /*    public void RequestAction(){
         intent = getIntent();
         action = intent.getStringExtra("action");
 
@@ -260,5 +316,5 @@ public class EducationActivity extends AppCompatActivity {
             anioFinal.setText(intent.getStringExtra("academic_end_year"));
 
         }
-    }
+    } */
 }
