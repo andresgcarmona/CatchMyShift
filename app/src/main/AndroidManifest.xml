@@ -25,7 +25,9 @@
         <!-- MAIN ACTIVITY -->
         <activity
             android:name=".activity.SplashScreenActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,11 +36,15 @@
         </activity>
         <activity
             android:name=".activity.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".activity.UserActivity"
             android:label="@string/title_activity_user"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+            />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -53,28 +59,40 @@
 
         <activity
             android:name=".activity.MapsActivity"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".activity.MapsUserActivity"
             android:label="@string/title_activity_maps_user"
             android:parentActivityName=".activity.UserActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="catchmyshift.catchmyshift.activity.UserActivity" />
+                android:value="catchmyshift.catchmyshift.activity.UserActivity"
+                android:screenOrientation="portrait"
+                />
         </activity>
         <activity
             android:name=".activity.CompanyActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="catchmyshift.catchmyshift.activity.CompanyActivity" />
         </activity>
-        <activity android:name=".activity.LoginActivityCompany" />
+        <activity android:name=".activity.LoginActivityCompany"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".activity.MyEventsActivity"
             android:label="@string/title_activity_my_events"
-            android:parentActivityName=".activity.UserActivity">
+            android:parentActivityName=".activity.UserActivity"
+            android:screenOrientation="portrait"
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="catchmyshift.catchmyshift.activity.UserActivity" />
@@ -82,37 +100,48 @@
         <activity
             android:name=".activity.CreateUserActivity"
             android:label="@string/title_blank"
-            android:parentActivityName=".activity.LoginActivity" />
-        <activity android:name=".activity.MainActivity" />
+            android:parentActivityName=".activity.LoginActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".activity.MainActivity"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".activity.EditUserActivity"
-            android:parentActivityName=".activity.UserActivity" />
+            android:parentActivityName=".activity.UserActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity.WExperienceActivity"
-            android:parentActivityName=".activity.UserActivity" />
+            android:parentActivityName=".activity.UserActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity.EducationActivity"
-            android:parentActivityName=".activity.UserActivity" />
+            android:parentActivityName=".activity.UserActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity.LanguagesActivity"
-            android:parentActivityName=".activity.UserActivity" />
+            android:parentActivityName=".activity.UserActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity.CompaniesActivity"
             android:label="@string/title_company"
-            android:parentActivityName=".activity.UserActivity" />
+            android:parentActivityName=".activity.UserActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity.JobActivity"
-            android:parentActivityName=".activity.UserActivity" />
+            android:parentActivityName=".activity.UserActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activity.MetodoPagoActivity"
             android:label="@string/title_payment_method"
-            android:parentActivityName=".activity.UserActivity" />
+            android:parentActivityName=".activity.UserActivity"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".activity.JobDetailActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:label=""
-            >
+            android:screenOrientation="portrait">
 
         </activity>
 
@@ -120,7 +149,7 @@
             android:name=".activity.SearchJobActivity"
             android:parentActivityName=".activity.UserActivity"
             android:label="@string/title_SearchJob"
-            ></activity>
+            android:screenOrientation="portrait"></activity>
 
     </application>
 

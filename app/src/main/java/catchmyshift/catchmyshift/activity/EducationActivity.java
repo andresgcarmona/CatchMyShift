@@ -140,7 +140,7 @@ public class EducationActivity extends AppCompatActivity {
 
             InputRead.close();
             RequestDegrees(FULL_TOKEN.toString());
-            RequestDegreesStatus(FULL_TOKEN.toString());
+            //RequestDegreesStatus(FULL_TOKEN.toString());
         }
         catch (Exception e){
             Log.e("JMCC ERROR", e.getMessage());
@@ -175,6 +175,7 @@ public class EducationActivity extends AppCompatActivity {
 
                             degree_adapter = new ArrayAdapter(EducationActivity.this, android.R.layout.simple_spinner_item, degrees);
                             nivelEstudio.setAdapter(degree_adapter);
+                            RequestDegreesStatus(FULL_TOKEN.toString());
 
                         } catch (JSONException e) {
                             Log.e("JMMC_USER",e.getMessage());
