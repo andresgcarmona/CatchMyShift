@@ -47,7 +47,7 @@ public class EducationActivity extends AppCompatActivity {
     @BindView(R.id.sp_nivelestudio) Spinner nivelEstudio;
     @BindView(R.id.sp_nivelestudio_status) Spinner nivelEstudioStatus;
     @BindView(R.id.id_institucion) EditText institucion;
-    @BindView(R.id.idprogressLoad) SpinKitView progressBar;
+    @BindView(R.id.idprogressEducation) SpinKitView progressBar;
 
     private int mYear, mMonth, mDay;
     private String URL_DATAD = "http://67.205.138.130/api/degrees";
@@ -260,29 +260,35 @@ public class EducationActivity extends AppCompatActivity {
 
         @Override
         protected LoadExtras doInBackground(Void... params) {
-            intent = getIntent();
-            action = intent.getStringExtra("action");
 
             LoadExtras loadExtras = new LoadExtras();
+            try{
+                intent = getIntent();
+                action = intent.getStringExtra("action");
+                if(action.equals("edit")){
 
-            if(action.equals("edit")){
+                    String degreeName = intent.getStringExtra("academic_degree_name");
+                    loadExtras.PDegreeName = degree_adapter.getPosition(degreeName);
 
-                String degreeName = intent.getStringExtra("academic_degree_name");
-                loadExtras.PDegreeName = degree_adapter.getPosition(degreeName);
+                    String degreeStatusName = intent.getStringExtra("academic_degree_status_name");
+                    loadExtras.PDegreeStatus = degree_status_adapter.getPosition(degreeStatusName);
 
-                String degreeStatusName = intent.getStringExtra("academic_degree_status_name");
-                loadExtras.PDegreeStatus = degree_status_adapter.getPosition(degreeStatusName);
+                    String instution = intent.getStringExtra("academic_institution");
+                    String startYear = intent.getStringExtra("academic_start_year");
+                    String endYear = intent.getStringExtra("academic_end_year");
 
-                String instution = intent.getStringExtra("academic_institution");
-                String startYear = intent.getStringExtra("academic_start_year");
-                String endYear = intent.getStringExtra("academic_end_year");
+                    loadExtras.Institution = instution;
+                    loadExtras.StartYear = startYear;
+                    loadExtras.EndYear = endYear;
 
-                loadExtras.Institution = instution;
-                loadExtras.StartYear = startYear;
-                loadExtras.EndYear = endYear;
-
+                }
+                return loadExtras;
             }
-            return loadExtras;
+            catch (Exception e){
+                Log.e("JMMC_ERROR_IN",e.getMessage());
+                return loadExtras;
+            }
+
         }
 
         @Override

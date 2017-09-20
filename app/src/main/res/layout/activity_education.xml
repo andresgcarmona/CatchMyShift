@@ -156,7 +156,7 @@
     </android.support.v4.widget.NestedScrollView>
 
     <com.github.ybq.android.spinkit.SpinKitView
-        android:id="@+id/idprogressLoad"
+        android:id="@+id/idprogressEducation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="150dp"

@@ -23,6 +23,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.github.ybq.android.spinkit.SpinKitView;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.squareup.picasso.Picasso;
@@ -66,13 +67,14 @@ public class ProfileFragment extends Fragment {
     static final int READ_BLOCK_SIZE = 100;
 
 
-    @BindString(R.string.title_Loading) String loadingText;
-    @BindString(R.string.title_edit_profile)String editProfText;
-    @BindString(R.string.title_no_data)String noDataText;
-    @BindView(R.id.userAvatar) ImageView avatarUserIV;
     @BindView(R.id.idNameUser) TextView userFullname;
     @BindView(R.id.idEmailUser) TextView userEmail;
     @BindView(R.id.idAbout) TextView userAbout;
+    @BindView(R.id.userAvatar) ImageView avatarUserIV;
+    @BindView(R.id.idprogressLoadUser) SpinKitView progressBar;
+    @BindString(R.string.title_Loading) String loadingText;
+    @BindString(R.string.title_edit_profile)String editProfText;
+    @BindString(R.string.title_no_data)String noDataText;
 
     private RecyclerView.Adapter adapter;
 
@@ -334,7 +336,7 @@ public class ProfileFragment extends Fragment {
 
                             adapter = new LanguagesAdapter(languagesListItems, getContext());
                             languageRecyclerView.setAdapter(adapter);
-
+                            progressBar.setVisibility(View.INVISIBLE);
                         } catch (JSONException e) {
                             Log.e("JMMC_USER",e.getMessage());
                             e.printStackTrace();
