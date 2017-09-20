@@ -35,6 +35,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.github.ybq.android.spinkit.SpinKitView;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
@@ -59,12 +60,18 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class EditUserActivity extends AppCompatActivity {
 
     @BindView(R.id.userImageProfile) CircleImageView imageUser;
-    @BindView(R.id.progressImage) ProgressBar progressImage;
+    @BindView(R.id.id_nombre) EditText userName;
+    @BindView(R.id.id_apellidos) EditText userLastName;
+    @BindView(R.id.idfecha_nac) TextView userBirthDate;
+    @BindView(R.id.id_user_email) EditText userEmail;
+    @BindView(R.id.id_user_about) EditText userAbout;
+
+    @BindView(R.id.progressImage) SpinKitView progressImage;
+    @BindView(R.id.idprogressLoad) SpinKitView progressBar;
     @BindString(R.string.title_selectOption) String selectOption;
     @BindString(R.string.permission) String permissions;
     @BindString(R.string.permisonSuccess) String permissionSuccess;
     @BindString(R.string.permisonFail) String permissionFail;
-    @BindView(R.id.idfecha_nac)TextView fechaNacimiento;
 
     Dialog myDialog;
     Button cameraOption, galleryOpcion;
@@ -76,13 +83,24 @@ public class EditUserActivity extends AppCompatActivity {
     String URL_IMAGE = "http://67.205.138.130/api/user/update-avatar";
     static final int READ_BLOCK_SIZE = 100;
 
+    public class ExtraData{
+        public String Avatar;
+        public String Name;
+        public String SecondName;
+        public String LastName;
+        public String BirthDay;
+        public String Email;
+        public String AboutMe;
+        public String PostalCode;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_user);
         ButterKnife.bind(this);
 
-        LoadDataUser();
+        new LoadDataUserAT().execute();
     }
 
     @OnClick(R.id.idfecha_nac)
@@ -101,7 +119,7 @@ public class EditUserActivity extends AppCompatActivity {
                     public void onDateSet(DatePicker view, int year,
                                           int monthOfYear, int dayOfMonth) {
 
-                        fechaNacimiento.setText((monthOfYear + 1) + "/" + dayOfMonth + "/" + year);
+                        userBirthDate.setText((monthOfYear + 1) + "/" + dayOfMonth + "/" + year);
 
                     }
                 }, mYear, mMonth, mDay);
@@ -356,6 +374,40 @@ public class EditUserActivity extends AppCompatActivity {
                     MyMethods.InfoDialog(EditUserActivity.this,"Info.",permissionFail).show();
                 }
                 break;
+        }
+    }
+
+    public class LoadDataUserAT extends AsyncTask<Void,Void,ExtraData>{
+
+        @Override
+        protected void onPreExecute() {
+            progressBar.setVisibility(View.VISIBLE);
+        }
+
+        @Override
+        protected ExtraData doInBackground(Void... params) {
+            ExtraData extraData = new ExtraData();
+            Intent intent = getIntent();
+            extraData.Avatar = intent.getStringExtra("avatar");
+            extraData.Name = intent.getStringExtra("name");
+            extraData.LastName = intent.getStringExtra("lastname");
+            extraData.BirthDay = intent.getStringExtra("birthdate");
+            extraData.Email = intent.getStringExtra("email");
+            extraData.AboutMe = intent.getStringExtra("about");
+
+            return extraData;
+        }
+
+        @Override
+        protected void onPostExecute(ExtraData extraData) {
+            Picasso.with(getApplicationContext()).load(extraData.Avatar).into(imageUser);
+            userName.setText(extraData.Name);
+            userLastName.setText(extraData.LastName);
+            userBirthDate.setText(extraData.BirthDay);
+            userEmail.setText(extraData.Email);
+            userAbout.setText(extraData.AboutMe);
+
+            progressBar.setVisibility(View.INVISIBLE);
         }
     }
 

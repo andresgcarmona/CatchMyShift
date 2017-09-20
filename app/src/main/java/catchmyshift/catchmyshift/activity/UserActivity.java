@@ -307,7 +307,7 @@ public class UserActivity extends AppCompatActivity
                     @Override
                     public void onResponse(String response){
                         try {
-                            String avatar, fullname, email, about;
+                            String avatar, fullname, email, about, name, lastName, birthDate;
 
                             JSONObject objetUser = new JSONObject(response);
 
@@ -315,11 +315,17 @@ public class UserActivity extends AppCompatActivity
                             fullname = objetUser.getString("fullname");
                             email = objetUser.getString("email");
                             about = objetUser.getString("about");
+                            name = objetUser.getString("firstname");
+                            lastName = objetUser.getString("lastname");
+                            birthDate = objetUser.getString("birthdate");
 
                             bundle.putString("avatar",avatar);
                             bundle.putString("fullname", fullname);
                             bundle.putString("email", email);
                             bundle.putString("about", about);
+                            bundle.putString("name",name);
+                            bundle.putString("lastname",lastName);
+                            bundle.putString("birthdate",birthDate);
 
                             ProfileFragment profileFragment = new ProfileFragment();
                             profileFragment.setArguments(bundle);

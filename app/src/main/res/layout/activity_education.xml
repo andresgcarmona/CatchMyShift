@@ -160,10 +160,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="150dp"
-        style="@style/SpinKitView.Large.ThreeBounce"
         android:layout_gravity="center"
-        app:SpinKit_Color="@color/colorAccent"
+        app:SpinKit_Color="@color/colorPrimary"
         android:background="@color/colorTransparent"
+        style="@style/SpinKitView.Large.ThreeBounce"
         android:visibility="invisible"
         />
 

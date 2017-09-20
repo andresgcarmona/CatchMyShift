@@ -61,9 +61,10 @@ public class ProfileFragment extends Fragment {
     private View v;
     LocationManager locationManager;
     private GoogleMap googleMap;
-    private String avatar, fullname, email, about, job_position, company, start_date, end_date;
+    private String avatar, fullname, name, email, about, lastName, birthdate, job_position, company, start_date, end_date;
     String URL_DATA="http://67.205.138.130/";
     static final int READ_BLOCK_SIZE = 100;
+
 
     @BindString(R.string.title_Loading) String loadingText;
     @BindString(R.string.title_edit_profile)String editProfText;
@@ -127,7 +128,11 @@ public class ProfileFragment extends Fragment {
             intent.putExtra("avatar",FULL_URL_AVATAR);
         }
 
-
+        intent.putExtra("name",name);
+        intent.putExtra("email",email);
+        intent.putExtra("about",about);
+        intent.putExtra("lastname",lastName);
+        intent.putExtra("birthdate",birthdate);
 
         Log.e("JMMC_INTENTAVATAR",intent.toString());
         startActivity(intent);
@@ -145,6 +150,10 @@ public class ProfileFragment extends Fragment {
                 company = bundle.getString("company");
                 start_date = bundle.getString("start_date");
                 end_date = bundle.getString("end_date");
+                name = bundle.getString("name");
+                lastName = bundle.getString("lastname");
+                birthdate = bundle.getString("birthdate");
+
 
                 String comparation = avatar.substring(0,1);
                 Log.e("JMMC_ AVATAR RESULT", comparation);
