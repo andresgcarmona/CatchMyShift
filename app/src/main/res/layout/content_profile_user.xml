@@ -41,7 +41,7 @@
                         android:layout_marginRight="32dp"
                         android:drawablePadding="8dp"
                         android:text="@string/title_user_about"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:textColor="@color/colorBlue"
                         android:drawableLeft="@drawable/aboutprofvd"
                         />
@@ -65,7 +65,7 @@
                         android:layout_marginBottom="8dp"
                         android:drawablePadding="8dp"
                         android:text="@string/title_user_workingxp"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:drawableLeft="@drawable/workxpvd"
                         android:textColor="@color/colorBlue"
                         />
@@ -94,7 +94,7 @@
                         android:layout_marginBottom="8dp"
                         android:drawablePadding="8dp"
                         android:text="@string/title_user_academics"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:drawableLeft="@drawable/gradeschovd"
                         android:textColor="@color/colorBlue"/>
 
@@ -121,7 +121,7 @@
                         android:drawablePadding="8dp"
                         android:layout_marginBottom="8dp"
                         android:text="@string/title_user_languages"
-                        android:textSize="20sp"
+                        android:textSize="15sp"
                         android:drawableLeft="@drawable/lenguagevd"
                         android:textColor="@color/colorBlue"
                         />

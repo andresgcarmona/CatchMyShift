@@ -1,9 +1,12 @@
 package catchmyshift.catchmyshift.activity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.Spinner;
@@ -16,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.github.ybq.android.spinkit.SpinKitView;
 import com.toptoche.searchablespinnerlibrary.SearchableSpinner;
 
 import org.json.JSONArray;
@@ -36,18 +40,36 @@ import butterknife.OnClick;
 import catchmyshift.catchmyshift.R;
 import catchmyshift.catchmyshift.adapter.SpinnerAdapter;
 
+
 public class WExperienceActivity extends AppCompatActivity {
 
     @BindView(R.id.idfecha_inicial)TextView fechaInicial;
     @BindView(R.id.idfecha_final)TextView fechaFinal;
     @BindView(R.id.sp_sector_industrial)
     SearchableSpinner sectorIndustrialSP;
+    @BindView(R.id.idprogressLoadWExp) SpinKitView progressBar;
     @BindString(R.string.title_describe_industria) String titleIndustrial;
 
     private int mYear, mMonth, mDay;
     private String URL_DATAIS = "http://67.205.138.130/api/industrial-sectors";
     static final int READ_BLOCK_SIZE = 100;
+    private Intent intent;
+    public static String action = "";
 
+
+    public class LoadExtras
+    {
+        public String Job;
+        public int PosIndSector;
+        public String Company;
+        public String Description;
+        public String StartDate;
+        public String EndDate;
+        public String SupervisorName;
+        public String SupervisorPhone;
+        public boolean ActualJob;
+
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -127,6 +149,7 @@ public class WExperienceActivity extends AppCompatActivity {
     }
 
     public void RequestIndustrialSectors(final String FULL_TOKEN){
+        progressBar.setVisibility(View.VISIBLE);
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL_DATAIS,
                 new Response.Listener<String>(){
                     @Override
@@ -154,6 +177,9 @@ public class WExperienceActivity extends AppCompatActivity {
                             ArrayAdapter spinner_adapter = new ArrayAdapter(WExperienceActivity.this, android.R.layout.simple_spinner_item, industrialSectors);
                             sectorIndustrialSP.setAdapter(spinner_adapter);
 
+                            //quitar y poner el load Extras cuando se implemnete ese método
+                            progressBar.setVisibility(View.INVISIBLE);
+
                         } catch (JSONException e) {
                             Log.e("JMMC_USER",e.getMessage());
                             e.printStackTrace();
@@ -177,6 +203,31 @@ public class WExperienceActivity extends AppCompatActivity {
 
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         requestQueue.add(stringRequest);
+    }
+
+    public class loadExtras extends AsyncTask<Void,Void, LoadExtras>{
+
+        @Override
+        protected LoadExtras doInBackground(Void... params) {
+            LoadExtras loadExtras = new LoadExtras();
+            try {
+                intent = getIntent();
+                action = intent.getStringExtra("action");
+                if (action.equals("edit")){
+
+                }
+                return loadExtras;
+            }
+            catch(Exception e){
+
+                return loadExtras;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(LoadExtras loadExtras) {
+            super.onPostExecute(loadExtras);
+        }
     }
 }
 
