@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Catch my Shift</string>
+    <string name="app_name">Catch a Shift</string>
     <string name="title_welcom">Welcome</string>
     <string name="title_welcom_to">to</string>
 

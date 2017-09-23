@@ -242,27 +242,13 @@ public class EditUserActivity extends AppCompatActivity {
         }
     }
 
-    public void  ReadToken(String imageConverted){
-
+    public void  ConvertAndSendImage(String imageConverted){
         try {
-            FileInputStream fileIn = openFileInput("cms.sm");
-            InputStreamReader InputRead = new InputStreamReader(fileIn);
-
-            char[] inputBuffer = new char[READ_BLOCK_SIZE];
-            String FULL_TOKEN = "";
-            int charRead;
-
-            while ((charRead = InputRead.read(inputBuffer)) > 0) {
-                // char to string conversion
-                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
-                FULL_TOKEN += readstring;
-            }
-            InputRead.close();
-            UploadImageRequest(FULL_TOKEN.toString(), imageConverted);
-
+            String FullToken = ReadToken();
+            UploadImageRequest(FullToken,imageConverted);
         }
         catch (Exception e){
-
+            Log.e("JMMC_ERROR",e.getMessage());
         }
     }
 
@@ -411,10 +397,29 @@ public class EditUserActivity extends AppCompatActivity {
         }
     }
 
-    public void LoadDataUser() {
-        Intent intent = getIntent();
-        String avatar = intent.getStringExtra("avatar");
-        Picasso.with(getApplicationContext()).load(avatar).into(imageUser);
-        Log.e("JMMC_INTENTAVATAR",avatar);
+    public String ReadToken(){
+        try {
+            FileInputStream fileIn = openFileInput("cms.sm");
+            InputStreamReader InputRead = new InputStreamReader(fileIn);
+
+            char[] inputBuffer = new char[READ_BLOCK_SIZE];
+            String FULL_TOKEN = "";
+            int charRead;
+
+            while ((charRead = InputRead.read(inputBuffer)) > 0) {
+                // char to string conversion
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                FULL_TOKEN += readstring;
+            }
+            InputRead.close();
+
+            return FULL_TOKEN;
+        }
+        catch (Exception e){
+            return "error-at-read-token";
+        }
+
     }
+
+
 }
