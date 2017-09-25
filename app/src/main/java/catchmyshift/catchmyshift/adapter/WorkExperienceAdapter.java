@@ -47,6 +47,7 @@ public class WorkExperienceAdapter extends RecyclerView.Adapter<WorkExperienceAd
             @Override
             public void onClick(View v) {
                 Intent workExperienceEdit = new Intent().setClass(context, WExperienceActivity.class);
+                workExperienceEdit.putExtra("action","edit");
             }
         });
     }
