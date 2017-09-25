@@ -229,7 +229,13 @@ public class ProfileFragment extends Fragment {
                                 WorkExperienceListItem workExperienceListItem = new WorkExperienceListItem(
                                         objectWE.getString("job_position"),
                                         objectWE.getString("company"),
-                                        objectWE.getString("start_date") + " - " + objectWE.getString("end_date"));
+                                        objectWE.getString("start_date") + " - " + objectWE.getString("end_date"),
+                                        objectWE.getString("description"),
+                                        objectWE.getString("supervisor_name"),
+                                        objectWE.getString("supervisor_number"),
+                                        objectWE.getString("current_job"),
+                                        objectWE.getString("start_date"),
+                                        objectWE.getString("end_date"));
 
                                 workExperienceListItems.add(workExperienceListItem);
                             }

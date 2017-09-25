@@ -1,15 +1,18 @@
 package catchmyshift.catchmyshift.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
 
 import catchmyshift.catchmyshift.R;
+import catchmyshift.catchmyshift.activity.WExperienceActivity;
 import catchmyshift.catchmyshift.listitem.WorkExperienceListItem;
 
 /**
@@ -39,6 +42,13 @@ public class WorkExperienceAdapter extends RecyclerView.Adapter<WorkExperienceAd
         holder.textViewJobPosition.setText(workExperienceListItem.getJobPosition());
         holder.textViewJobCompany.setText(workExperienceListItem.getJobCompany());
         holder.textViewJobDate.setText(workExperienceListItem.getJobDate());
+
+        holder.workExpLinearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent workExperienceEdit = new Intent().setClass(context, WExperienceActivity.class);
+            }
+        });
     }
 
     @Override
@@ -51,6 +61,7 @@ public class WorkExperienceAdapter extends RecyclerView.Adapter<WorkExperienceAd
         public TextView textViewJobPosition;
         public TextView textViewJobCompany;
         public TextView textViewJobDate;
+        public LinearLayout workExpLinearLayout;
 
         public ViewHolder(View itemView) {
             super(itemView);
@@ -58,6 +69,7 @@ public class WorkExperienceAdapter extends RecyclerView.Adapter<WorkExperienceAd
             textViewJobPosition = (TextView) itemView.findViewById(R.id.idjob_position);
             textViewJobCompany = (TextView) itemView.findViewById(R.id.idjob_company);
             textViewJobDate = (TextView) itemView.findViewById(R.id.idjob_date);
+            workExpLinearLayout =  (LinearLayout) itemView.findViewById(R.id.idwork_LinearLayout);
         }
     }
 }
