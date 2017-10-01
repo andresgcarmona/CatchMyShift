@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.button_publicvacante)
     public void PublishVacancy() {
-        Intent intent = new Intent().setClass(getApplicationContext(), LoginActivity.class);
+        Intent intent = new Intent().setClass(getApplicationContext(), LoginActivityCompany.class);
         startActivity(intent);
     }
 
