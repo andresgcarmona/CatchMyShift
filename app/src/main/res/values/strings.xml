@@ -28,7 +28,7 @@
     <string name="title_navdraw_logoff">Cerrar Sesión</string>
     <string name="title_navdraw_option">Opciones</string>
 
-    <string name="title_navdraw_profileBussiness">Perfil de Trabajo</string>
+    <string name="title_navdraw_profileBussiness">Perfil de Empresa</string>
     <string name="title_navdraw_bussinessContact">Contacto</string>
     <string name="title_navdraw_billingInfo">Información de Facturación</string>
     <string name="title_navdraw_publishJob">Publicar un Trabajo</string>

@@ -17,6 +17,7 @@ import android.view.View;
 import catchmyshift.catchmyshift.fragment.BillingCompanyFragment;
 import catchmyshift.catchmyshift.fragment.ContactCompanyFragment;
 import catchmyshift.catchmyshift.fragment.EventsCompanyFragment;
+import catchmyshift.catchmyshift.fragment.PaymentFragment;
 import catchmyshift.catchmyshift.utilities.MyMethods;
 import catchmyshift.catchmyshift.fragment.OpenEventsCompanyFragment;
 import catchmyshift.catchmyshift.fragment.ProfileCompanyFragment;
@@ -79,9 +80,9 @@ public class CompanyActivity extends AppCompatActivity implements NavigationView
         int id = item.getItemId();
         switch (id){
             case R.id.nav_profile_bussiness:
-                    ProfileCompanyFragment profileFragment = new ProfileCompanyFragment();
-                    manager = getSupportFragmentManager();
-                    manager.beginTransaction().replace(R.id.layout_content_company,profileFragment,profileFragment.getTag()).commit();
+                ContactCompanyFragment profileFragment = new ContactCompanyFragment();
+                manager = getSupportFragmentManager();
+                manager.beginTransaction().replace(R.id.layout_content_company,profileFragment,profileFragment.getTag()).commit();
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_contact:
@@ -91,18 +92,18 @@ public class CompanyActivity extends AppCompatActivity implements NavigationView
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_billing_info:
-                BillingCompanyFragment billingFragment = new BillingCompanyFragment();
+                PaymentFragment paymentFragment = new PaymentFragment();
                 manager = getSupportFragmentManager();
-                manager.beginTransaction().replace(R.id.layout_content_company,billingFragment, billingFragment.getTag()).commit();
+                manager.beginTransaction().replace(R.id.layout_content_company, paymentFragment, paymentFragment.getTag()).commit();
                 drawer.closeDrawer(GravityCompat.START);
                 break;
             case R.id.nav_publish_job:
-                PublishJobCompanyFragment publishJob = new PublishJobCompanyFragment();
-                manager = getSupportFragmentManager();
-                manager.beginTransaction().replace(R.id.layout_content_company,publishJob, publishJob.getTag()).commit();
                 drawer.closeDrawer(GravityCompat.START);
+                Intent jobIntent = new Intent().setClass(getApplicationContext(),JobActivity.class);
+                startActivity(jobIntent);
+                finish();
                 break;
-            case R.id.nav_myevents:
+            /*case R.id.nav_myevents:
                 EventsCompanyFragment myEvents = new EventsCompanyFragment();
                 manager = getSupportFragmentManager();
                 manager.beginTransaction().replace(R.id.layout_content_company, myEvents, myEvents.getTag()).commit();
@@ -113,7 +114,7 @@ public class CompanyActivity extends AppCompatActivity implements NavigationView
                 manager= getSupportFragmentManager();
                 manager.beginTransaction().replace(R.id.layout_content_company, openEvents, openEvents.getTag()).commit();
                 drawer.closeDrawer(GravityCompat.START);
-                break;
+                break;*/
             case R.id.nav_settings:
                 drawer.closeDrawer(GravityCompat.START);
                 break;

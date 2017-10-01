@@ -13,19 +13,19 @@
         <item
             android:id="@+id/nav_billing_info"
             android:icon="@drawable/payvd"
-            android:title="@string/title_navdraw_billingInfo" />
+            android:title="@string/method_payment" />
         <item
             android:id="@+id/nav_publish_job"
             android:icon="@drawable/publishvd"
             android:title="@string/title_navdraw_publishJob" />
-        <item
+        <!--<item
             android:id="@+id/nav_myevents"
             android:icon="@drawable/myeventsvd"
             android:title="@string/title_navdraw_myEventsBussiness" />
         <item
             android:id="@+id/nav_myopenevents"
             android:icon="@drawable/publicvd"
-            android:title="@string/title_navdraw_myOpEventsBussiness" />
+            android:title="@string/title_navdraw_myOpEventsBussiness" />-->
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/settingsvd"
