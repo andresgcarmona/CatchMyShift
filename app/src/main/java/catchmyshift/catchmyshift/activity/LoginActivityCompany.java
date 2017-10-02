@@ -24,7 +24,7 @@ public class LoginActivityCompany extends AppCompatActivity {
 
     @OnClick(R.id.button_login_comp)
     public void Login(){
-        Intent intent = new Intent().setClass(getApplicationContext(),CompaniesActivity.class);
+        Intent intent = new Intent().setClass(getApplicationContext(),CompanyActivity.class);
         startActivity(intent);
     }
 
