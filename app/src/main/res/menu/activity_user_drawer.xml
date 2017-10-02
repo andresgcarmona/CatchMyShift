@@ -18,14 +18,14 @@
             android:id="@+id/opLanguages"
             android:icon="@drawable/languagesvd"
             android:title="@string/title_user_languages" />
-        <item
+        <!--<item
             android:id="@+id/opCompanies"
             android:icon="@drawable/companiesvd"
-            android:title="@string/title_mycompanies" />
-        <item
+            android:title="@string/title_mycompanies" />-->
+        <!--<item
             android:id="@+id/opJobs"
             android:icon="@drawable/jobsvd"
-            android:title="@string/title_myjobs" />
+            android:title="@string/title_myjobs" />-->
         <item
             android:id="@+id/opLogOut"
             android:icon="@drawable/backvd"

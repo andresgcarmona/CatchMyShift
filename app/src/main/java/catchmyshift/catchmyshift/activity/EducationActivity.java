@@ -294,12 +294,14 @@ public class EducationActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(LoadExtras loadExtras) {
-            nivelEstudio.setSelection(loadExtras.PDegreeName);
-            nivelEstudioStatus.setSelection(loadExtras.PDegreeStatus);
+            if(action.equals("edit")) {
+                nivelEstudio.setSelection(loadExtras.PDegreeName);
+                nivelEstudioStatus.setSelection(loadExtras.PDegreeStatus);
 
-            institucion.setText(loadExtras.Institution);
-            anioInicial.setText(loadExtras.StartYear);
-            anioFinal.setText(loadExtras.EndYear);
+                institucion.setText(loadExtras.Institution);
+                anioInicial.setText(loadExtras.StartYear);
+                anioFinal.setText(loadExtras.EndYear);
+            }
 
             progressBar.setVisibility(View.INVISIBLE);
         }
