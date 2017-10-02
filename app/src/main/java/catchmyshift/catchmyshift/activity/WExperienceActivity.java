@@ -205,7 +205,7 @@ public class WExperienceActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    public class loadExtras extends AsyncTask<Void,Void, LoadExtras>{
+    /*public class loadExtras extends AsyncTask<Void,Void, LoadExtras>{
 
         @Override
         protected LoadExtras doInBackground(Void... params) {
@@ -228,7 +228,7 @@ public class WExperienceActivity extends AppCompatActivity {
         protected void onPostExecute(LoadExtras loadExtras) {
             super.onPostExecute(loadExtras);
         }
-    }
+    }*/
 }
 
 

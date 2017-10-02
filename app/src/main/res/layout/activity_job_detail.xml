@@ -97,10 +97,10 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 >
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="0px"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.40"
+                    android:layout_weight="0.45"
                     android:layout_marginLeft="16dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="8dp">
@@ -113,16 +113,17 @@
                         app:civ_border_color="@color/colorPrimary"
                         android:src="@drawable/empresafoto" />
 
-                </RelativeLayout>
+                </LinearLayout>
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="0px"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_weight="1"
+                    android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="8dp"
+                    android:orientation="vertical"
                     >
 
                     <TextView
@@ -139,16 +140,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignTop="@+id/idCompany"
-                        android:layout_marginTop="20dp"
                         android:text="Company"
-                        android:textSize="18sp" />
+                        android:textSize="17sp" />
 
 
                     <TextView
                         android:id="@+id/iddescripcion_empresa"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="30dp"
+                        android:layout_marginTop="8dp"
                         android:layout_alignTop="@+id/idCompany_Name"
                         android:textStyle="bold"
                         android:textSize="15sp"
@@ -159,14 +159,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
 
-                        android:layout_marginTop="20dp"
                         android:layout_alignTop="@+id/iddescripcion_empresa"
                         android:textSize="17sp"
                         android:text="@string/title_company_descripcion"
 
                         />
 
-                </RelativeLayout>
+                </LinearLayout>
 
             </LinearLayout>
 
