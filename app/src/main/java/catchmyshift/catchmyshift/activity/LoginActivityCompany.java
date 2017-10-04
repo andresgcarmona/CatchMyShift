@@ -15,6 +15,8 @@ import catchmyshift.catchmyshift.R;
 
 public class LoginActivityCompany extends AppCompatActivity {
 
+    @BindView(R.id.text_createAccoutn) TextView createAccount;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +30,12 @@ public class LoginActivityCompany extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @OnClick(R.id.text_createAccoutn)
+    public void CreateAccount() {
+        Intent intent = new Intent().setClass(getApplicationContext(), CreateUserActivity.class);
+        intent.putExtra("type","2");
+        startActivity(intent);
+    }
 
 }
 /*

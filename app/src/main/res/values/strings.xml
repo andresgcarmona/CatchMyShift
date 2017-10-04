@@ -340,4 +340,6 @@
     <string name="title_SearchJob">Buscar Trabajo</string>
 
     <string name="title_remember_me">Recuérdame</string>
+
+    <string name="title_error_signup">Error al registrar el usuario</string>
 </resources>

@@ -121,6 +121,7 @@ public class LoginActivity extends AppCompatActivity {
     @OnClick(R.id.text_createAccoutn)
     public void CreateAccount() {
         Intent intent = new Intent().setClass(getApplicationContext(), CreateUserActivity.class);
+        intent.putExtra("type","1");
         startActivity(intent);
     }
 
